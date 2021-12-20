@@ -12,6 +12,8 @@ categories = [ "Unfinished" ]
 
 在写下这篇文章的时候，我习惯于把所有的记录都写在Notion中，不论是私人的还是公开的，后续大概也是如此。这一篇文章也是先在Notion上完成，然后黏贴到md文件中，进一步再上传至Github Pages。目前这篇文章的效果我觉得还是不错的，这也加强了后续我更新博客动力。
 
+暂时发现的问题就是通过 Github Action 来进行网站构建，虽然不能说特别慢，但是在推送完代码之后还是需要等待一段时间。
+
 > 静态网站生成器：Zola [https://www.getzola.org/documentation/getting-started/overview/](https://www.getzola.org/documentation/getting-started/overview/)
 > 
 

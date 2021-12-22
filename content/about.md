@@ -8,4 +8,4 @@ template = "about.html"
 
 - [GitHub](https://github.com/livexia)
 - [Telegram](https://t.me/livexia)
-- [twitter](https://twitter.com/livexia5)|
+- [twitter](https://twitter.com/livexia5)

@@ -21,7 +21,7 @@ Advent of Code 网站：[https://adventofcode.com](https://adventofcode.com)
 
 部分题目我采用了非常规的做法（day 18），或者用了题目输入输出的偶然性（day 19）而完成。这些题目我需要进一步的重新编写。记录中的题目虽然大部分都是有所不足的，但是这些不足更多的是在实现上有效率的问题，大体上是不存在严重问题的，而列表内的题目则是方法有误，所以最好能进行重写。
 
-- Day 18
+- ~~Day 18~~: [构建二叉树解决Advent of Code 2021 18天](/build-a-binary-tree-to-solve-aoc-ay18)
 - Day 19
 - Day 23
 - Day 24

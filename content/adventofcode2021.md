@@ -9,9 +9,9 @@ tags = [ "Coding" ]
 
 记录从2021.12.1日到2021.12.25日参与的Advent of Code。以下内容是记录在我的代码仓库中的。
 
-代码仓库：https://github.com/livexia/advent-of-code-2021
+代码仓库：[livexia/advent-of-code-2021](https://github.com/livexia/advent-of-code-2021)
 
-Advent of Code 网站：https://adventofcode.comå
+Advent of Code 网站：[https://adventofcode.com](https://adventofcode.com)
 
 ---
 

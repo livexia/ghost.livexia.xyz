@@ -122,7 +122,7 @@ aoc18_with_string: 字符串方法，成功通过part1和part2，并且含有相
 
 参考：https://www.reddit.com/r/adventofcode/comments/rizw2c/2021_day_18_solutions
 
-### Day19
+### Day 19
 
 这个题目其实并不难，但是有好几个关键的部分，第一个部分是，坐标系的转动是如何的，第二个部分是如何确定两个scanner中的beacon是重叠的。
 

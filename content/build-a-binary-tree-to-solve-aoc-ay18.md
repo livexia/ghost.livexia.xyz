@@ -46,13 +46,13 @@ struct Number {
 
 ```rust
 fn from_str(s: &str) -> Result<Option<Box<Self>>> {
-		let mut stack: Vec<u8> = s
-		    .bytes()
-		    .filter(|c| !c.is_ascii_whitespace())
-		    .rev()
-		    .collect();
-		stack.pop();
-		Ok(Number::from_stack(&mut stack))
+    let mut stack: Vec<u8> = s
+        .bytes()
+        .filter(|c| !c.is_ascii_whitespace())
+        .rev()
+        .collect();
+    stack.pop();
+    Ok(Number::from_stack(&mut stack))
 }
 ```
 
@@ -67,7 +67,7 @@ fn from_str(s: &str) -> Result<Option<Box<Self>>> {
 
 ```rust
 fn from_stack(stack: &mut Vec<u8>) -> Option<Box<Self>> {
-		let mut number = Number::new(None, None, None);
+    let mut number = Number::new(None, None, None);
     while let Some(b) = stack.pop() {
         if b == ']' as u8 {
             break;

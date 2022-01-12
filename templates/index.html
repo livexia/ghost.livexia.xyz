@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block meta %}
+<meta property="og:type" content="website">
+{% endblock meta %}
+
+{% block content %}
+<ul class="article-list">
+{{ macros::article_list(articles=section.pages) }}
+</ul>
+{% endblock content %}

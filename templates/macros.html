@@ -1,0 +1,18 @@
+{% macro post_metadata(page) %}
+<div class="page-metadata">
+{{ page.date | date(format="%B %e, %Y") }}
+&middot; {{ page.reading_time }} minute read
+</div>
+{% endmacro post_metadata %}
+
+
+{% macro article_list(articles) %}
+  {% for page in articles %}
+  <li>
+    <span class="page-metadata">
+    {{ page.date | date(format="%B %e, %Y") }}
+    </span>
+  <h2 class="title"><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+  </li>
+  {% endfor %}
+{% endmacro %}

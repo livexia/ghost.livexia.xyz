@@ -12,13 +12,13 @@ build_search_index = false # disable because too much js file update
 # add feeds
 generate_feed = true
 
-theme = "even"
+# theme = "even"
 # config for even
-taxonomies = [
-    # You can enable/disable RSS
-    {name = "categories", feed = true},
-    {name = "tags", feed = true},
-]
+# taxonomies = [
+#     # You can enable/disable RSS
+#     {name = "categories", feed = true},
+#     {name = "tags", feed = true},
+# ]
 
 [markdown]
 # Whether to do syntax highlighting

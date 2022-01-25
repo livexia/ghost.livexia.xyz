@@ -1,5 +1,6 @@
 {% macro post_metadata(page) %}
 <div class="page-metadata">
+{{ page.taxonomies["tags"] }}
 {{ page.date | date(format="%B %e, %Y") }}
 &middot; {{ page.reading_time }} minute read
 </div>
@@ -10,6 +11,7 @@
   {% for page in articles %}
   <li>
     <span class="page-metadata">
+    {{ page.taxonomies["tags"] }}
     {{ page.date | date(format="%B %e, %Y") }}
     </span>
   <h2 class="title"><a href="{{ page.permalink }}">{{ page.title }}</a></h2>

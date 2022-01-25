@@ -14,11 +14,11 @@ generate_feed = true
 
 # theme = "even"
 # config for even
-# taxonomies = [
-#     # You can enable/disable RSS
-#     {name = "categories", feed = true},
-#     {name = "tags", feed = true},
-# ]
+taxonomies = [
+    # You can enable/disable RSS
+    {name = "categories", feed = false},
+    {name = "tags", feed = false},
+]
 
 [markdown]
 # Whether to do syntax highlighting

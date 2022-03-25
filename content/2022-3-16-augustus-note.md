@@ -1,8 +1,8 @@
 +++
-title = "除了自我别无留存 ——《奥古斯都》观后感"
+title = "除了自我别无留存 ——《奥古斯都》读后感"
 slug = "augustus-note"
 date = 2022-03-16
-excerpt = "《奥古斯都》观后感"
+excerpt = "《奥古斯都》读后感"
 
 [taxonomies]
 tags = [ "reading" ]

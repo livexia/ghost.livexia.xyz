@@ -1,8 +1,8 @@
 +++
-title = "人生复杂 ——《安娜·卡列尼娜》观后感"
+title = "人生复杂 ——《安娜·卡列尼娜》读后感"
 slug = "anna-karenina-note"
 date = 2022-03-11
-excerpt = "《安娜·卡列尼娜》观后感"
+excerpt = "《安娜·卡列尼娜》读后感"
 
 [taxonomies]
 tags = [ "reading" ]

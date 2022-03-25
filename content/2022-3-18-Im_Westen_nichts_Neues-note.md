@@ -1,8 +1,8 @@
 +++
-title = "战损人生 ——《西线无战事》观后感"
+title = "战损人生 ——《西线无战事》读后感"
 slug = "Im_Westen_nichts_Neues-note"
 date = 2022-03-18
-excerpt = "《西线无战事》观后感"
+excerpt = "《西线无战事》读后感"
 
 [taxonomies]
 tags = [ "reading" ]

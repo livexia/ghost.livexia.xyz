@@ -1,5 +1,5 @@
 +++
-title = "独裁的节日———《公羊的节日》读后感"
+title = "独裁的节日 ——《公羊的节日》读后感"
 slug = "La_fiesta_del_chivo-note"
 date = 2022-07-03
 excerpt = "《公羊的节日》读后感"

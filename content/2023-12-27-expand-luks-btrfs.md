@@ -124,3 +124,10 @@ tl;dr ：这么复杂的操作是没法长话短说，长话段说容易进不�
     2. 备份 `/ect/crypttab`
     3. 备份 `/ect/default/grub`
     4. 备份 LUKS header
+        
+        ```bash
+        sudo cryptsetup luksHeaderBackup /dev/nvme0n1p6 --header-backup-file nvme0n1p6.bin
+        sudo cryptsetup luksHeaderBackup /dev/nvme0n1p7 --header-backup-file nvme0n1p7.bin
+        # 验证备份文件
+        sudo cryptsetup luksDump nvme0n1p6.bin
+        ```

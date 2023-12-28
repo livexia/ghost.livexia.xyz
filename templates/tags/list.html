@@ -9,7 +9,7 @@
 <ul>
 {% for tag in terms %}
     <li class="tags-list"> 
-        <h3 class="title"><a href="{{ tag.permalink }}"><span>{{ tag.name }}</span></a> {{ tag.pages | length }}</h3>
+        <h4 class="title"><a href="{{ tag.permalink }}"><span>{{ tag.name }}</span></a> {{ tag.pages | length }}</h4>
     </li>
 {% endfor %}
 </ul>

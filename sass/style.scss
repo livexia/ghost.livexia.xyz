@@ -275,4 +275,16 @@ article img[src*=".svg"] {
 
 .tags-list {
     list-style-type: none;
+    margin-left: 0;
+    a {
+        display: block; 
+        color: #4a4a4a;
+        text-decoration: none;
+    }
+    li {
+        margin-top: 1em;
+    }
+    h2 {
+        margin-top: 0;
+    }
 }

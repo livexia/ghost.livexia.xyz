@@ -6,10 +6,18 @@
 {% endblock meta %}
 
 {% block content %}
-<ul>
-{% for tag in terms %}
-    <li class="tags-list"> 
-        <h4 class="title"><a href="{{ tag.permalink }}"><span>{{ tag.name }}</span></a> {{ tag.pages | length }}</h4>
+<ul class="tags-list">
+<h2>All Tags</h2>
+    {% for tag in terms | sort(attribute="pages") | reverse %}
+    <li> 
+        <h4 class="title">
+            <a href="{{ tag.permalink }}">
+                <span>{{ tag.name }}</span>
+                <span class="page-metadata">
+                    {{ tag.pages | length }}
+                </span>
+            </a>
+        </h4>
     </li>
 {% endfor %}
 </ul>

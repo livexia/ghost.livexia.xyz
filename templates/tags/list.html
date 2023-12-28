@@ -1,3 +1,3 @@
 {% for tag in terms %}
-    {{ tag.name }} {{ tag.slug }} {{ tag.pages | length }}
+<a href="{{ current_url }}{{ tag.slug }}"><span>{{ tag.name }}</span></a> {{ tag.pages | length }}
 {% endfor %}

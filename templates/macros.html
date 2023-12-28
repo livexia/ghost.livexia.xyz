@@ -20,3 +20,28 @@
   {% endfor %}
 </ul>
 {% endmacro %}
+
+{% macro paginnation_list(paginator) %}
+<ul class="article-list">
+  {% for page in paginator.pages %}
+  <li>
+    <span class="page-metadata">
+    {{ page.taxonomies["tags"] }}
+    {{ page.date | date(format="%B %e, %Y") }}
+    </span>
+  <h2 class="title"><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+  </li>
+  {% endfor %}
+</ul>
+<div>
+    {% if paginator.previous %}
+        <a href = "{{ paginator.previous }}">Previous page</a>
+    {% endif%}
+    {% if paginator.number_pagers > 1 %}
+        Page {{ paginator.current_index }}
+    {% endif %}
+    {% if paginator.next %}
+        <a href = "{{ paginator.next }}">Next page</a>
+    {% endif%}
+</div>
+{% endmacro %}

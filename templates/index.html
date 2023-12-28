@@ -6,5 +6,5 @@
 {% endblock meta %}
 
 {% block content %}
-{{ macros::article_list(articles=section.pages) }}
+{{ macros::paginnation_list(paginator=paginator) }}
 {% endblock content %}

@@ -17,7 +17,7 @@ generate_feed = true
 taxonomies = [
     # You can enable/disable RSS
     # {name = "categories", feed = false},
-    {name = "tags", feed = false, render = true},
+    {name = "tags", feed = false, paginate_by = 10, render = true},
 ]
 
 [markdown]

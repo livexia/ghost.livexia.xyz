@@ -4,8 +4,7 @@ slug = "the-gods-themselves-note"
 date = 2019-09-03T17:05:20.000Z
 
 [taxonomies]
-tags = [ "Reading" ]
-categories = [ "Unfinished" ]
+tags = [ "Reading", "Unfinished" ]
 +++
 
 > 面对愚昧，神们自己也缄口不言

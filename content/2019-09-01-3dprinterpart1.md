@@ -5,8 +5,7 @@ date = 2019-09-03T17:04:38.000Z
 excerpt = "关于3D打印机的一些初步计划，主要内容包含基本的3D打印机构建同初步设置。"
 
 [taxonomies]
-tags = [ "Tech" ]
-categories = [ "Unfinished" ]
+tags = [ "Tech", "Unfinished" ]
 +++
 
 ### 初衷

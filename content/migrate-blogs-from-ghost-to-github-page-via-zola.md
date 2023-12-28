@@ -5,8 +5,7 @@ date = 2021-12-20
 excerpt = "目前采用的Ghost博客框架，是搭建在DigitalOcean上的，每个月需要花费我5刀。而我只把这个服务器用作博客，我也不需要服务器用做其他的事情，而且架设在服务器上需要更多的精力进行维护，那么不如就把博客迁移到Github Pages好了，成本低，而且也解决了博客内容备份的问题。"
 
 [taxonomies]
-tags = [ "Tech", "Coding" ]
-categories = [ "Unfinished" ]
+tags = [ "tech", "coding" , "Unfinished"]
 +++
 目前采用的Ghost博客框架，是搭建在DigitalOcean上的，每个月需要花费我5刀。而我只把这个服务器用作博客，我也不需要服务器用做其他的事情，而且架设在服务器上需要更多的精力进行维护，那么不如就把博客迁移到Github Pages好了，成本低，而且也解决了博客内容备份的问题。
 

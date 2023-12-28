@@ -16,7 +16,7 @@ generate_feed = true
 # config for even
 taxonomies = [
     # You can enable/disable RSS
-    {name = "categories", feed = false},
+    # {name = "categories", feed = false},
     {name = "tags", feed = false, render = true},
 ]
 

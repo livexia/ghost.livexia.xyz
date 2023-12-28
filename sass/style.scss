@@ -253,3 +253,23 @@ article img[src*=".svg"] {
     }
 }
 
+@media (max-width: 400px) {
+  .nav-content .header-nav a.hide-when-small {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav-content .header-nav a.hide-when-not-large {
+    display: none;
+  }
+}
+
+.header-nav {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  font-size: 1rem;
+}

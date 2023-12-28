@@ -32,18 +32,22 @@
     </head>
     <body class="theme-default">
         <header>
-            <div class="main-column">
+            <div class="nav-content main-column">
                 <div class="icon">
                     <a href="/">
                         <img id="icon" src="/icon.png">
-                        <span><b>Just Some Ramblings</b></span>
+                        <span>livexia</span>
                     </a>
                 </div>
 
-                <div class="social-links">
+                <div class="header-nav"> 
+                    <a href="/tags/reading", class="hide-when-small">
+                      <span>Reading</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
                     <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
-                        <a href="https://github.com/livexia" target="_blank">{% include "github-brands.svg.html" %}</i></a>
-                        <a href="https://t.me/livexia" target="_blank">{% include "telegram-brands.svg.html" %}</i></a>
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small">{% include "github-brands.svg.html" %}</i></a>
                     </span>
                 </div>
             </div>

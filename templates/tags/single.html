@@ -1,3 +1,13 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block content %}
+<h2>Tag: {{ term.name }}</h2>
+<ul class="article-list">
+{{ macros::article_list(articles=term.pages) }}
+</ul>
+{% endblock content %}
+
 {% if not paginator %}
     Tag: {{ term.name }}
 

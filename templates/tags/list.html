@@ -1,3 +1,16 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block meta %}
+<meta property="og:type" content="website">
+{% endblock meta %}
+
+{% block content %}
+<ul>
 {% for tag in terms %}
-<a href="{{ current_url }}{{ tag.slug }}"><span>{{ tag.name }}</span></a> {{ tag.pages | length }}
+    <li> 
+        <h2 class="title"><a href="{{ tag.permalink }}"><span>{{ tag.name }}</span></a> {{ tag.pages | length }}</h2>
+    </li>
 {% endfor %}
+</ul>
+{% endblock content %}

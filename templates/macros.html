@@ -8,6 +8,7 @@
 
 
 {% macro article_list(articles) %}
+<ul class="article-list">
   {% for page in articles %}
   <li>
     <span class="page-metadata">
@@ -17,4 +18,5 @@
   <h2 class="title"><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
   </li>
   {% endfor %}
+</ul>
 {% endmacro %}

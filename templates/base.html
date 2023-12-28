@@ -4,11 +4,15 @@
         {% set title = page.title %}
     {% elif section.title %}
         {% set title = section.title %}
+    {% elif taxonomy.name %}
+        {% set title = taxonomy.name %}
     {% else %}
         {% set title = config.title %}
     {% endif %}
     {% if page.permalink %}
         {% set canonical_url = page.permalink %}
+    {% elif current_path %}
+        {% set canonical_url = current_path %}
     {% else %}
         {% set canonical_url = section.permalink %}
     {% endif %}

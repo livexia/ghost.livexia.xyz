@@ -266,10 +266,15 @@ article img[src*=".svg"] {
 }
 
 .header-nav {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
+
+.header-nav .btn {
+    // padding-top: 5px;
+    padding-left: 1rem;
+}
+

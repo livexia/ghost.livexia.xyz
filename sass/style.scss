@@ -32,11 +32,9 @@ body {
     line-height: 1.5;
 }
 article {
-    font-weight: 400;
-}
-article {
     max-width: $main-width;
     padding: 0 0.3rem;
+    font-weight: 400;
 }
 .main-column {
     padding: 0 0.4rem;
@@ -44,7 +42,7 @@ article {
 main {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     padding-left: 2ch;
     padding-right: 2ch;
@@ -266,15 +264,15 @@ article img[src*=".svg"] {
 }
 
 .header-nav {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  font-size: 1.5rem;
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
-.header-nav .btn {
-    // padding-top: 5px;
-    padding-left: 1rem;
+.tags-list {
+    list-style-type: none;
 }
-

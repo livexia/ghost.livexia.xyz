@@ -8,8 +8,8 @@
 {% block content %}
 <ul>
 {% for tag in terms %}
-    <li> 
-        <h2 class="title"><a href="{{ tag.permalink }}"><span>{{ tag.name }}</span></a> {{ tag.pages | length }}</h2>
+    <li class="tags-list"> 
+        <h3 class="title"><a href="{{ tag.permalink }}"><span>{{ tag.name }}</span></a> {{ tag.pages | length }}</h3>
     </li>
 {% endfor %}
 </ul>

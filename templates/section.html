@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block meta %}
+<meta property="og:type" content="website">
+{% endblock meta %}
+
+{% block content %}
+    {{ section.content | safe }}
+    {{ macros::paginnation_list(paginator=paginator) }}
+{% endblock content %}

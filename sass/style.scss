@@ -1,5 +1,5 @@
-$main-width: 50rem;
-$toc-width: 15rem;
+$main-width: 75%;
+$toc-width: 25%;
 $phone-width-threshold: 30rem;
 * {
     --line-color: #ebedef;
@@ -35,6 +35,7 @@ article {
     max-width: $main-width;
     padding: 0 0.3rem;
     font-weight: 400;
+    word-wrap: break-word;
 }
 .main-column {
     padding: 0 0.4rem;
@@ -189,7 +190,7 @@ code {
     padding: .2em .4em;
     border-radius: 6px;
     background-color: rgba(27, 31, 35, 0.05);
-    white-space: nowrap;
+    white-space: pre-wrap;
     font-size: .85em;
 }
 .title {
@@ -232,6 +233,7 @@ nav {
         display: block;
     }
     article {
+        max-width: 100%;
         margin: 0 auto;
     }
 }
@@ -287,4 +289,8 @@ article img[src*=".svg"] {
     h2 {
         margin-top: 0;
     }
+}
+
+.toc {
+    float: right;
 }

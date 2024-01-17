@@ -218,13 +218,13 @@ ERROR while creating surface for extension VK_KHR_wayland_surface : ./vulkaninfo
 Selected GPU 0: Virtio-GPU Venus (Intel(R) UHD Graphics 615 (AML-KBL)), type: IntegratedGpu
 ```
 
-### 后续
+## 后续
 
 1. 在 chrome://flags 中有用的选项 chrome://flags/#exo-ordinal-motion
 2. 如果驱动存在问题，可以尝试拉取最新代码，重新编译安装，再进行测试
 3. 增加 vulkan 程序 FPS 计数器，在 /etc/environment 文件中添加环境变量  `VK_INSTANCE_LAYERS=VK_LAYER_MESA_overlay`
 
-### 前后游戏帧数对比
+## 前后游戏帧数对比
 
 **The Conquest of Go**
 

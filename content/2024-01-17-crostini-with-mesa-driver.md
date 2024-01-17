@@ -6,7 +6,6 @@ date = 2024-01-17
 [taxonomies]
 tags = [ "Linux" ]
 +++
-
 tl;dr ：在 ChromeOS/Crostini 容器中安装 mesa 驱动，实现 vulkan 在容器中的可用，手动编译安装成功，但 Steam/Proton 游戏帧率提升不明显，ChromeOS/Crostini 通过 Proton 运行游戏（The Conquest of Go）仍与 Linux 直接 Proton 运行有较大差距。
 
 ## 起因
@@ -61,7 +60,7 @@ git clone https://gitlab.freedesktop.org/mesa/mesa.git
 
 ### 编译 64 位驱动
 
-配置编译
+**配置编译**
 
 ```bash
 meson setup build64 --libdir /usr/lib/x86_64-linux-gnu \
@@ -143,7 +142,7 @@ sudo apt-get install libelf-dev:i386
 sudo apt-get install libzstd-dev:i386
 ```
 
-### 配置 32 位编译
+**配置 32 位编译**
 
 ```bash
 meson setup build32 --cross-file gcc-i686 --libdir /usr/lib/i386-linux-gnu                                                        -Ddri3=enabled                              \

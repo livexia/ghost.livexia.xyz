@@ -80,7 +80,9 @@ meson setup build64 --libdir /usr/lib/x86_64-linux-gnu \
 
 **运行编译 `sudo ninja -C build64 install`** 。编译的时候，我这台无风扇的电脑 CPU 温度达到 75C 左右，还是比较吃性能和缓慢的，编译成功，在我的机器上运行了 15 分钟不到。
 
-### 编译 32 位驱动
+### 编译 32 位驱动（视情况可跳过）
+
+并不确定 32 位驱动是否必要，因为在我编译失败后，检测的几个方法都正常通过，我测试的游戏也正确的运行在了 64 位驱动上，原作者也不确定 32 位驱动的必要性，我尝试找到解答，最终大概只能确定的是也许在一些 32 位的游戏上会需要 32 位的驱动，也许是 32 位的 wine 需要 32 位的驱动，所以如果确定自己运行的游戏是 64 位，同时 wine 是 64 位的（大部分新游戏都满足这两个条件），那么这一步实际上是可以跳过的。
 
 **配置 gcc** 
 
@@ -180,11 +182,9 @@ Selected GPU 0: Virtio-GPU Venus (Intel(R) UHD Graphics 615 (AML-KBL)), type: In
 
 先尝试运行游戏：Steam 客户端一样的卡，但是运行游戏时弹出了配置 Vulkan 着色器的窗口，也许是好迹象，大概 15FPS ，依旧是不可玩的状态，看来是需要 32 位的驱动。因为在 Fedora 上，使用 Proton 7.0 有更好的兼容性，所以更换 Proton 版本再测试一下。测试 ProtonDB 上提到的启动参数 `PROTON_USE_WINED3D11=1 %command%` 情况依旧。
 
-**安装额外的依赖后编译成功：**
+**不推荐的解决方法：**~~安装额外的依赖后编译成功 `sudo apt install llvm:i386 llvm-dev:i386`~~
 
-```bash
-sudo apt install llvm:i386 llvm-dev:i386
-```
+反馈给原教程之后，我了解到这个方法会导致[依赖冲突](https://gist.github.com/Usulyre/bb33f77b225b8d9336c1f9e744114fba?permalink_comment_id=4840165#gistcomment-4840165)，所以我并不推荐，在我的环境中并不存在依赖冲突，因为我没有对应的依赖软件安装，例如 python3-mako ，可能是因为我的环境并非是新建立的，也可能是我之前对 python 的环境进行了改动，总之我不建议以这样的方式解决，我这样的解决方法应该是错误的，原教程中并没有这样的问题。
 
 ## 检查安装情况
 

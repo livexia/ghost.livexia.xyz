@@ -2,7 +2,7 @@
 title = "ChromeOS/Crostini 安装 mesa virtio-venus-experimental 驱动"
 slug = "crostini-with-mesa-driver"
 date = 2024-01-17
-update = 2024-03-18
+updated = 2024-03-18
 
 [taxonomies]
 tags = [ "Linux" ]

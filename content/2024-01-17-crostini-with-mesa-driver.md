@@ -2,6 +2,7 @@
 title = "ChromeOS/Crostini 安装 mesa virtio-venus-experimental 驱动"
 slug = "crostini-with-mesa-driver"
 date = 2024-01-17
+update = 2024-03-18
 
 [taxonomies]
 tags = [ "Linux" ]
@@ -14,7 +15,7 @@ tl;dr ：在 ChromeOS/Crostini 容器中安装 mesa 驱动，实现 vulkan 在�
 
 ## 原教程
 
-1. [Debian Bullseye](https://gist.github.com/Usulyre/bb33f77b225b8d9336c1f9e744114fba)
+1. [Debian Bullseye](https://gist.github.com/Usulyre/bb33f77b225b8d9336c1f9e744114fba) 参与了后续讨论
 2. [Arch](https://old.reddit.com/r/chromeos/comments/uq13t0/steam_gaming_by_vulkan_for_crostini_and_this/)
 
 初步阅读教程，可以发现大部分的操作并不太可能损害环境，所以我决定直接在原有环境上进行编译，而不新建容器，构建 Arch 虚拟机可能可以让整个流程加快，但是我还是喜欢用统一的环境。
@@ -32,10 +33,10 @@ Selected GPU 0: llvmpipe (LLVM 15.0.6, 256 bits), type: Cpu
 
 ## 前置条件，启用 crostini
 
-在 chrome://flags 中：
+在 `chrome://flags` 中：
 
-1. 使用最新版本的 Debian 我使用的是最新的 Bookworm chrome://flags/#crostini-container-install
-2. 启用 GPU 加速 chrome://flags/#crostini-gpu-support
+1. 使用最新版本的 Debian 我使用的是最新的 Bookworm `chrome://flags/#crostini-container-install`
+2. 启用 GPU 加速 `chrome://flags/#crostini-gpu-support`
 
 ## 具体操作
 
@@ -84,11 +85,11 @@ meson setup build64 --libdir /usr/lib/x86_64-linux-gnu \
 
 并不确定 32 位驱动是否必要，因为在我编译失败后，检测的几个方法都正常通过，我测试的游戏也正确的运行在了 64 位驱动上，原作者也不确定 32 位驱动的必要性，我尝试找到解答，最终大概只能确定的是也许在一些 32 位的游戏上会需要 32 位的驱动，也许是 32 位的 wine 需要 32 位的驱动，所以如果确定自己运行的游戏是 64 位，同时 wine 是 64 位的（大部分新游戏都满足这两个条件），那么这一步实际上是可以跳过的。
 
-**配置 gcc** 
+**配置 gcc （March 18, 2024 更新）**
 
-新建文件夹 mkdir -p ~/.local/share/meson/cross
+新建文件夹 `mkdir -p ~/.local/share/meson/cross`
 
-新增文件 ~/.local/share/meson/cross/gcc-i686
+新增文件 `~/.local/share/meson/cross/gcc-i686`
 
 内容为：
 
@@ -99,8 +100,8 @@ c = '/usr/bin/gcc'
 cpp = '/usr/bin/g++'
 ar = '/usr/bin/gcc-ar'
 strip = '/usr/bin/strip'
-pkgconfig = '/usr/bin/i686-linux-gnu-pkg-config'
-llvm-config = '/usr/bin/llvm-config'
+pkg-config = '/usr/bin/i686-linux-gnu-pkg-config'
+llvm-config = '/usr/bin/llvm-config-15'
 
 [built-in options]
 c_args = ['-m32']
@@ -114,6 +115,11 @@ cpu_family = 'x86'
 cpu = 'i686'
 endian = 'little'
 ```
+
+注：
+
+1. 当 `meson` 版本为 1.4.0 时  `pkgconfig` 应该是 `pkg-config` 
+2. 同时 `llvm-config` 要对齐编译 `64` 位驱动时使用的 `llvm` 版本
 
 **安装编译依赖**，也许非必需，作者并不确定，因为是 bookworm 所以要修改原教程中部分的 sid 安装命令为正常的安装命令。尝试不安装依赖，直接编译测试，编译配置就失败了。
 
@@ -186,6 +192,21 @@ Selected GPU 0: Virtio-GPU Venus (Intel(R) UHD Graphics 615 (AML-KBL)), type: In
 
 反馈给原教程之后，我了解到这个方法会导致[依赖冲突](https://gist.github.com/Usulyre/bb33f77b225b8d9336c1f9e744114fba?permalink_comment_id=4840165#gistcomment-4840165)，所以我并不推荐，在我的环境中并不存在依赖冲突，因为我没有对应的依赖软件安装，例如 python3-mako ，可能是因为我的环境并非是新建立的，也可能是我之前对 python 的环境进行了改动，总之我不建议以这样的方式解决，我这样的解决方法应该是错误的，原教程中并没有这样的问题。
 
+### 正确的方法（March 18, 2024 新增）
+
+在上次编译过后，因为涉及到依赖冲突，所以我最后卸载了之前安装的依赖 `llvm:i386 llvm-dev:i386` ，不确定是否是这个原因，导致这次再登陆系统，发现 Steam 无法启动了，而后尝试卸载驱动，导致 OpenGL 都不可用，Alacritty 都不可用了，这很麻烦。最后虽然通过重新编译 64 位的驱动，解决了 OpenGL 但问题，但是对于 Steam 依旧是启动错误，为了解决这个问题，我再次尝试编译 32 位驱动，依旧遇到了之前遇到的错误 `/usr/bin/ld: cannot find -lLLVM-14: No such file or directory`。
+
+这次我没有尝试安装会造成冲突的依赖，，我决定好好的分析一下，最后发现是没有正确的设置交叉编译，系统默认的 `llvm` 版本是 `llvm-15` 但是默认的 `llvm-config` 却是 `llvm-14` 版本，导致了在交叉编译过程中寻找不到正确的依赖。之前通过错误的安装了 `i386` 版本的 `llvm-14` 补齐了依赖，所以编译安装能够成功，但那其实就不是交叉编译了。理论上 64 位的驱动能用 `llvm-15` 完成编译，那应该也能通过 `llvm-15` 完成交叉编译出 32 位驱动。所以通过修改文件 `~/.local/share/meson/cross/gcc-i686` 中的 `llvm-config` 为 `llvm-config-15` ，再运行 `meson` 配置，然后进行编译安装，最终实现了 32 位驱动的正确编译。在这之后 Steam 正确的启动，问题解决。我的环境中存在 `llvm-14` 和 `llvm-15` ，其中 `llvm-14` 为默认版本，对于为何在编译 64 位驱动时用了 `llvm-15` 而不使用 `llvm-14` 有点让我费解，可能要仔细阅读一下 `meson.build` 文件才能确定了。
+
+在编译过程中 Debian Bokworm 源内自带的 `meson` 版本太低，所以我从 Bookworm Sid 源下载了较新版本的 `meson` ，利用 `dpkg` 安装 `deb` 包，最后成功安装。 
+
+`meson` 这次又提醒交叉编译配置中存在一个弃用的选项，即 `pkgconfig` 要变更为 `pkg-config` 。
+
+参考：
+
+- https://docs.mesa3d.org/install.html
+- https://github.com/mesonbuild/meson/issues/10483
+
 ## 检查安装情况
 
 安装 vulkan 测试工具 `sudo apt-get install vulkan-tools`
@@ -220,7 +241,7 @@ Selected GPU 0: Virtio-GPU Venus (Intel(R) UHD Graphics 615 (AML-KBL)), type: In
 
 ## 后续
 
-1. 在 chrome://flags 中有用的选项 chrome://flags/#exo-ordinal-motion
+1. 在 `chrome://flags` 中有用的选项 `chrome://flags/#exo-ordinal-motion`
 2. 如果驱动存在问题，可以尝试拉取最新代码，重新编译安装，再进行测试
 3. 增加 vulkan 程序 FPS 计数器，在 /etc/environment 文件中添加环境变量  `VK_INSTANCE_LAYERS=VK_LAYER_MESA_overlay`
 

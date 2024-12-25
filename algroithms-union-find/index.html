@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+    
+    
+        
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <title>Algorithms——Union-Find</title>
+        <link rel="stylesheet" href="https://ghost.livexia.xyz/style.css?2"/>
+        <link rel="icon" href="https://ghost.livexia.xyz/icon.png"/>
+        <link rel="canonical" href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;algroithms-union-find&#x2F;"/>
+        <link rel="alternate" type="application/rss+xml" title="Just Some Ramblings" href="/rss.xml">
+        
+<meta property="og:type" content="article">
+
+        <meta property="og:title" content="Algorithms——Union-Find">
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;algroithms-union-find&#x2F;">
+        <meta property="og:image" content="https://ghost.livexia.xyz/icon.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125980270-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-125980270-1');
+        </script>
+    </head>
+    <body class="theme-default">
+        <header>
+            <div class="nav-content main-column">
+                <!-- <div class="icon"> -->
+                <!--     <a href="/"> -->
+                <!--         <img id="icon" src="/icon.png"> -->
+                <!--     </a> -->
+                <!-- </div> -->
+                <div class="header-nav"> 
+                    <a href="/">
+                        <span>livexia</span>
+                    </a>
+                </div>
+
+                <div class="header-nav"> 
+                    <a href="/tags/reading">
+                      <span>reading</span>
+                    </a>
+                </div>
+                <div class="header-nav btn">
+                    <a href="/tags">
+                      <span>tags</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
+                    <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></i></a>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <article>
+                
+<h1 class="title">
+  Algorithms——Union-Find
+</h1>
+
+<div class="page-metadata">
+[Coding]
+Posted on Apr  3, 2019
+
+&middot; 5 minute read
+</div>
+
+<p>并查集（Union-Find）问题：研究动态连接性</p>
+<p>基础算法：快速查找（Quick Find）、快速连接（Quick Union）</p>
+<p>提升算法：带权的并查集（Weighted Union Find）、路径压缩后带权的并查集（Weighted Union Find with Path Compression）</p>
+<p>快速查找（Quick Find）：维护数组id[i]，i代表各个连接单位，不同索引id[i]相同时代表这一系列i属于同一连通风量。若id[1]=id[2]=id[4]，则1、2、4三个单位处于同一连通分量，即1、2、4互相连接。</p>
+<p>快速连接（Quick Union）：利用数组id[i]，维护森林，所有相连的单位处于同一棵树内，连接（Union）使得两颗不同的树合并为一棵树。id[i]的值为i的父亲，如果id[i]=i则i为i所处的树的根（root）。每当一棵树并入另一棵树，将并入树的根改为待并入树的根。</p>
+<p>带权的并查集（Weighted Union Find）：改善Quick-Union，额外维护数组sz[i]，存储根为i的树的所有结点量/权。当两棵树合并时，比较两棵树的权，权较小的树并入权较大的树。改善的目的是使得在树中较少出现“一枝独秀”。树的深度不超过lgN，每当叶子的深度增加时，该树最少并入相同大小的树，此时深度+1，若共有N个节点，则最多可以进行lgN次合并，使得所有节点处于同一颗树，该树深度最大，一次合并深度增加1。</p>
+<p>路径压缩后带权的并查集（Weighted Union Find with Path Compression）：改善Weighted Union Find，相比带权并查集并不维护额外的数组。当每一次进行并、查操作时，尽量使得当前节点直接指向根（root），示例代码中仅仅使查询节点指向其爷爷。</p>
+<p>算法复杂度：
+<img src="https://ghost.livexia.xyz/algroithms-union-find/__GHOST_URL__/content/images/2019/04/M-union-find-operations-on-a-set-of-N-objects.png" alt="" />
+Python示例代码：</p>
+<p>Quick-Find：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>class QF:
+</span><span>    id = []
+</span><span>    count = 0
+</span><span>    def __init__(self, n):
+</span><span>        self.id = list(range(n))
+</span><span>        self.count = n
+</span><span>
+</span><span>    def union(self, p, q):
+</span><span>        if self.connected(p,q):
+</span><span>            pass
+</span><span>        else:
+</span><span>            old_p = self.id[p]
+</span><span>            for i in range(self.count):
+</span><span>                if self.id[i] == old_p:
+</span><span>                    self.id[i] = self.id[q]
+</span><span>
+</span><span>    def connected(self, p, q):
+</span><span>        if self.id[p] == self.id[q]:
+</span><span>            return 1
+</span><span>        return 0
+</span></code></pre>
+<p>Quick-Union：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>class QU:
+</span><span>    id = []
+</span><span>    count = 0
+</span><span>    def __init__(self, n):
+</span><span>        self.id = list(range(n))
+</span><span>        self.count = n
+</span><span>
+</span><span>    def root(self, p):
+</span><span>        while p != self.id[p]:
+</span><span>            p = self.id[p]
+</span><span>        return p
+</span><span>
+</span><span>    def union(self, p, q):
+</span><span>        if self.connected(p,q):
+</span><span>            pass
+</span><span>        else:
+</span><span>            self.id[self.root(p)] = self.root(q)
+</span><span>
+</span><span>    def connected(self, p, q):
+</span><span>        if self.root(p) == self.root(q):
+</span><span>            return 1
+</span><span>        return 0
+</span></code></pre>
+<p>Weighted Union Find：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>class WQU:
+</span><span>    id = []
+</span><span>    sz = []
+</span><span>    count = 0
+</span><span>    def __init__(self, n):
+</span><span>        self.id = list(range(n))
+</span><span>        self.sz = [1] * n
+</span><span>        self.count = n
+</span><span>
+</span><span>    def root(self, p):
+</span><span>        while p != self.id[p]:
+</span><span>            p = self.id[p]
+</span><span>        return p
+</span><span>
+</span><span>    def union(self, p, q):
+</span><span>        if self.connected(p,q):
+</span><span>            pass
+</span><span>        else:
+</span><span>            rootp = self.root(p)
+</span><span>            rootq = self.root(q)
+</span><span>            if self.sz[rootp] &gt;= self.sz[rootq]:
+</span><span>                self.id[rootq] = rootp
+</span><span>                self.sz[rootp] += self.sz[rootq]
+</span><span>            else:
+</span><span>                self.id[rootp] = rootq
+</span><span>                self.sz[rootq] += self.sz[rootp]
+</span><span>
+</span><span>    def connected(self, p, q):
+</span><span>        if self.root(p) == self.root(q):
+</span><span>            return 1
+</span><span>        return 0
+</span></code></pre>
+<p>Weighted Union Find With Compression：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>class WQUPC:
+</span><span>    id = []
+</span><span>    sz = []
+</span><span>    count = 0
+</span><span>    def __init__(self, n):
+</span><span>        self.id = list(range(n))
+</span><span>        self.sz = [1] * n
+</span><span>        self.count = n
+</span><span>
+</span><span>    def root(self, p):
+</span><span>        while p != self.id[p]:
+</span><span>            self.id[p] = self.id[self.id[p]]
+</span><span>            p = self.id[p]
+</span><span>        return p
+</span><span>
+</span><span>    def union(self, p, q):
+</span><span>        if self.connected(p,q):
+</span><span>            pass
+</span><span>        else:
+</span><span>            rootp = self.root(p)
+</span><span>            rootq = self.root(q)
+</span><span>            if self.sz[rootp] &gt;= self.sz[rootq]:
+</span><span>                self.id[rootq] = rootp
+</span><span>                self.sz[rootp] += self.sz[rootq]
+</span><span>            else:
+</span><span>                self.id[rootp] = rootq
+</span><span>                self.sz[rootq] += self.sz[rootp]
+</span><span>
+</span><span>    def connected(self, p, q):
+</span><span>        if self.root(p) == self.root(q):
+</span><span>            return 1
+</span><span>        return 0
+</span></code></pre>
+<p>C语言示例代码：</p>
+<h4 id="todo">TODO</h4>
+
+
+
+<noscript>
+    This is where the comments would load if you enabled JavaScript.
+</noscript>
+<script src="https://utteranc.es/client.js"
+        repo="livexia/ghost.livexia.xyz"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </article>
+            
+
+<nav class="toc">
+    <h4>目录</h4>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;algroithms-union-find&#x2F;#todo">TODO</a>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+
+        </main>
+    </body>
+</html>

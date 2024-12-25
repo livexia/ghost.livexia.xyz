@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+    
+    
+        
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <title>利用Zola将博客从Ghost迁移到Github Pages</title>
+        <link rel="stylesheet" href="https://ghost.livexia.xyz/style.css?2"/>
+        <link rel="icon" href="https://ghost.livexia.xyz/icon.png"/>
+        <link rel="canonical" href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;"/>
+        <link rel="alternate" type="application/rss+xml" title="Just Some Ramblings" href="/rss.xml">
+        
+<meta property="og:type" content="article">
+
+        <meta property="og:title" content="利用Zola将博客从Ghost迁移到Github Pages">
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;">
+        <meta property="og:image" content="https://ghost.livexia.xyz/icon.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125980270-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-125980270-1');
+        </script>
+    </head>
+    <body class="theme-default">
+        <header>
+            <div class="nav-content main-column">
+                <!-- <div class="icon"> -->
+                <!--     <a href="/"> -->
+                <!--         <img id="icon" src="/icon.png"> -->
+                <!--     </a> -->
+                <!-- </div> -->
+                <div class="header-nav"> 
+                    <a href="/">
+                        <span>livexia</span>
+                    </a>
+                </div>
+
+                <div class="header-nav"> 
+                    <a href="/tags/reading">
+                      <span>reading</span>
+                    </a>
+                </div>
+                <div class="header-nav btn">
+                    <a href="/tags">
+                      <span>tags</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
+                    <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></i></a>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <article>
+                
+<h1 class="title">
+  利用Zola将博客从Ghost迁移到Github Pages
+</h1>
+
+<div class="page-metadata">
+[tech, coding, Unfinished]
+Posted on Dec 20, 2021
+
+&middot; 6 minute read
+</div>
+
+<p>目前采用的Ghost博客框架，是搭建在DigitalOcean上的，每个月需要花费我5刀。而我只把这个服务器用作博客，我也不需要服务器用做其他的事情，而且架设在服务器上需要更多的精力进行维护，那么不如就把博客迁移到Github Pages好了，成本低，而且也解决了博客内容备份的问题。</p>
+<p>在写下这篇文章的时候，我习惯于把所有的记录都写在Notion中，不论是私人的还是公开的，后续大概也是如此。这一篇文章也是先在Notion上完成，然后黏贴到md文件中，进一步再上传至Github Pages。目前这篇文章的效果我觉得还是不错的，这也加强了后续我更新博客动力。</p>
+<p>暂时发现的问题就是通过 Github Action 来进行网站构建，虽然不能说特别慢，但是在推送完代码之后还是需要等待一段时间。</p>
+<blockquote>
+<p>静态网站生成器：Zola <a href="https://www.getzola.org/documentation/getting-started/overview/">https://www.getzola.org/documentation/getting-started/overview/</a></p>
+</blockquote>
+<h2 id="zolahuan-jing-da-jian">Zola环境搭建</h2>
+<p>以下操作均在macOS上完成</p>
+<p>Setp1: 安装Zola</p>
+<p><code>brew install zola</code></p>
+<p>Setp2: 初始化Zola仓库</p>
+<p><code>zola init ghost.livexia.xyz</code></p>
+<p>Setp3: 一些简单的zola命令</p>
+<ol>
+<li>构建网站  <code>zola build</code></li>
+<li>本地预览 <code>zola serve</code></li>
+<li>编译检查 <code>zola check</code></li>
+</ol>
+<h2 id="an-zhuang-zhu-ti">安装主题</h2>
+<p>参考的博客的主题应该是手写的？不确定我能在短期内实现，先选择一个主题，后续再看看是否有自己定制化的需求。</p>
+<p>简单使用主题 even</p>
+<p><code>cd themes</code></p>
+<p><code>git clone https://github.com/getzola/even</code></p>
+<p>在 <code>config.toml</code> 中启用:</p>
+<p><code>theme = "even"</code></p>
+<p>根据even文档，进一步修改 <code>config.toml</code></p>
+<p>并不是特别喜欢这个主题的样式，可能会找时间将我参考的博客的主题进行复制修改</p>
+<h2 id="ghostnei-rong-qian-yi"><strong>Ghost内容迁移</strong></h2>
+<p>在Ghost管理页面上导出数据，导出后应该是一个json文件。</p>
+<p>利用工具<code>ghost-to-md</code> 批量转换：</p>
+<p>Step1：安装工具 <code>npm install -g ghost-to-md</code></p>
+<p>Step2: 在Ghost管理面板中导出数据，执行命令批量转换。</p>
+<p><code>ghost-to-md cheng-xu-yuan-de-sheng-huo.ghost.2021-12-20-00-54-57.json</code></p>
+<p>虽然利用工具能转换大部分的内容到 markdown，但是仍有部分错误需要手动修复。工具转出的markdown 头部的信息是yaml格式，为了和Rust的语言生态保持一致，修改yaml格式的markdown为toml。</p>
+<p>进一步梳理博客中的内容，将部分博客文章删除，并分类了未完成的文章。</p>
+<h2 id="githubcang-ku-jia-she"><strong>Github仓库架设</strong></h2>
+<p><strong>详细说明参见：</strong><a href="https://www.getzola.org/documentation/deployment/github-pages/">https://www.getzola.org/documentation/deployment/github-pages/</a></p>
+<p>Step1：执行git submodule 来包含主题仓库。</p>
+<p><code>git submodule add https://github.com/getzola/even.git themes/even</code></p>
+<p>Step2：生成github personal token</p>
+<p>Step4：在仓库的 Secert 里添加token，注意要取和下一步Action 脚本中的 Token 一样的名字。</p>
+<p>Step5：添加Github Actions</p>
+<h2 id="yu-ming-que-ding-he-jie-xi-diao-zheng"><strong>域名确定和解析调整</strong></h2>
+<p>原有域名为 <a href="https://ghost.livexia.xyz/">https://ghost.livexia.xyz/</a> 需要调整ghost为其他的什么吗？暂时保持不动吧。</p>
+<p>将ghost.livexia.xyz的域名解析进行修改，原有dns解析是在 <a href="https://dns.he.net/">https://dns.he.net/</a> （注意不是<a href="https://he.net/">https://he.net/</a>）</p>
+<ol>
+<li>删除原有的A类域名解析</li>
+<li>添加CNAME域名解析，到github.io 页面</li>
+<li>在仓库的Pages页面中增加域名即可，参见："<a href="https://docs.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain">Managing a custom domain for your GitHub Pages site</a>."</li>
+</ol>
+<h2 id="an-zhuang-ping-lun-cha-jian"><strong>安装评论插件</strong></h2>
+<p>参考：<a href="https://utteranc.es/">https://utteranc.es/</a></p>
+<p>在安装教程里，我看见需要修改博客的模版文件，我不想去动even的模版文件，大概率我自己会写一个和参考博客的类似的模版，所以这个部分暂时挂起。</p>
+<p>ToDo</p>
+<h2 id="tian-jia-google-analysticdao-mo-ban-zhong">添加Google Analystic到模版中</h2>
+<p>ToDo</p>
+<h2 id="digitaloceantui-fei"><strong>DigitalOcean退费</strong></h2>
+<p>收到第二封回复，告知我能够将我账户上的未使用的余额进行退款，而我需要在账单到期后进行余额补足。</p>
+<p>账户中的所有余额都已经完成退费，而这个月的账单是3.43美元，如果我用PayPal进行支付，我需要最少支付5美元。</p>
+<p>参考：<a href="https://fasterthanli.me/articles/a-new-website-for-2020">https://fasterthanli.me/articles/a-new-website-for-2020</a></p>
+
+
+
+<noscript>
+    This is where the comments would load if you enabled JavaScript.
+</noscript>
+<script src="https://utteranc.es/client.js"
+        repo="livexia/ghost.livexia.xyz"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </article>
+            
+
+<nav class="toc">
+    <h4>目录</h4>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;#zolahuan-jing-da-jian">Zola环境搭建</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;#an-zhuang-zhu-ti">安装主题</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;#ghostnei-rong-qian-yi">Ghost内容迁移</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;#githubcang-ku-jia-she">Github仓库架设</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;#yu-ming-que-ding-he-jie-xi-diao-zheng">域名确定和解析调整</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;#an-zhuang-ping-lun-cha-jian">安装评论插件</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;#tian-jia-google-analysticdao-mo-ban-zhong">添加Google Analystic到模版中</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;migrate-blogs-from-ghost-to-github-page-with-zola&#x2F;#digitaloceantui-fei">DigitalOcean退费</a>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+
+        </main>
+    </body>
+</html>

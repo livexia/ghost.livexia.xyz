@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+    
+    
+        
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <title>参加2023年Advent of Code</title>
+        <link rel="stylesheet" href="https://ghost.livexia.xyz/style.css?2"/>
+        <link rel="icon" href="https://ghost.livexia.xyz/icon.png"/>
+        <link rel="canonical" href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;"/>
+        <link rel="alternate" type="application/rss+xml" title="Just Some Ramblings" href="/rss.xml">
+        
+<meta property="og:type" content="article">
+
+        <meta property="og:title" content="参加2023年Advent of Code">
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;">
+        <meta property="og:image" content="https://ghost.livexia.xyz/icon.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125980270-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-125980270-1');
+        </script>
+    </head>
+    <body class="theme-default">
+        <header>
+            <div class="nav-content main-column">
+                <!-- <div class="icon"> -->
+                <!--     <a href="/"> -->
+                <!--         <img id="icon" src="/icon.png"> -->
+                <!--     </a> -->
+                <!-- </div> -->
+                <div class="header-nav"> 
+                    <a href="/">
+                        <span>livexia</span>
+                    </a>
+                </div>
+
+                <div class="header-nav"> 
+                    <a href="/tags/reading">
+                      <span>reading</span>
+                    </a>
+                </div>
+                <div class="header-nav btn">
+                    <a href="/tags">
+                      <span>tags</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
+                    <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></i></a>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <article>
+                
+<h1 class="title">
+  参加2023年Advent of Code
+</h1>
+
+<div class="page-metadata">
+[Coding]
+Posted on Dec 27, 2023
+
+&middot; 89 minute read
+</div>
+
+<ul>
+<li>https://adventofcode.com/</li>
+<li>https://github.com/livexia/advent-of-code-2023</li>
+</ul>
+<p>[toc]</p>
+<h2 id="rust-hints">Rust Hints</h2>
+<ul>
+<li>https://github.com/dtolnay/anyhow This library provides <code>[anyhow::Error](https://docs.rs/anyhow/1.0/anyhow/struct.Error.html)</code>, a trait object based error type for easy idiomatic error handling in Rust applications.</li>
+<li><code>flat_map(|n| n.parse())</code> 会忽略 <code>Err</code> 保留 <code>Ok</code> 中的结果。</li>
+</ul>
+<h2 id="things-to-learn">Things to Learn</h2>
+<ul>
+<li>Dynamic programming</li>
+<li>Dijkstra's algorithm</li>
+<li>Shortest path problem</li>
+<li>Cycle detection
+<ul>
+<li>Floyd's tortoise and hare</li>
+</ul>
+</li>
+<li>Shoelace formula</li>
+<li>Pick’s theorem</li>
+<li>Purne graph
+<ul>
+<li>Edge contraction</li>
+</ul>
+</li>
+<li>Longest path problem</li>
+<li>Linear algebra</li>
+</ul>
+<h2 id="day-1">Day 1</h2>
+<p>Part 2 一些特别的思路</p>
+<ul>
+<li>通过替换 zero 为 zero0zero 将字母串替换为包含数字字符的新字符串，巧妙的实现字母串转换为数字字符，同时又避免因为替换而导致其他可能的字母串被修改 https://old.reddit.com/r/adventofcode/comments/1883ibu/2023_day_1_solutions/kbikddg/ advent-of-code-2023
+Advent of Code 2023</li>
+</ul>
+<h2 id="day-2">Day 2</h2>
+<p>所耗时间均在对输入的处理上，解决问题的思路直截了当。</p>
+<h2 id="day-3">Day 3</h2>
+<p>依旧需要小心的处理输入，涉及到二维的矩阵，往往有两种方法：一是利用二维 Vec 进行表示，二则是利用 HashMap 进行表示。如果利用 Vec 那么在涉及到对周边节点遍历时，在 Rust 中要注意对 usize 数据类型可能的 underflow ，利用 HashMap 则可以利用 i32 作为矩阵的坐标数据类型。</p>
+<p>在具体的算法上，我选择利用深度优先搜索，进行解决，具体思路如下：</p>
+<ol>
+<li>从矩阵的右下角开始进行深度优先搜索，从右到左，从上到下的顺序分别进行dfs。</li>
+<li>如果当前元素是数字，那么这个数字必然是一个数字的组成部分，同时也是这个数字的最低位，这样的搜索顺序可以方便的对最终结果进行结合。</li>
+<li>同样的如果当前元素是数字，那么可以对这个数字的邻接元素（8个）进行判断，如果其中存在一个符号，设标识，表示当前数字同一个符号相邻。</li>
+<li>除了对邻接元素进行判断，同时要对当前元素的左侧元素进行递归的深度优先搜索，深度优先返回得到整个数字除了最低位的部分，对这个结果乘 10 加上当前元素的数字，即是完整的数字。</li>
+<li>同样的一个数字任意位的邻接是符号，则整个数字都与符号邻接，于是需要在深度优先的搜索过程中保留标识，每次都对标识进行或运算。</li>
+<li>在深度优先搜索中引入 visited ，确保元素不被重复搜索。</li>
+<li>总结：深度优先搜索是从一个数字开始，在一行中向左继续搜索，搜索过程中取得一个完整的数字，并确认整个数字是否存在部分与符号邻接。</li>
+<li>第一部分的方法即是如此，第二部分则稍有不同，但整体思路是一致的，在深度优先搜索中，要判断数字的组成部分是否与齿轮符号邻接，并保留数字每个组成部分对应的齿轮符号坐标（一个齿轮可能与多个数字邻接，同时一个数字也可能与多个符号邻接）。</li>
+<li>在每一次深度优先搜索后，就得到了数字与邻接齿轮的对应关系，在这个基础上再对问题进行解答即可。</li>
+</ol>
+<h2 id="day-4">Day 4</h2>
+<p>这个问题的输入并不复杂，每一行输入包含了两个数组，第一部分要求计算第二个数组中的数字在第一个数组中出现的次数，直接暴力匹配实现即可。第二部分需要在这个基础上再进一步的计算，在此以示例输入为例进行阐述：</p>
+<ul>
+<li>依旧是对输入进行暴力匹配，计算每一行输入中第二个数组中的数字在第一个数组中出现的次数，对于示例输入可得 <code>[4, 2, 2, 1, 0, 0]</code></li>
+<li>当前所有的 Card 数量均为 <code>[1, 1, 1, 1, 1, 1]</code></li>
+<li>根据题意，因为 Card 1 中重复的数字有 4 个，则会获得 Card 2、3、4、5 各一张</li>
+<li>此时各 Card 数量为 <code>[1, 2, 2, 2, 2, 1]</code></li>
+<li>因为 Card 2 有两张，同时 Card 2 中重复的数字有 2 个，则会 Card 3、4 各两张</li>
+<li>此时各 Card 数量为 <code>[1, 2, 2 + 2, 2 + 2, 2, 1]</code></li>
+<li>依次类推</li>
+<li>刮完所有的 Card 3后，Card 数量为 <code>[1, 2, 2 + 2, 2 + 2 + 4, 2 + 4, 1]</code></li>
+<li>刮完所有的 Card 4后，Card 数量为 <code>[1, 2, 2 + 2, 2 + 2 + 4, 2 + 4 + 8, 1]</code></li>
+<li>最后的 Crad 总数即为 <code>1 + 2 + 4 + 8 + 14 + 1 = 30</code></li>
+</ul>
+<p><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>性能优化？</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p>
+<ul>
+<li>避免暴力匹配，选用更好的匹配算法，计算两个数组的重叠元素个数。<strong>实际上在这个问题中，需要匹配的两个数组大小都较小，暴力匹配并不会影响性能。</strong>
+<ul>
+<li>https://afteracademy.com/blog/find-the-intersection-of-two-unsorted-arrays/</li>
+<li>对其中一个数组进行排序，在二分查找另一个数组的元素</li>
+<li>对两个数组都进行排序，双指针进行对比 <a href="https://afteracademy.com/blog/find-the-intersection-of-two-unsorted-arrays/#:~:text=Return%20answer%20list.-,Solution%20Visualization,-Pseudo%2DCode">https://afteracademy.com/blog/find-the-intersection-of-two-unsorted-arrays/#:~:text=Return answer list.-,Solution Visualization,-Pseudo-Code</a></li>
+<li>存储其中一个数组为 HashSet ，在对另一个数组进行 HashSet 查找</li>
+</ul>
+</li>
+</ul>
+<p><strong><strong><strong><strong><strong><strong><strong><strong><strong>Rust Tips</strong></strong></strong></strong></strong></strong></strong></strong></strong></p>
+<ul>
+<li>You can use <code>split_whitespace()</code> to avoid the <code>.filter(|n| !n.is_empty())</code>. Good job!
+<ul>
+<li>https://old.reddit.com/r/adventofcode/comments/18actmy/2023_day_4_solutions/kbx5j4v/</li>
+</ul>
+</li>
+</ul>
+<h2 id="day-5">Day 5</h2>
+<p>输入稍显麻烦，并不是特别的困难，对每行进行循环处理即可。问题中的 Map 其实就是对应关系，每一条 Map 由三个部分组成分别是 <code>dest</code> <code>src</code> 和 <code>length</code> ，可以将 Map 表示为函数，对于范围在 <code>[src, src+length)</code> 的输入数字 <code>input</code> ，可以通过如下计算得到转化后的 <code>result = dest - src + input</code> ，第一部分就是对输入的 <code>seed</code> 不断的进行计算最后得到 <code>location</code> ，选取其中最小值即可。</p>
+<p>第二部分在第一部分的基础上进行扩展，每两个输入的 <code>seeds</code> 表示 <code>seed</code> 的区间，同样需要计算所有区间内 <code>seed</code> 经过转化最后得到的 <code>loaction</code> 中的最小值。首先尝试直接对区间内的每一个 <code>seed</code> 进行暴力求解，但是因为的实际输入范围较大，运行时间较慢，所以很快的放弃，在完成后阅读 Reddit 社区的解答后发现，实际上暴力求解虽然慢，但是并不是需要几天的那种，如果让它跑完，也许在十分钟内也能取得结果。</p>
+<p>既然不选择使用暴力，实际上这个问题就是涉及区间的问题，如果能够对整个输入的 <code>seed</code> 区间，进行转换，那就减少了大量的计算，对一个输入 <code>input</code> 区间作用某一 <code>Map</code> 转换逻辑如下：</p>
+<ol>
+<li>
+<p>将 <code>Map</code> 转为区间转换的表示方式：<code>[src, src + length)</code> ，同时 <code>offset = dest - src</code> ，那么就有 <code>[src, src + length) -&gt; [src + offset, src + length + offset)</code></p>
+</li>
+<li>
+<p>设输入区间 <code>input</code> 为 <code>[start, end)</code></p>
+</li>
+<li>
+<p>那么只需要计算 <code>[start, end)</code> 和 <code>[src, src + length)</code> 的重叠区间 <code>overlaps</code> ，再加上 <code>offset</code> 即可得到输入区间 <code>input</code> 经过 <code>Map</code> 转换后的部分区间</p>
+</li>
+<li>
+<p>根据题意，如果一个 <code>seed</code>  无法被同一阶段的任意 <code>Map</code> 进行转换对应，那么就直接进行转换 （<code>10 → 10</code>）</p>
+</li>
+<li>
+<p>所以仅仅得到 <code>input</code> 和某一个 <code>Map</code> 的重叠区间仍旧不够，仍旧需要判断除重叠区间外的 <code>input</code> 区间是否能够被同一阶段的其他 <code>Map</code> 进行转换，也就是需要依次对剩余的 <code>input</code> 区间和剩余的同一阶段的 <code>Map</code> 进行转换，当所有同一阶段的 <code>Map</code> 都完成了转换后，如果 <code>input</code> 区间还剩下，那么依旧需要将剩下的区间保留到下一阶段，具体代码如下：</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">convert_range</span><span>(
+</span><span>    </span><span style="color:#bf616a;">input</span><span>: Range,
+</span><span>    </span><span style="color:#bf616a;">dest</span><span>: Number,
+</span><span>    </span><span style="color:#bf616a;">src</span><span>: Number,
+</span><span>    </span><span style="color:#bf616a;">length</span><span>: Number,
+</span><span>) -&gt; (Vec&lt;Range&gt;, Option&lt;Range&gt;) {
+</span><span>    </span><span style="color:#65737e;">// src range: src..src+length
+</span><span>    </span><span style="color:#65737e;">// src and dest offset is: dest - src
+</span><span>    </span><span style="color:#65737e;">// then: dest = src + offset
+</span><span>    </span><span style="color:#b48ead;">let</span><span> offset = dest - src;
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">let</span><span> src_end = src + length;
+</span><span>    </span><span style="color:#b48ead;">let </span><span>(start, end) = input;
+</span><span>    </span><span style="color:#b48ead;">if</span><span> end &lt;= src || src_end &lt;= start {
+</span><span>        </span><span style="color:#b48ead;">return </span><span>(vec![input], None);
+</span><span>    } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>        </span><span style="color:#b48ead;">let</span><span> overlaps = Some((start.</span><span style="color:#96b5b4;">max</span><span>(src) + offset, end.</span><span style="color:#96b5b4;">min</span><span>(src_end) + offset));
+</span><span>        </span><span style="color:#65737e;">// input range overlaps with range Number::MIN..src and range src_end..Number::MAX
+</span><span>        </span><span style="color:#65737e;">// is the remain range of input
+</span><span>        </span><span style="color:#b48ead;">let</span><span> remain_range: Vec&lt;Range&gt; = [(start, end.</span><span style="color:#96b5b4;">min</span><span>(src)), (start.</span><span style="color:#96b5b4;">max</span><span>(src_end), end)]
+</span><span>            .</span><span style="color:#96b5b4;">into_iter</span><span>()
+</span><span>            .</span><span style="color:#96b5b4;">filter</span><span>(|(</span><span style="color:#bf616a;">a</span><span>, </span><span style="color:#bf616a;">b</span><span>)| a &lt; b)
+</span><span>            .</span><span style="color:#96b5b4;">collect</span><span>();
+</span><span>        (remain_range, overlaps)
+</span><span>    }
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">convert_range_with_maps</span><span>(</span><span style="color:#bf616a;">range</span><span>: Range, </span><span style="color:#bf616a;">maps</span><span>: &amp;[SingleMap], </span><span style="color:#bf616a;">converted</span><span>: &amp;</span><span style="color:#b48ead;">mut </span><span>Vec&lt;Range&gt;) {
+</span><span>    </span><span style="color:#b48ead;">if</span><span> maps.</span><span style="color:#96b5b4;">is_empty</span><span>() {
+</span><span>        converted.</span><span style="color:#96b5b4;">push</span><span>(range);
+</span><span>        </span><span style="color:#b48ead;">return</span><span>;
+</span><span>    }
+</span><span>    </span><span style="color:#b48ead;">let </span><span>(dest, src, length) = maps[</span><span style="color:#d08770;">0</span><span>];
+</span><span>    </span><span style="color:#b48ead;">let </span><span>(r_ranges, overlaps) = </span><span style="color:#96b5b4;">convert_range</span><span>(range, dest, src, length);
+</span><span>    </span><span style="color:#b48ead;">if let </span><span>Some(overlaps) = overlaps {
+</span><span>        converted.</span><span style="color:#96b5b4;">push</span><span>(overlaps);
+</span><span>    }
+</span><span>    </span><span style="color:#b48ead;">for</span><span> r in r_ranges {
+</span><span>        </span><span style="color:#96b5b4;">convert_range_with_maps</span><span>(r, &amp;maps[</span><span style="color:#d08770;">1</span><span>..], converted);
+</span><span>    }
+</span><span>}
+</span></code></pre>
+</li>
+<li>
+<p>根据输入，对每个阶段都进行同一阶段的 Maps 转化和对应，不断得到新的输入区间，直到完成所有的转换对应阶段，对最后得到的所有区间的起点取最小值即是第二部分的解</p>
+</li>
+</ol>
+<p><strong><strong><strong><strong><strong><strong><strong><strong>性能优化</strong></strong></strong></strong></strong></strong></strong></strong></p>
+<ul>
+<li>
+<p>采用 interval 区间重叠的方法可以视作是对暴力计算的一种性能优化</p>
+</li>
+<li>
+<p>也可以在暴力计算的过程中改变每次循环的间隔进行逼近求解，当然这不是一种特别系统的方法</p>
+</li>
+<li>
+<p>在利用 interval 求解的过程中依旧存在可能的性能优化，那就是对于每一个阶段输出的区间列表进行合并，减少下一个阶段的输入，涉及到区间合并的算法。</p>
+<ul>
+<li>首先按照区间起点对区间列表进行排序</li>
+<li>考虑两个<strong>有序区间</strong>合并的算法，即 <code>merge_range</code>，设区间：<code>[a_start, a_end)</code> 和 <code>[b_start, b_end)</code> 且 <code>a_start &lt; b_start</code>
+<ul>
+<li>如果 <code>a_end &lt; b_start</code> 那么两个区间不存在重叠，区间 <code>a</code> 和 <code>b</code> 不需要合并</li>
+<li>反之，两个区间存在重叠，那么合并后的区间就是 <code>(a_start, a_end.max(b_end))</code></li>
+</ul>
+</li>
+<li>对于有序区间列表的合并只需要在这个基础上进行扩展即可，见 <code>merge_ranges</code>。</li>
+<li>首先对第一个和第二个区间进行合并，如果不存在重叠，那么第一个区间已完成了所有的合并，第二个区间再对第三个区间进行合并。</li>
+<li>反之如果存在重叠，那么合并后的区间，再对第三个区间进行合并。</li>
+<li>以此类推就可以对有序区间列表完成合并，具体代码如下：</li>
+</ul>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// this funtion only works when a.0 &lt;= b.0
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">merge_range</span><span>(</span><span style="color:#bf616a;">a</span><span>: Range, </span><span style="color:#bf616a;">b</span><span>: Range) -&gt; (Option&lt;Range&gt;, Range) {
+</span><span>    </span><span style="color:#b48ead;">let </span><span>(a_start, a_end) = a;
+</span><span>    </span><span style="color:#b48ead;">let </span><span>(b_start, b_end) = b;
+</span><span>    </span><span style="color:#b48ead;">if</span><span> a_end &lt; b_start {
+</span><span>        (Some(a), b)
+</span><span>    } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>        (None, (a_start, a_end.</span><span style="color:#96b5b4;">max</span><span>(b_end)))
+</span><span>    }
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">merge_ranges</span><span>(</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">ranges</span><span>: Vec&lt;Range&gt;) -&gt; Vec&lt;Range&gt; {
+</span><span>    </span><span style="color:#b48ead;">if</span><span> ranges.</span><span style="color:#96b5b4;">len</span><span>() &lt; </span><span style="color:#d08770;">2 </span><span>{
+</span><span>        </span><span style="color:#b48ead;">return</span><span> ranges;
+</span><span>    }
+</span><span>    ranges.</span><span style="color:#96b5b4;">sort</span><span>();
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> merged_ranges = vec![];
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> next = </span><span style="color:#d08770;">1</span><span>;
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> remain = ranges[</span><span style="color:#d08770;">0</span><span>];
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">while</span><span> next &lt; ranges.</span><span style="color:#96b5b4;">len</span><span>() {
+</span><span>        </span><span style="color:#b48ead;">let </span><span>(merged, remain_temp) = </span><span style="color:#96b5b4;">merge_range</span><span>(remain, ranges[next]);
+</span><span>        </span><span style="color:#b48ead;">if let </span><span>Some(merged) = merged {
+</span><span>            merged_ranges.</span><span style="color:#96b5b4;">push</span><span>(merged);
+</span><span>        }
+</span><span>        next += </span><span style="color:#d08770;">1</span><span>;
+</span><span>        remain = remain_temp;
+</span><span>    }
+</span><span>    merged_ranges.</span><span style="color:#96b5b4;">push</span><span>(remain);
+</span><span>
+</span><span>    merged_ranges
+</span><span>}
+</span></code></pre>
+</li>
+</ul>
+<h2 id="day-6">Day 6</h2>
+<p>输入的处理很简单，第一部分将两行输入转换为数组，第二部分则将两个数组分别组成一个大数。直接根据题意进行了暴力解答，题意理解如下：</p>
+<ul>
+<li>对于给定的最大时间 <code>t</code> ，和给定最小距离 <code>d</code> ，求满足不等式 $(t - x)*x&gt;d$ 的 <code>x</code> （按按钮的时间） 所有整数解</li>
+</ul>
+<p>因为涉及的不等式并不复杂，而且第一第二部分给定的输入都并非超级巨大，所以暴力求解也可以轻松完成。但是既然涉及不等式，那么就可以简单的对不等式进行求解，取得答案，思路如下（虽然是初中数学，但是依旧进行了搜索，根本记不住公式，记住的部分也是错的，数学都还给老师了）：</p>
+<ul>
+<li>
+<p>对不等式进行转换 $-x^2 + tx - d &gt; 0$</p>
+</li>
+<li>
+<p><del>继续转换 $x^2 - tx + d &lt;= 0$</del></p>
+<ul>
+<li>不等式两侧乘负数变号规则错误</li>
+</ul>
+</li>
+<li>
+<p>正确的方程为 $x^2 - tx + d &lt; 0$</p>
+</li>
+<li>
+<p>可以发现，实际上要求的就是二次函数 $f(x) = x^2 - tx + d$ 在 <del>x 轴和</del>轴下方时，x 的整数范围</p>
+</li>
+<li>
+<p>同时也可以发现该二次函数在 x = 0 和 x = t 出是对称的，那么也可以通过计算当 $f(x) = 0$ 时 x 距离 0 或 t 的距离进行求解</p>
+</li>
+<li>
+<p>当然最简单的方法就是直接计算一元二次方程 $x^2 - tx + d = 0$ 的两个解，求解公式为 $x = (t \pm \sqrt{t^2 - 4d}) / 2$</p>
+</li>
+<li>
+<p>因为要求的是两个解的距离，就有以下方程 $(t + \sqrt{t^2-4d})/2-(t-\sqrt{t^2-4d})/2$ 化简后可得距离为 $\sqrt{t^2 - 4d}$</p>
+</li>
+<li>
+<p><del>同时需要包含两侧的解，所以最后结果需要加一</del></p>
+</li>
+<li>
+<p>因为需要计算的区间内的所有整数的数量，而直接接计算距离将无法考虑到这一点</p>
+</li>
+<li>
+<p>设两个解为 <code>x1</code> 和 <code>x2</code> 且 <code>x1 ≤ x2</code></p>
+</li>
+<li>
+<p>如果 <code>x1.ceil() == x1</code> 为真则需要从 <code>x1 + 1</code> ，反之则需要从 <code>x1.ceil()</code> （包含）开始</p>
+</li>
+<li>
+<p>如果 <code>x2.floor() == x2</code> 为真则需要从 <code>x2 - 1</code>, 反之所有的整数直到 <code>x2.floor()</code>（包含）为止</p>
+</li>
+<li>
+<p>具体代码如下：</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">let</span><span> start = </span><span style="color:#b48ead;">if</span><span> x1.</span><span style="color:#96b5b4;">ceil</span><span>() == x1 {
+</span><span>    (x1 + </span><span style="color:#d08770;">1.0</span><span>) as </span><span style="color:#b48ead;">usize
+</span><span>} </span><span style="color:#b48ead;">else </span><span>{
+</span><span>    x1.</span><span style="color:#96b5b4;">ceil</span><span>() as </span><span style="color:#b48ead;">usize
+</span><span>};
+</span><span style="color:#b48ead;">let</span><span> end = </span><span style="color:#b48ead;">if</span><span> x2.</span><span style="color:#96b5b4;">floor</span><span>() == x2 {
+</span><span>    (x2 - </span><span style="color:#d08770;">1.0</span><span>) as </span><span style="color:#b48ead;">usize
+</span><span>} </span><span style="color:#b48ead;">else </span><span>{
+</span><span>    x2.</span><span style="color:#96b5b4;">floor</span><span>() as </span><span style="color:#b48ead;">usize
+</span><span>};
+</span><span>end - start + </span><span style="color:#d08770;">1
+</span></code></pre>
+</li>
+<li>
+<p><strong>也可以从 x1.floor() + 1.0 开始到 x2.ceil() - 1.0 为止，两侧都包含 <code>(x2.ceil() - 1.0 - x1.floor() - 1.0) as usize + 1</code></strong></p>
+</li>
+</ul>
+<h2 id="day-7">Day 7</h2>
+<p>题目并不难，为了构造正确的数据类型而花费了大量的时间，思路如下：</p>
+<ul>
+<li>
+<p>每一行输入包含 <code>Hand</code> 和 <code>bid</code> 两个部分，<code>Hand</code> 由五个字符即五张手牌组成，<code>bid</code> 为数字</p>
+</li>
+<li>
+<p>根据组成 <code>Hand</code> 中手牌重复情况，存在七种可能的手牌组类型 <code>HandKind</code></p>
+</li>
+<li>
+<p>七种 <code>HandKind</code> 存在大小顺序，同时每一张牌也存在大小关系</p>
+<ul>
+<li>第二个部分调整了部分牌的大小顺序</li>
+</ul>
+</li>
+<li>
+<p>在确定手牌 <code>Hand</code> 的大小时，首先考虑 <code>HandKind</code> 大小，再考虑牌的大小</p>
+</li>
+<li>
+<p>第一部分需要对所有输入的手牌进行排序，从小到大依次乘上当前手牌的位置，再累加即可</p>
+</li>
+<li>
+<p>第二部分引入小丑规则，即 <code>J</code> 牌为小丑，可以替代任何的牌，已达成更好的 <code>HandKind</code> ，但是 J 牌变为最小的牌</p>
+</li>
+<li>
+<p>因为涉及到大小和排序，所以最简单的方法就是实现 <code>HandKind</code> 的大小比较，再实现牌的大小比较，最后再实现 <code>Hand</code> 的大小比较</p>
+</li>
+<li>
+<p><code>HandKind</code> 可以使用 <code>enum</code> 表示，比较大小时则可以直接转为对应的数字进行比较</p>
+</li>
+<li>
+<p>牌的大小比较也类似，首先字符转为对应顺序的数字，再对数字进行比较即可</p>
+</li>
+<li>
+<p>确定 <code>HandKind</code> 的思路如下：</p>
+<ul>
+<li>利用 <code>HashMap</code> 统计手牌中每个牌的数量</li>
+<li><code>HashMap.into_values().collect()</code> 取得数量的数组，对数组进行排序</li>
+<li><code>values.iter().fold(0, |sum, i| sum * 10 + *i)</code> 将排序后的数组，转换为数字</li>
+<li>因为题意中的牌组类型较少，每一个 <code>HandKind</code> 通过这样转换后都能得到对应的唯一数字，一对一的关系，所以可以利用这个数字确定 <code>HandKind</code></li>
+</ul>
+</li>
+<li>
+<p>然后就是利用 <code>sort()</code> 对 <code>Vec&lt;Hand&gt;</code> 进行排序，并根据题意计算结果即可</p>
+</li>
+<li>
+<p>第二部分稍微复杂点，相比于修改第一部分处理好的 <code>Vec&lt;Hand&gt;</code> 不如重新对输入进行处理，将牌 <code>J</code> 的大小置为最小，而用 J 牌替换其他牌构成更好的 <code>HashMap</code> 逻辑如下：</p>
+<ul>
+<li>依旧是利用 <code>HashMap</code> 统计手牌中每个牌的数量</li>
+<li>通过 <code>HashMap</code> ，如果 <code>Hand</code> 中 <code>J</code> 的数量介于 1 到 4 张（均包含），那么需要将 J 牌的数量从 <code>HashMap</code> 中移除，同时将对应 <code>J</code> 牌数量加到剩余牌数量最大的牌之上，实现的时候我是很自然的这样操作，但是实际上这是题目恰好的安排，如果改变了 <code>HandKind</code> 的大小顺序那么这样也许不可行。假设 <code>Hand</code> 中包含 <code>J</code> 牌，分析如下：
+<ul>
+<li><code>14</code> 对应 <code>Four</code> ，无论 <code>J</code> 是一张还是四张，最后都能构成更大的 <code>Five</code></li>
+<li><code>23</code> 对应 <code>Full</code> ，无论 <code>J</code> 是两张还是三张，最后都能构成更大的 <code>Five</code></li>
+<li><code>113</code> 对应 <code>Three</code> ，无论 <code>J</code> 是一张还是三张，最后都能构成更大的 <code>Five</code> ，而不是变成 <code>23</code> 的 <code>Full</code> 这不是最优解</li>
+<li><code>122</code> <code>1112</code> 和 <code>11111</code> 都是同样的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>依旧可以在处理输入时就对引入小丑规则的 <code>Hand</code> 和 <code>HandKind</code> 进行处理</p>
+</li>
+<li>
+<p>花了大量的时间在输入处理上，第一部分因为细节上有错误，找了半天，第二部分则是因为一个可恶的生命周期问题，花费了太多时间，最后只好用不那么优雅的方法实现</p>
+</li>
+<li>
+<p>部分代码如下：</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">new</span><span>(</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">count</span><span>: HashMap&lt;</span><span style="color:#b48ead;">i8</span><span>, </span><span style="color:#b48ead;">usize</span><span>&gt;) -&gt; Result&lt;</span><span style="color:#b48ead;">Self</span><span>&gt; {
+</span><span>    </span><span style="color:#b48ead;">let</span><span> j_count = count.</span><span style="color:#96b5b4;">remove</span><span>(&amp;-</span><span style="color:#d08770;">1</span><span>).</span><span style="color:#96b5b4;">unwrap_or</span><span>(</span><span style="color:#d08770;">0</span><span>);
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> values: Vec&lt;_&gt; = count.</span><span style="color:#96b5b4;">into_values</span><span>().</span><span style="color:#96b5b4;">collect</span><span>();
+</span><span>    values.</span><span style="color:#96b5b4;">sort</span><span>();
+</span><span>    </span><span style="color:#b48ead;">let</span><span> count_number = values.</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">fold</span><span>(</span><span style="color:#d08770;">0</span><span>, |</span><span style="color:#bf616a;">sum</span><span>, </span><span style="color:#bf616a;">i</span><span>| sum * </span><span style="color:#d08770;">10 </span><span>+ *i) + j_count;
+</span><span>    Ok(</span><span style="color:#b48ead;">match</span><span> count_number {
+</span><span>        </span><span style="color:#d08770;">5 </span><span>=&gt; HandKind::Five,
+</span><span>        </span><span style="color:#d08770;">14 </span><span>=&gt; HandKind::Four,
+</span><span>        </span><span style="color:#d08770;">23 </span><span>=&gt; HandKind::Full,
+</span><span>        </span><span style="color:#d08770;">113 </span><span>=&gt; HandKind::Three,
+</span><span>        </span><span style="color:#d08770;">122 </span><span>=&gt; HandKind::Two,
+</span><span>        </span><span style="color:#d08770;">1112 </span><span>=&gt; HandKind::One,
+</span><span>        </span><span style="color:#d08770;">11111 </span><span>=&gt; HandKind::High,
+</span><span>        _ =&gt; </span><span style="color:#b48ead;">return </span><span>err!(&quot;</span><span style="color:#a3be8c;">Wrong hand: {:?}</span><span>&quot;, values),
+</span><span>    })
+</span><span>}
+</span></code></pre>
+</li>
+</ul>
+<h2 id="day-8-todo">Day 8（TODO）</h2>
+<p>第一部分直接按照题意思路求解即可，第二部分有以下几种思路。</p>
+<ol>
+<li><strong>暴力</strong>
+<ul>
+<li>取得以 A 结尾的所有起始节点，在取得所有以 B 结尾的所有结尾节点</li>
+<li>每一次都按照指令对所有当前节点进行遍历，直到当前的所有节点与所有结尾节点相同</li>
+<li>但是实际输入巨大，而导致几乎不可能在有限时间内取得结果</li>
+</ul>
+</li>
+<li><strong>提前计算</strong>
+<ul>
+<li>按照第一部分的方法计算出所有的一个启示节点到一个结尾节点需要几步</li>
+<li>假如一个起始节点只能到达一个唯一的结尾节点，同时一个结尾节点也只能由一个唯一的起始节点到达，那么第二部分所求的就是这些路径长度的最小公倍数 lcm</li>
+<li>题目并未明确的指出起点和结尾是一一对应的，所以理论上是可能存在多种方式达成题意要求，而最后的结果则是这多种方式的最小值</li>
+</ul>
+</li>
+</ol>
+<h3 id="huan-jian-ce-suan-fa">环检测算法</h3>
+<ul>
+<li>https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare</li>
+</ul>
+<h3 id="dfs">DFS</h3>
+<h3 id="xing-neng-you-hua">性能优化</h3>
+<ul>
+<li>在环检测时，我直接使用了 HashMap 判断当前节点和指令是否出现过，可以采用环检测算法直接确定环的大小和起点
+<ul>
+<li>环检测算法实际比 HashMap 的方法要进行更多遍历</li>
+<li>环检测算法节省了 HashMap 所需要的内存空间</li>
+</ul>
+</li>
+<li>以 HashMap 存储节点的左右节点，这影响了后续对节点路径的搜索的性能。用 Vec 替代 HashMap 存储 NetWork 最后 Debug 的运行时间从 1xx ms → 20ms</li>
+</ul>
+<h2 id="day-9">Day 9</h2>
+<p>题目很简单，输入并不复杂，按行解析为数组即可，第一部分直接按照题目要求进行解答即可。第一部分思路如下：</p>
+<ul>
+<li>迭代计算数组相邻两个元素差，将结果存入新的数组，直到新的数组全为 0
+<ul>
+<li>计算过程中保留每一个数组的最后一个元素到 <code>last</code> 数组</li>
+</ul>
+</li>
+<li>当数组全为 <code>0</code> 时，反向计算上一层数组的最后一个元素，直到得到输入数组的最后一个元素
+<ul>
+<li>设所有每一层数组的预测最后一个元素的数组为 predict 那么有:
+<ul>
+<li><code>predict[0] - last[0] = predict[1]</code></li>
+<li><code>predict[1] - last[1] = predict[2]</code></li>
+<li>直到 <code>predict[n] - last[n] = predict[n + 1]</code>，且 <code>predict[n + 1] = 0</code></li>
+<li>将所有等式两边相加得到： <code>(predict[0] + predict[1] + … + predict[n]) -  (last[0] + last[1] + … + last[n]) =  (predict[1] + predict[2] + … + predict[n+1])</code></li>
+<li>化简可得 <code>predict[0] = Sum{ last } + predict[n + 1]</code></li>
+<li>所以 <code>predict[0] = Sum{ last }</code></li>
+</ul>
+</li>
+<li><strong>可以直接对 <code>last</code> 数组进行求和</strong></li>
+</ul>
+</li>
+</ul>
+<p>第二部分要预测输入数组的第一个元素：</p>
+<ul>
+<li>迭代计算数组相邻两个元素差，将结果存入新的数组，直到新的数组全为 0
+<ul>
+<li>计算过程中保留每一个数组的第一个元素到 <code>first</code> 数组</li>
+</ul>
+</li>
+<li>当数组全为 <code>0</code> 时，反向计算上一层的数组的第一个元素，直到得到输入数组的第一个元素
+<ul>
+<li>设所有每一层数组的预测第一个一个元素的数组为 predict 那么有:
+<ul>
+<li><code>first[0] - predict[0] = predict[1]</code></li>
+<li><code>first[1] - predict[1] = predict[2]</code></li>
+<li>直到 <code>first[n] - predict[n] = predict[n + 1]</code>，且 <code>predict[n + 1] = 0</code></li>
+<li>为了避免计算每一个 predict 值，可以每隔一个等式改变等式两边的符号，再对所有等式进行累加</li>
+<li><code>(first[0] - predict[0]) + (first[1] - predict[1]) = predict[1] - predict[2]</code></li>
+<li>化简可得 <code>first[0] - first[1] = predict[0] - predict[1]</code></li>
+<li>依次类推可得 <code>first[0] - first[1] + first[2] -first[3] + … + fisrt[n-1] - first[n] = predict[0] - predict[n + 1]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>实际上第二部分存在一种取巧的方法，可以将输入的每一个数组都进行倒序，然后按照第一部分方法计算即可。</strong></p>
+<h2 id="day-10">Day 10</h2>
+<h3 id="brute-force-and-bfs-code"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Brute Force and BFS [<a href="https://github.com/livexia/advent-of-code-2023/blob/51559bfee7d0b08eccb3ca62c77e078c6ca4d583/aoc10/src/main.rs">code</a>]</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></h3>
+<ul>
+<li>并没有按照方向前进</li>
+<li>而是遍历当前 <code>Pipe</code> 四周所有的 <code>Pipe</code></li>
+<li>根据两个 <code>Pipe</code> 的链接情况确定下一个 <code>Pipe</code> 的位置</li>
+<li>递归遍历<strong>没有访问（搜索）过的位置</strong>，直到无法确定下一个 <code>Pipe</code></li>
+<li>因为不确定起始点的 <code>Pipe</code> 类型，起始点的 <code>Pipe</code> 可与邻接的四个 <code>Pipe</code> 都连通</li>
+<li>使用 <code>BFS</code> ，确定 <code>BFS</code> 最长路径长度，第一部分的结果是最长路径长度的一半</li>
+</ul>
+<h3 id="move-along-and-dfs-bfs-dfs-bfs"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Move along and DFS/BFS [</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><a href="https://github.com/livexia/advent-of-code-2023/blob/74afe4cc89c7fcb143d1c9da6da1c93e53eb06ab/aoc10/src/main.rs">DFS</a><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>/BFS]</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></h3>
+<ul>
+<li>根据水管的方向进行移动</li>
+<li>初始时同样存在四种可能的移动方向</li>
+<li>根据移动方向计算下一个位置坐标</li>
+<li>取得下一个位置坐标处的水管类型，确定移动方向是否能与该水管连通</li>
+<li>如果无法连通，则当前最初的移动方向存在错误</li>
+<li>如果可以连通，则更新当前坐标，同时根据水管类型更新移动方向
+<ul>
+<li>第一部分可以只计算路径长度，也可以保留所有连通水管的坐标，第二部分实际上是需要所有连通水管的坐标的</li>
+</ul>
+</li>
+<li><strong>直到回到原点</strong>，表明初始的移动方向正确，结合最后的移动方向，可以确定初始水管的类型</li>
+<li>可以用 BFS 或者 DFS 实现，不过 DFS 可能会栈溢出</li>
+</ul>
+<p>第一部分上述两种思路和方法都可以得出正确的解，但是对于第二部分，实际上第二种方法更加合理，从思路和逻辑上看也是第二种方法更加清晰，更容易理解题意。尝试在第一种方法的基础上实现第二部分，耗费了我大量的时间，同时因为这种方法存在混乱，使得迟迟无法对第二部分作出有效的解答，所以狠下心来重新按照第二种方法解决了第一部分，也较容易得处了第二部分所需要的循环路径上的节点，当然第二部分也依旧没有因此而快速解决，<strong>以下几种解决第二部分的方法，我只实现了第一种 Double Resolution / Flood Fill ，其余的方法都来自 Reddit ，我认为都是要优于我自己想到的方法。</strong></p>
+<h3 id="double-resolution-flood-fill-code"><strong>Double Resolution</strong> / <strong>Flood Fill [<a href="https://github.com/livexia/advent-of-code-2023/blob/6a43dbb06d8346383f1d85f887dd4ba42221927e/aoc10/src/main.rs#L187-L253">code</a>]</strong></h3>
+<ul>
+<li>利用上述第一部分的第二种方法，计算循环的路径保存为 <code>loop_path</code></li>
+<li>两倍放大网格，在原由的每一个<code>Tile</code> 四周填入新的 <code>Tile</code></li>
+<li>构造二维数组表示网格，为 <code>expand_map</code> ，元素为 <code>1</code> 表示处于循环，元素为 <code>0</code> 表示被循环包含，元素为 <code>2</code> 则表示不被循环包含
+<ul>
+<li>也可以使用 <code>false</code> 表示不被包含，<code>true</code> 表示被包含，但是在判断过程中，要将补齐的 <code>Pipe</code> 间的节点加入到所有的循环节点中，再确定当前的搜索节点是是否处于循环中</li>
+</ul>
+</li>
+<li>因为网格被放大了，在初始化 <code>expand_map</code> 时，要注意 <code>Pipe</code> 的坐标需要两倍放大
+<ul>
+<li><code>expand_map[x1 as usize * 2][y1 as usize * 2] = 1</code></li>
+</ul>
+</li>
+<li>同时需要补齐 Pipe 间的连接
+<ul>
+<li>依次比较循环路径 <code>loop_path</code> 中的前后水管</li>
+<li>如果水管处于同一行，那么需要补齐左右两个水管间的节点</li>
+<li>如果水管处于同一列，那么需要补齐上下两个水管间的节点</li>
+</ul>
+</li>
+<li>同时要对 <code>expand_map</code> 的四边进行初始化，四个边上所有不是循环路径（补齐后）的元素都应当为 <code>2</code> ，即未被循环包含</li>
+<li>完成了 <code>expand_map</code> 的初始化后，可以从四边未被循环包含的节点开始搜索，当前搜索节点的四个邻接节点中为 <code>0</code> 的节点置为 <code>2</code> 即可，利用 BFS 或者 DFS 完全全部搜索</li>
+<li>最后将 <code>expand_map</code> 缩小，去除所有奇数行和奇数列的节点，统计所有为 <code>0</code> 的节点数量即是第二部分的解</li>
+</ul>
+<h3 id="line-crossing-ray-casting-shoelace-theorem-code">Line Crossing (<strong>Ray Casting) / Shoelace Theorem? [<a href="https://github.com/livexia/advent-of-code-2023/blob/9bb4e26da49eece00fccc432614d83b886cac76e/aoc10/src/main.rs#L287-L322">code</a>]</strong></h3>
+<p>这个方法我根本没想到，记忆里往年也是有用这个方法的，这个方法不算是平时算法练习里会出现的，感觉上这个方法是正确的，但是并没有阅读过完整的证明，即我<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>只知其然，不知其所以然</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>参，考链接如下：</p>
+<ul>
+<li>https://old.reddit.com/r/adventofcode/comments/18evyu9/2023_day_10_solutions/kcr28lt/</li>
+<li>https://en.wikipedia.org/wiki/Ray_casting</li>
+<li>https://gamedev.stackexchange.com/questions/141460/how-can-i-fill-the-interior-of-a-closed-loop-on-a-tile-map</li>
+</ul>
+<p><strong>算法概述</strong></p>
+<ul>
+<li>想象从闭合曲线外的一个点发射一条直线与曲线相交</li>
+<li>当直线与曲线未相交时，直线的所有部分都在闭合曲线外</li>
+<li>当直线与曲线相交一次，发射点到交点部分都在闭合曲线外，而交点到当前直线末端的部分在闭合曲线内</li>
+<li>当直线与曲线相交两次时，第一个交点到第二个交点部分都在闭合曲线内，而第二个交点到当前直线末端的部分在闭合曲线外</li>
+<li>以此类推，可以发现对于所有的<strong>奇数 N ，第 N 个交点到第 N + 1 个交点间的直线线段都在曲线内</strong></li>
+<li>也可以换一种思路</li>
+<li>想象从闭合曲线外的一个点发射一条直线与曲线相交，初始闭合曲线入度为 0，出度为 0</li>
+<li>当直线与曲线第一次相交时，闭合曲线的入度加 1 ，为 1</li>
+<li>当直线与曲线第二次相交时，闭合曲线的出度加 1 ，为 1</li>
+<li>即每当奇数次相交时，入度加 1 ，而偶数次相交时，出度加 1</li>
+<li>当入度和出度相同的时候，直线的这部分不被曲线包含</li>
+<li>当入度比出度大一的时候，直线的这部分被曲线包含</li>
+</ul>
+<p><strong>具体思路</strong></p>
+<ul>
+<li>依旧利用上述第一部分的第二种方法，计算循环的路径保存为 <code>loop_path</code> ，结果保存在 <code>result</code> 中</li>
+<li>按行遍历网格，即从当前行的最左侧向右发射直线，默认相交计数为 0 ，即 <code>crossing_count = 0</code></li>
+<li>依次按行向右判断，如果当前节点为 <code>Pipe</code> ，说明当前行与循环相交或者相切</li>
+<li>如果当前 <code>Pipe</code> 为 <code>-</code> 那么就是相切，不必考虑</li>
+<li>如果当前 <code>Pipe</code> 为 <code>|</code> 那么必然相交，相交计数加一 <code>crossing_count += 1</code></li>
+<li>当 <code>Pipe</code> 为弯角即 <code>F J L 7</code> 的一种时，需要考虑上一次遇见的弯角水管 <code>last_corner</code>
+<ul>
+<li>如果<code>last_corner == F &amp;&amp; pipe == J</code> ，是竖着的折现，那么是相交的情况 <code>crossing_count += 1</code></li>
+<li>如果<code>last_corner == F &amp;&amp; pipe == 7</code> ，是 U 型管，可以想象当前行实际上是跟着水管走了，那么是相切的情况，不必考虑</li>
+<li>如果<code>last_corner == L &amp;&amp; pipe == 7</code> ，是竖着的折现，那么是相交的情况 <code>crossing_count += 1</code></li>
+<li>如果<code>last_corner == L &amp;&amp; pipe == J</code> ，是倒的 U 型管，可以想象当前行实际上是跟着水管走了，那么是相切的情况，不必考虑</li>
+<li>对四种情况进行分析，可以发现只需要在当前水管是 7 或 J 的时候对相交计数加一 <code>crossing_count += 1</code> 即可，无需记录上次遇见的弯角水管</li>
+</ul>
+</li>
+</ul>
+<h3 id="more-solutions"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>More Solutions</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></h3>
+<p><strong>计算机图像处理?</strong></p>
+<ul>
+<li>
+<p>https://old.reddit.com/r/adventofcode/comments/18evyu9/2023_day_10_solutions/kcqufnn/</p>
+<blockquote>
+<p><a href="https://github.com/PaigePalisade/AdventOfCode2023/blob/main/Solutions/day10part2.c">Part 2</a> was a bit of a struggle for me. At some point I figured that the best way of solving it was to print the path with box building unicode characters, put a screenshot of it into gimp, fill the inside of the path with the fill tool, and then count the number of periods in the filled region. For some reason, this didn't work and I'm not going to debug that janky solution.</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>标记循环移动方向同一侧邻接节点（未实现）</strong></p>
+<ul>
+<li>从循环起点顺时针或者逆时针前进时，前进方向同一侧（右侧或左侧）的所有节点要么被循环包含，要么不被循环包含</li>
+<li>标记前进方向同一侧（右侧或左侧）的节点</li>
+<li>对这些标记节点进行 BFS 或 DFS 对所有邻接且不在循环上的节点进行标记，直到完成所有节点的遍历</li>
+<li>判断左上角第一个节点是否被标记
+<ul>
+<li>如果被标记则意味着该节点不在循环上，同时该节点接墙，那么所有标记的节点都不被循环包含，所有节点数减去循环节点数再减去标记节点数，即是被循环包含的节点</li>
+<li>如果不被标记，那么该节点原来应当是 Pipe ，同时也处于循环，那么所有标记的节点都应当被循环包含，直接统计标记节点数即可</li>
+</ul>
+</li>
+<li>https://old.reddit.com/r/adventofcode/comments/18evyu9/2023_day_10_solutions/kcqnr5i/
+<ul>
+<li>https://github.com/yangdanny97/advent-of-code-2023-rust/blob/main/src/day10/mod.rs</li>
+</ul>
+</li>
+</ul>
+<h3 id="day-11-code">Day 11 [<a href="https://github.com/livexia/advent-of-code-2023/blob/main/aoc11/src/main.rs">code</a>]</h3>
+<p>今天的题目思路简单明了，输入为网格，记录其中字符为 <code>#</code> 的位置，第一部分要求将网格的中不包含任何的行和列都翻倍，而第二部分则是将这个倍数增加到 <code>1000000</code> 倍，要求计算翻倍后每一对唯一的 <code>#</code> 间的最短距离。</p>
+<p><strong><strong><strong><strong><strong><strong><strong><strong><strong>网格翻倍：</strong></strong></strong></strong></strong></strong></strong></strong></strong>
+
+- 第一第二部分仅有扩张倍率不同，设变量 <code>expansion_rate</code> 表示</p>
+<ul>
+<li>可以先考虑对行进行翻倍，再以同样的方式考虑列</li>
+<li>初始 <code>empty_row = 0</code> 即当前未遇到任何不包含 <code>#</code> 的行</li>
+<li>遍历每一行</li>
+<li>对当前行上所有的 <code>#</code> 的坐标进行扩大， <code>(x, y) → (x * empty_row * (expansion_rate - 1))</code>
+<ul>
+<li>要注意要对 <code>expansion_rate - 1</code> ，因为是变为 <code>expansion_rate</code> 倍，而不是增加</li>
+</ul>
+</li>
+<li>如果当前行上没有任何的 <code>#</code> 则对空行计数加一， <code>empty_row += 1</code></li>
+</ul>
+<p><strong>最短距离</strong>：因为是网格，同时网格间并不存在任何阻碍，所以直接计算曼哈顿距离即可 $D=∣x1​−x2​∣+∣y1​−y2​∣$</p>
+<p><strong><strong><strong><strong><strong><strong><strong><strong>性能优化</strong></strong></strong></strong></strong></strong></strong></strong>：利用 <code>HashSet</code> 保存 <code>#</code> 的坐标，固然可以在查找时避免麻烦，但是在这个问题中完全没有必要，可以直接用 <code>Vec</code> 保存。</p>
+<h2 id="day-12-todo">Day 12 (TODO)</h2>
+<h3 id="dfs-with-cache-code-dp"><strong>DFS with Cache [<a href="https://github.com/livexia/advent-of-code-2023/blob/cb7133436a0e11be14d1e5a299024265af503ba6/aoc12/src/main.rs">code</a>] =</strong> DP ?</h3>
+<ul>
+<li>https://old.reddit.com/r/adventofcode/comments/18ge41g/2023_day_12_solutions/kd0um89/</li>
+</ul>
+<p>if springs[i] == ‘.’ dp[i] = dp[i - 1]</p>
+<p>if springs[i] ≠ ‘.’ count += 1</p>
+<h3 id="rust">Rust @</h3>
+<p>https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html#-bindings</p>
+<h2 id="day-13">Day 13</h2>
+<p>题意要求查找矩阵的对称轴，题目并不难，逻辑很简单，因为对称轴可能是出现在行上也可能是出现在列上，可以先计算一个方向上的对称轴，再将矩阵转置在重复计算即可，直接暴力实现。</p>
+<p>虽然题目的输入处理很简单，同时逻辑也不复杂，输入的数据量也不大，所以理论上应该是很容易的题目，但是我在第二部分卡了很长时间，原因就是在第二部分题意的理解上，第二部分有一句题目描述为 “you discover that every mirror has <strong>exactly</strong> one smudge” ，我没能注意到其中的关键词 <strong>exactly</strong> 以致于浪费了太多的时间，具体思路[<a href="https://github.com/livexia/advent-of-code-2023/blob/e512830206b964989fcafc9127effd2746b436c9/aoc13/src/main.rs">code</a>]如下：</p>
+<ul>
+<li>以查找垂直方向（列）的对称轴为例，遍历所有可能的对称轴位置 <code>i</code></li>
+<li>因为对称轴一定位于两个元素之间，而不在矩阵上，则令</li>
+<li><code>left = i - 1</code> 和 <code>right = i</code> 同时不同计数器 <code>diff_cnt=0</code></li>
+<li>对于每一对 <code>left</code> 和 <code>right</code> 遍历每一行，如果当前行上 left 和 right 位置处元素不同</li>
+<li>对计数器 <code>diff_cnt</code> 加一
+<ul>
+<li>第一部分：此时表示当前对位置 <code>i</code> 一定不可能时对称轴，可以直接检测 <code>i + 1</code></li>
+</ul>
+</li>
+<li>直到 <code>left</code> 或者 <code>right</code> 到达边界</li>
+<li>第一部分要求查找对称轴左侧（上方）的列（行）的数量，结果即是对于对称轴 <code>i</code> ，最终 <code>diff_cnt</code> 为 <code>0</code></li>
+<li>第二部分要求在矩阵中允许<strong>有且仅有一对元素不对称</strong>，计算此时的对称轴 <code>i</code> ，思路和第一部分一致，结果即是对于对称轴 <code>i</code> ，最终 <code>diff_cnt</code> 为 <code>1</code></li>
+</ul>
+<h3 id="xing-neng-you-hua-1">性能优化</h3>
+<p><strong>利用数字表示矩阵的每一行和每一列，同时用位运算进对称比较 [<a href="https://github.com/livexia/advent-of-code-2023/blob/8857d18cedb88ae689b00f48bee082797e86a8f5/aoc13/src/main.rs">code</a>]</strong></p>
+<ul>
+<li>输入的矩阵只包含两种不同的字符，同时输入矩阵的长和宽的大小均在数字可表示的范围内</li>
+<li>二进制数字每一位表示该行（列）在该位置上的字符</li>
+<li>对比两行本来需要遍历两行，进行元素的一一比对，统计不同的数量，而利用数字表示之后</li>
+<li>只需要对两个数字进行异或运算，结果的二进制表示中 1 的数量即是不同的数量</li>
+</ul>
+<h2 id="day-14-code">Day 14 [<a href="https://github.com/livexia/advent-of-code-2023/blob/main/aoc14/src/main.rs">code</a>]</h2>
+<p>第二部分涉及环检测，使用了第八天里也用到的环检测算法，计算环的起始点和大小，再取得最后结果，题目并不难，但最后我对性能并不是特别的满意，所以在具体平台倾斜的实现上进行了优化。</p>
+<h3 id="huan-jian-ce-suan-fa-code">环检测算法 [<a href="https://github.com/livexia/advent-of-code-2023/blob/aff91ffe7fa0ec97538af098d6a791babe078f95/aoc14/src/main.rs#L111-L134">code</a>]</h3>
+<p>往年我都是要用哈希表进行环检测，今年遇到环的问题，我都选择用快慢指针算法实现，相比于哈希表，两种方法的对比：</p>
+<ul>
+<li>哈希表进行环检测时，要确保键值的设置合理，在这个问题里如果只将计算出的 load 值作为键值，会错误的检测到环，而如果用平台当前的状态（Vec）作为键值则又要考虑可能的内存消耗。如果循环较小这个问题还不严重，但是如果循环较大，那么利用哈希表也许就不可行。</li>
+<li>用 Floyd 的快慢指针算法，虽然在检测的过程中，需要使用两个指针进行移动，也许检测中所需的指令较多，但是检测过程中最多只需要保存两个状态（如果算上初始状态，那么就是三个状态），内存消耗较少。</li>
+<li>哈希表环检测使用空间换时间，而快慢指针算法则是用时间换空间</li>
+</ul>
+<p><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Floyd 快慢指针</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p>
+<ul>
+<li>虽然是快慢指针，但是这个算法适用于所有的环检测，而不仅限于链表，指针指代的是状态转换，以下用乌龟表示慢指针，兔子表示快指针</li>
+<li>算法概述：龟兔赛跑，分成三个部分：检测环，确定环入口，确定环大小</li>
+<li><strong>检测环</strong>
+<ul>
+<li>乌龟，以正常的速度跳转到下一个状态</li>
+<li>兔子，以两倍的速度跳转</li>
+<li>如果过程中两个状态相同，那么说明存在环</li>
+</ul>
+</li>
+<li><strong>确定环入口</strong>
+<ul>
+<li>此时将乌龟放回起点，兔子和乌龟都以正常的速度跳转到下一个状态</li>
+<li>当乌龟和兔子再次相遇，此时兔子的位置就是环的入口</li>
+</ul>
+</li>
+<li><strong>确定环大小</strong>
+<ul>
+<li>兔子不动，乌龟以正常速度跳转</li>
+<li>再次相遇时，兔子跳转的距离即是环的大小</li>
+</ul>
+</li>
+<li>这个算法只属于能用的情况，具体的证明还需要进一步学习</li>
+<li>https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare</li>
+</ul>
+<h3 id="xing-neng-you-hua-2">性能优化</h3>
+<ul>
+<li>
+<p>当前倾斜平台的实现是按照模拟的方式，矩阵平台倾斜的情况</p>
+</li>
+<li>
+<p>**代码重构：**第二部分需要向四个方向倾斜，最初我直接复制黏贴实现了四个函数，可以将四个函数进行合并，合并之后性能有所下降 <strong>700ms → 1s</strong> 。[<a href="https://github.com/livexia/advent-of-code-2023/commit/f13789ce924e2d3452d4c0baac92fa6470885d23">code</a>]</p>
+</li>
+<li>
+<p>倾斜过程中圆石没有一次移动到位，而是一个位置一个位置的移动，可以直接一步到位，避免不必要的修改，性能提升不明显 <strong>1s → 900ms</strong></p>
+</li>
+<li>
+<p>考虑一行石头滚到右侧的情况，当前的逻辑是从最右侧的圆石开始移动，计算新的位置，虽然不是一个位置一个位置的移动，但是依旧是一个位置一个位置的比较，应当有更优解：</p>
+<ul>
+<li>以行 <code>OOOO…#</code>  为例初始时位置为各个位置 0 1 2 3 4 5 6 7</li>
+<li>最右侧的第一个圆石位置为 3 ，右侧与它最近的石头位置为 7，移动后圆石新的位置为 6</li>
+<li>移动右侧第二个圆石时，理他最近的石头位置为 6 ，所以它新的位置为 5，依次类推</li>
+<li>代码如下</li>
+</ul>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">tilt_north</span><span>(</span><span style="color:#bf616a;">platform</span><span>: &amp;</span><span style="color:#b48ead;">mut</span><span> [Vec&lt;</span><span style="color:#b48ead;">char</span><span>&gt;]) {
+</span><span>    </span><span style="color:#b48ead;">for</span><span> j in </span><span style="color:#d08770;">0</span><span>..platform[</span><span style="color:#d08770;">0</span><span>].</span><span style="color:#96b5b4;">len</span><span>() {
+</span><span>        </span><span style="color:#b48ead;">let mut</span><span> last_possible = </span><span style="color:#d08770;">0</span><span>;
+</span><span>        </span><span style="color:#b48ead;">for</span><span> i in </span><span style="color:#d08770;">0</span><span>..platform.</span><span style="color:#96b5b4;">len</span><span>() {
+</span><span>            </span><span style="color:#b48ead;">if</span><span> platform[i][j] == &#39;</span><span style="color:#a3be8c;">#</span><span>&#39; {
+</span><span>                last_possible = i + </span><span style="color:#d08770;">1</span><span>;
+</span><span>            } </span><span style="color:#b48ead;">else if</span><span> platform[i][j] == &#39;</span><span style="color:#a3be8c;">O</span><span>&#39; {
+</span><span>                platform[i][j] = &#39;</span><span style="color:#a3be8c;">.</span><span>&#39;;
+</span><span>                platform[last_possible][j] = &#39;</span><span style="color:#a3be8c;">O</span><span>&#39;;
+</span><span>                last_possible += </span><span style="color:#d08770;">1</span><span>;
+</span><span>            }
+</span><span>        }
+</span><span>    }
+</span><span>}
+</span></code></pre>
+</li>
+<li>
+<p>在四个方向上应用新的移动算法，虽然需要在四个方向上分别存在以一个函数，但是性能提升明显 <strong>900ms → 500ms</strong> 。[<a href="https://github.com/livexia/advent-of-code-2023/commit/2279c94738b3e9134d33da64d77f842a5c9bd551">code</a>]</p>
+</li>
+<li>
+<p>也许可以使用数字代表平台的每一行？</p>
+<ul>
+<li>矩阵每一个位置有3种情况：圆石 <code>O</code>、方石 <code>#</code> 和空地 <code>.</code></li>
+<li>如果 1 表示当前位为石头，0 表示空地，那么就需要额外维护一个列表记录所有圆石的位置
+<ul>
+<li>某种程度上而言，这又是二维？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>也许可以优化环检测中的状态对比？当前是直接比较两个 Vec ，好在 Vec 并不大</p>
+</li>
+</ul>
+<h2 id="day-15">Day 15</h2>
+<p>第一部分需要实现哈希，第二部分则需要实现类似于哈希表。第一部分按照题意实现即可，第二部分的题意有点复杂，但是理解题意之后其实也是很简单的。输入的数据量也不大，直接实现即可。第一部分不需要说明，简单说明第二部分：</p>
+<ul>
+<li>
+<p>输入字符串由逗号隔开分成一个一个部分</p>
+</li>
+<li>
+<p>每一个部分由两到三个部分组成，初始连续的字符为镜头的标识符 <code>label</code></p>
+</li>
+<li>
+<p>紧接着是 <code>=</code> 或 <code>-</code></p>
+<ul>
+<li><code>=</code> 对应增加或更新操作</li>
+<li><code>-</code> 对应删操作</li>
+</ul>
+</li>
+<li>
+<p>focal length 在最后的结果计算中需要</p>
+</li>
+<li>
+<p>将每个部分的字符串转为 <code>ascii</code> 码，然后进行分割，分割实现如下：</p>
+<ul>
+<li>直接根据是否能够从中解析出 focal length 来确定当前操作是 <code>=</code> 还是 <code>-</code></li>
+</ul>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">step_to_instr</span><span>(</span><span style="color:#bf616a;">step</span><span>: &amp;[</span><span style="color:#b48ead;">u8</span><span>]) -&gt; (</span><span style="color:#b48ead;">usize</span><span>, </span><span style="color:#b48ead;">usize</span><span>, Option&lt;</span><span style="color:#b48ead;">usize</span><span>&gt;) {
+</span><span>    </span><span style="color:#b48ead;">let</span><span> i = step.</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">position</span><span>(|&amp;</span><span style="color:#bf616a;">c</span><span>| c == </span><span style="color:#b48ead;">b</span><span>&#39;</span><span style="color:#a3be8c;">=</span><span>&#39; || c == </span><span style="color:#b48ead;">b</span><span>&#39;</span><span style="color:#a3be8c;">-</span><span>&#39;).</span><span style="color:#96b5b4;">unwrap</span><span>();
+</span><span>    </span><span style="color:#b48ead;">let</span><span> k = </span><span style="color:#96b5b4;">hash</span><span>(&amp;step[..i]);
+</span><span>    </span><span style="color:#b48ead;">let</span><span> v = step.</span><span style="color:#96b5b4;">get</span><span>(i + </span><span style="color:#d08770;">1</span><span>).</span><span style="color:#96b5b4;">map</span><span>(|</span><span style="color:#bf616a;">n</span><span>| (n - </span><span style="color:#b48ead;">b</span><span>&#39;</span><span style="color:#a3be8c;">0</span><span>&#39;) as </span><span style="color:#b48ead;">usize</span><span>);
+</span><span>    assert!(i &lt;= </span><span style="color:#d08770;">8</span><span>); </span><span style="color:#65737e;">// usize is u64, max lable length is 8
+</span><span>    </span><span style="color:#b48ead;">let</span><span> label = step[..i].</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">fold</span><span>(</span><span style="color:#d08770;">0</span><span>, |</span><span style="color:#bf616a;">l</span><span>, &amp;</span><span style="color:#bf616a;">b</span><span>| l * </span><span style="color:#d08770;">256 </span><span>+ b as </span><span style="color:#b48ead;">usize</span><span>);
+</span><span>    (k, label, v)
+</span><span>}
+</span></code></pre>
+</li>
+<li>
+<p><code>label</code> 字符串的哈希值表示当前镜头需要放置哪一个 <code>box</code></p>
+</li>
+<li>
+<p><code>=</code> 之后还有一个数字，表示镜头的 focal length</p>
+<ul>
+<li><code>=</code> 代表需要将对应镜头和对应的 focal length值放到对应的 <code>box</code> 中
+<ul>
+<li>如果对应镜已经存在，那么修改原有 focal length 为新的值</li>
+<li>如果不存在则将当前镜头放置到最末端</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>-</code> 之后则什么都没有</p>
+<ul>
+<li><code>-</code> 表示需要从对应的 <code>box</code> 中移除对应镜头</li>
+</ul>
+</li>
+<li>
+<p>用二维 <code>Vec&lt;Vec&lt;(label, focal legth)&gt;&gt;</code> 表示所有的 <code>box</code> 和其中的镜头</p>
+</li>
+<li>
+<p>我的实现中 <code>label</code> 的数据类型是 <code>usize</code> ，避免了构造 String 但是同样的镜头标识长度不能超过 8 。<code>let label = step[..i].iter().fold(0, |l, &amp;b| l * 256 + b as usize);</code></p>
+</li>
+<li>
+<p>利用 position 确定当前镜头标识是否已经在 box 中，如果在取得索引值，再根距对应的 <code>=</code> 和 <code>-</code> 进行更新</p>
+</li>
+</ul>
+<p>部分处理代码如下：</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">let mut</span><span> map = vec![vec![]; </span><span style="color:#d08770;">256</span><span>];
+</span><span>
+</span><span style="color:#b48ead;">for</span><span> step in steps {
+</span><span>    </span><span style="color:#b48ead;">let </span><span>(k, l, v) = </span><span style="color:#96b5b4;">step_to_instr</span><span>(step);
+</span><span>    </span><span style="color:#b48ead;">let</span><span> p = map[k].</span><span style="color:#96b5b4;">iter</span><span>().</span><span style="color:#96b5b4;">position</span><span>(|(</span><span style="color:#bf616a;">i</span><span>, _)| i == &amp;l);
+</span><span>    </span><span style="color:#b48ead;">match </span><span>(v, p) {
+</span><span>        (Some(f), None) =&gt; map[k].</span><span style="color:#96b5b4;">push</span><span>((l, f)),
+</span><span>        (Some(f), Some(i)) =&gt; {
+</span><span>            map[k][i] = (l, f);
+</span><span>        }
+</span><span>        (None, Some(i)) =&gt; {
+</span><span>            map[k].</span><span style="color:#96b5b4;">remove</span><span>(i);
+</span><span>        }
+</span><span>        _ =&gt; (),
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h2 id="day-16">Day 16</h2>
+<p>今天的问题并不难，光线按照方向移动，根据新位置处可能的镜子调整移动方向，计算光线移动的路径，除了方向的改变，光线在遇到特定的镜子时还会产生分裂，我通过利用 BFS 实现了第一部分。第二部分是在第一部分之上计算从四周发出光线，每个位置发出光线移动路径的最大值。唯一需要注意的点就是光线的起始点，如果光线在起始点就遇到了镜子，那就需要根据镜子先调整方向。这点可以通过在平台外设置一个虚拟的起点解决，也可以首先对起点和起点处的镜子计算下一个可能的方向。代码的实现很简单，可是性能却并不好，第二部分主要的运行时间都是在 BFS 中对当前状态的访问情况进行检查上，而我在尝试提升性能时引入了错误的逻辑，导致性能提升，但是结果错误。</p>
+<p><strong>错误</strong>的调整：<strong><del>调整了 BFS 中 visited 的检测位置，代码运行时间从 4s → 80ms [<a href="https://github.com/livexia/advent-of-code-2023/commit/2d21d515193a26817ee6f237e4f89d474a65654f">code</a>]</del></strong></p>
+<ul>
+<li><strong>出队检测</strong>：左侧代码先将下一个状态推入队列，等到再次从队列中取出时再检测状态是否在 <code>visited</code>
+<ul>
+<li>因为是出队时检测，那么队列中就会存在多个重复的状态</li>
+<li>https://stackoverflow.com/a/45643883</li>
+<li>https://stackoverflow.com/a/25992077</li>
+<li>https://stackoverflow.com/a/63322362</li>
+</ul>
+</li>
+<li><strong>入队检测</strong>：右侧则是确定<strong>下一个状态</strong>不在 <code>visited</code> 中后，再推入队列
+<ul>
+<li>右侧代码保证队列中的每一个状态都是未被访问过的，队列中重复的元素更少，这控制了队列的大小，相应的也就减少了 <code>insert</code> 的操作次数</li>
+</ul>
+</li>
+<li>对左右两种实现统计 visited 的大小，可以发现左侧代码中 visited 大小可以比右侧 visited 大百倍 (11117 vs 57)，<strong>如果仅仅是因为检测时机的问题不应该会导致 visited 大小有剧烈的变化</strong></li>
+<li><strong>右侧的代码理论上应该是错误，实际上右侧代码的 for 循环是没有必要的，它只将其中一个状态加入队列，实际上是减少了遍历的分支。<del>理论上这是错误的，但是为何运行结果是对的？</del></strong>
+<ul>
+<li><code>visited.insert((pos, dir))</code> 应该是 <code>visited.insert((next, n_d))</code> 才对</li>
+</ul>
+</li>
+<li>理论上一个状态经过反弹最多存在两种状态，当光线是向左或向右遇到 <code>|</code> 时会产生两种新的状态，或者是当光线是向上或向下遇到 <code>-</code> 时也会产生两种新的状态。右侧错误的代码实际上之旅两种状态中的第一种，直接忽略了可能的第二种情况。</li>
+</ul>
+<p><img src="https://github.com/livexia/advent-of-code-2023/assets/15051530/3ba76f7f-21b5-4bd1-9f3f-da247ea8584f" alt="image" /></p>
+<h3 id="xing-neng-ti-sheng">性能提升</h3>
+<p>因为主要的时间损耗是在 BFS 中的访问检测上，那么就要考虑从这个方面入手。</p>
+<ul>
+<li><del>第二部分中也许可以在所有起点的 <code>BFS</code> 中应用同一个 <code>visited</code> ，这个方法会在不同的 BFS 见产生干扰，导致结果错误</del></li>
+<li>使用 with_capacity 创建 visited 和 energized 可以一定的提升效率 [<a href="https://github.com/livexia/advent-of-code-2023/commit/5c6aec68747a91557032a244894bd67c32aec921">code</a>]
+<ul>
+<li><code>let mut visited = HashSet::with_capacity(20_000);</code></li>
+<li><code>let mut energized = HashSet::with_capacity(10_000);</code></li>
+<li><code>cargo r</code> 4s → 2.8s release 500ms → 300ms</li>
+</ul>
+</li>
+<li>使用更好的 <code>HashSet</code> 实现或者 <code>Vec</code>
+<ul>
+<li>hashbrown 并没有明显的性能提升</li>
+<li>Vec 需要使用三维数组才行</li>
+</ul>
+</li>
+</ul>
+<h2 id="day-17-todo">Day 17 (TODO)</h2>
+<p>实现的思路并不复杂，但是求解空间巨大，无论用何种方法都需要剪枝，动态规划虽然不需要剪枝，但是因为路径选择存在前后依赖关系，需要保存的状态几乎等同于求解空间，也不现实。位置的移动并不是简单的上下左右移动一个，第一部分要求最长的同一方向移动距离为三，也就是说以一个方向移动三次必须要转向，那么对于当前位置最多存在六种可能的状态。这个地方存在两种处理，一就是只关心这六种可能的状态，省略中间状态，这个方法的好处是不需要考虑连续移动的次数，也一定程度减少了求解空间，<del>但是却也影响了剪枝的范围</del>（剪枝时依旧需要考虑当前连续移动的距离）。最后通过剪枝的 BFS 取得两个部分的解，但是应该可以用最短路径的算法进行求解。</p>
+<h3 id="bfs">BFS</h3>
+<p>尝试通过 BFS 实现，但是在节点的访问状态判断上 BFS 并不正确，如果应用一个 visited 到整体的 BFS 会导致搜索路径的不完全，虽然节点是完全访问了，但是却无法取得所有的搜索路径，自然也就无法取得最终的结果，应该使用 DFS。</p>
+<p>如果不使用 Visited 那么就要进行剪枝，引入 HashMap 记录当前位置和移动方向的最小 loss ，当遇到同样的状态时，判断当前 loss 是否小于记录值，如果不小于记录值，那么就不入队，实现剪枝。运行速度依旧堪忧，release 版本，运行需要 3s。第二部分和第一部分完全一致，引入节点的移动范围参数即可。</p>
+<p>虽然没有对单条路径使用 Visited ，但是实际上如果在一条路径中，以同样的方向进入同一个节点两次，那么第二次的 loss 一定大于第一次，这样也就组织了可能的重复访问。</p>
+<p><strong>如果能够证明在一条路径中，无论以何种方向进入同一个节点两次，第二次的 loss 一定大于第一次，那么就能进一步剪枝。</strong></p>
+<h3 id="dfs-1">DFS</h3>
+<p>可能的路径太多，需要剪枝，<del>引入缓存</del>。应该可以用同 BFS 一样的方法进行剪枝。</p>
+<p><strong><del>BFS + 最小堆</del>：依旧需要剪枝，子问题的最优解之和并不等同于最优解。</strong></p>
+<h3 id="dong-tai-gui-hua">动态规划</h3>
+<p>前一次选择的路径会影响到下一次的路径选择，dp 应该是不能用的，(0, 0) 到 (1, 2) 的最短路径应该是 3 ，但是(0, 0) 到 (4, 6) 的最短路径中(0, 0) 到 (1, 2) 的路径长度应该是 5， 也就是说部分的最优解并不等同于最终最优解</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#d08770;">1111999
+</span><span style="color:#d08770;">9911999
+</span><span style="color:#d08770;">9919999
+</span><span style="color:#d08770;">9911199
+</span><span style="color:#d08770;">9999111
+</span></code></pre>
+<h3 id="dijkstra-s-algorithm-todo"><strong>Dijkstra's algorithm</strong> (TODO)</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">https://en.wikipedia.org/wiki/Dijkstra's_algorithm</a></li>
+<li>考虑输入 <code>abcde</code> 从 <code>a</code> 出发存在三条路径 <code>ab</code> <code>ac</code> <code>ad</code>
+<ul>
+<li>如果选择了 <code>ad</code> 那么就不存在从 <code>d</code> 出发的路径</li>
+</ul>
+</li>
+</ul>
+<h2 id="day-18-todo">Day 18 (TODO)</h2>
+<p>问题的输入处理并不复杂，第一部分根据输入首先构造边，再利用 Ray Cast 算法计算被边包含的大小即可。第二部分对输入的变化依旧不复杂，但是每一条边的长度都被放大，再用第一部分的方法，求解空间将会变得巨大，简单的将所有边包含的位置记录在 HashSet 中就需要及其长的时间，更别提在 Ray Cast 中需要遍历的一个一个位置了。</p>
+<p>鞋带定理</p>
+<p>https://en.wikipedia.org/wiki/Shoelace_formula</p>
+<p>皮克定理</p>
+<p><a href="https://en.wikipedia.org/wiki/Pick%27s_theorem">https://en.wikipedia.org/wiki/Pick's_theorem</a></p>
+<h2 id="day-19-code">Day 19 [<a href="https://github.com/livexia/advent-of-code-2023/blob/main/aoc19/src/main.rs">code</a>]</h2>
+<p>今天的题目依旧不算特别难，但是我在输入的处理上花费了太多的时间，第一部分的排名并不优秀，第一部分的实现根据题意实现模拟即可，注意细节即可。第二部分扩大了第一部分的求解空间，如果依旧按照第一部分的模拟实现，那么程序将无法完成运行，第二部分要求 <code>x m a s</code> 在 <code>[1, 4000]</code> 的范围内进行组合，计算所有组合中会被工作流接收的个数。如果构造组合，再根据第一部分实现的模拟一一判断，这是不现实的，所以需要另辟蹊径。问题太大的时候首先考虑对问题进行分解，初始问题描述如下：</p>
+<ul>
+<li>对于 <code>x m a s</code> 在 <code>[1, 4000]</code> 的所有组合，从工作流 <code>in</code> 开始最后能被接收的组合个数</li>
+</ul>
+<p>分解问题：以工作流 <code>in{s&lt;1351:px,qqz}</code> 为例</p>
+<ul>
+<li>经过 <code>in</code> 工作流的输入存在两种可能：
+<ul>
+<li>如果 <code>s &lt; 1351</code> 进入工作流 <code>px</code></li>
+<li>否则进入工作流 <code>qqz</code></li>
+</ul>
+</li>
+<li>那么原问题就变成，两个子问题：
+<ul>
+<li>计算 <code>s</code> 在 <code>[1, 1350]</code> 和 <code>x m a</code>  在 <code>[1, 4000]</code> 的所有组合，从工作流 <code>px</code> 开始最后能被接收的组合个数</li>
+<li>同时计算 <code>s</code> 在 <code>[1351, 4000]</code> 和 <code>x m a</code>  在 <code>[1, 4000]</code> 的所有组合，从工作流 <code>qqz</code> 开始最后能被接收的组合个数</li>
+</ul>
+</li>
+<li>两个子问题的和即是原问题的解，同样的也可以对子问题再进行细分</li>
+<li>可以<strong>利用动态规划</strong>实现，定义如下：
+<ul>
+<li>函数 <code>A(wf)</code> 表示有多少 <code>x,m,a,s</code> 的组合经过工作流 <code>wf</code> 后能被接受</li>
+<li>转移方程： <code>A(wf) = Sum{A(next(wf))}</code> 其中 <code>next(wf)</code> 表示 <code>wf</code> 的后续工作流</li>
+<li>边界：当一个工作流 <code>wf</code> 的下一个状态为 <code>A</code> 时，所有经过 <code>wf</code> 的 <code>x,m,a,s</code> 的组合都被接受</li>
+</ul>
+</li>
+<li>定义 <code>possible</code> 表示经过工作流 <code>wf</code> 前所有的输入组合</li>
+<li>在 <code>wf</code> 内，根据 <code>wf</code> 所有的可能下一状态进行对 <code>possible</code> 进行分裂</li>
+<li>如果下一个可能状态为进入工作流，那么根据进入工作流的条件对 <code>possible</code> 进行分裂为 <code>occupy</code> 和 <code>remain</code>，<code>occupy</code> 为进入新的工作流的所有可能组合，递归求解子问题</li>
+<li>剩余的可能组合 <code>remain</code> 成为 <code>possible</code></li>
+<li>如果下一个可能的状态为被接收，那么计算 <code>possible</code> 的组合数，输入的所有可能组合完成消耗</li>
+<li>累加所有可能状态的被接收组合数</li>
+</ul>
+<p><strong><a href="https://github.com/livexia/advent-of-code-2023/blob/e8e56f4876c80256b6d91cf1a24efdaaaf4eb1f6/aoc19/src/main.rs#L220-L327">递归代码实现</a>，也可以用队列迭代实现。</strong></p>
+<h2 id="day-20">Day 20</h2>
+<p>第一部分根据题意模拟实现即可，求解空间并不大，循环一千次的模拟在可承受范围内。第二部分首先依旧尝试模拟实现，可惜短时间内根本无法取得解，最后得结果数量级是 100千亿 ，这不是模拟能够解决的，需要寻找更好的方法。自己虽然观察了输入，但是却没能想出具体的实现，最后参考了 Reddit 的题解，才终于得处答案。第一部分代码对任何的输入都可行，第二部分则只支持 rx 依赖一个 <em>Conjunction</em> 模块，同时这个 Conjunction 模块又依赖于其他的 Conjunction 模块，同时这些 Conjunction 模块发出高位是存在循环规律的，第二部分会给出每一个模块的可能循环大小，需要手动根据循环计算这些模块的最小公倍数，最后取得结果。</p>
+<h3 id="di-er-bu-fen">第二部分</h3>
+<p>观察给定的输入，可以发现 <code>rx</code> 仅依赖 <code>vd</code> ，而 <code>vd</code> 则依赖于 <code>rd bt fv</code> 和 <code>pr</code> ，<code>vd rd bt fv</code> 和 <code>pr</code> 都为 <em>Conjunction</em> 模块，所以如果 <code>rx</code> 要接收到低位，那么 <code>vd</code> 要发出低位，则 <code>vd</code> 的四个输入模块都必须发出高位，那么当 <code>rd bt fv</code> 和 <code>pr</code> 都发出高位时，<code>rx</code> 就能接收到低位。因为 rx 仅依赖于 <code>vd</code> ，那么求 <code>rx</code> 和求 <code>vd</code> 的求解空间应当是一样大的，所以就需要考虑 <code>vd</code> 依赖的四个模块，如果这四个模块存在一定的规律那么就可以将问题划分，减少求解空间。根据分析输入所得到的依赖关系，<strong>利用代码计算这四个模块发出高位所需要的按键次数</strong>，如果循环出现，那么说明存在规律，最后只需要计算四个模块发出高位次数的最小公倍数即是题解。</p>
+<p>虽然第二部分涉及的代码是同第一部分一致的，但是在<strong>利用代码计算这四个模块发出高位所需要的按键次数</strong>的时间点很重要，因为 vd 这四个模块，所以要在经过 vd 模块就检测这四个模块发出的高低位，如果在按完一次按钮的最后，再检测这四个模块，那就可能无法检测到这四个模块的状态变化。这个细节也是为何我虽然知晓求解方法，但是依旧耗费了不少时间的原因。</p>
+<h2 id="day-21-todo">Day 21(TODO)</h2>
+<h3 id="di-er-bu-fen-1">第二部分</h3>
+<ul>
+<li>可以从一个位置进行上下左右的移动，要计算从位置 <code>S</code> 开始，经过 <code>step</code> 次移动，可以到达位置的数，令函数 <code>f(step)</code> 表示该问题</li>
+<li>同时令 <code>d(step)</code> 表示从从位置 <code>S</code> 开始，经过 <code>step</code> 次不回头的移动，可以到达位置的数
+<ul>
+<li>即从 <code>S</code> 出发的最短路径长度为 <code>step</code> 的路径数</li>
+</ul>
+</li>
+<li>可以发现 <code>f(step) = d(step) + f(step -2)</code>
+<ul>
+<li>当从 <code>S</code> 出发经过 <code>step - 2</code> 次移动，如果剩余的 <code>2</code> 次移动允许回头，那么两次移动可以被消除（向左，再向右）</li>
+<li>所以所有 <code>f(step -2)</code> 的终点都包含在 <code>f(step)</code> 中
+<ul>
+<li>同样的 <code>f(step - 4)</code> 被 <code>f(step - 2)</code> 包含</li>
+</ul>
+</li>
+<li>同时 <code>f(step - 1)</code> 中的任何终点都不可能被 f(step) 包含，因为其中的位置，只需要移动一次就可以成为 <code>f(step)</code> ，而移动一次却不可能实现原地不动</li>
+</ul>
+</li>
+<li>如果网格中不存在任何的石头，那么 d(step) 的终点将是以 S 为中心的一个菱形的边，边上的任意位置与 S 的最短距离是曼哈顿距离</li>
+<li>根据 <code>f(step) = d(step) + f(step -2)</code></li>
+<li>对于任意的偶数 <code>step</code> 有 <code>f(step) = d(step) + d(step - 2) + … + d(0)</code></li>
+<li>对于任意的奇数 <code>step</code> 有 <code>f(step) = d(step) + d(step - 2) + … + d(1)</code></li>
+<li>第二部分的网格是无限网格，所以就算知道 <code>f(step)</code> 的计算公式也不能减少多少计算量</li>
+<li>参考 Reddit 上的解法，通过求解二次函数的系数，确定二次函数，再计算最终结果即可。
+<ul>
+<li>https://old.reddit.com/r/adventofcode/comments/18nevo3/2023_day_21_solutions/</li>
+<li>实际的输入中，网格的四边都为空，同时起始点 <code>S</code> 位于的行和列都为空，那么从 <code>S</code> 到四边上位置的最短路径长度即是二者之间的曼哈顿距离</li>
+<li>同时 <code>S</code> 位于网格的正中央，那么 S 到四角的最短距离长度刚好为网格的边长 <code>width</code>（长宽相等）</li>
+<li>所以从一个网格的 <code>S</code> 出发，在上下左右四个方向移动网格边长的距离 <code>width</code>，就会抵达相邻网格的 <code>S</code></li>
+<li>当 S 移动 <code>width</code> 时 覆盖了 1 个原始网格</li>
+<li>当 S 移动 <code>2 * width</code> 时 覆盖了 5 个原始网格</li>
+<li>当 S 移动 <code>3 * width</code> 时 覆盖了 13 个原始网格</li>
+<li>当 S 移动 <code>4 * width</code> 时 覆盖了 25 个原始网格
+<ul>
+<li><a href="https://www.wolframalpha.com/input?i=quadratic+fit+%7B%7B1%2C+1%7D%2C+%7B2%2C+5%7D%2C+%7B3%2C+13%7D%2C+%7B4%2C+25%7D%7D">https://www.wolframalpha.com/input?i=quadratic+fit+{{1%2C+1}%2C+{2%2C+5}%2C+{3%2C+13}%2C+{4%2C+25}}</a></li>
+</ul>
+</li>
+<li>网格的覆盖是随着移动的距离二次增长的</li>
+</ul>
+</li>
+<li>第二部分要求计算移动距离 <code>26501365</code> 的位置个数</li>
+<li>输入网格边长为 <code>131</code>，恰好 <code>26501365 = 131 * 202300 + 65</code></li>
+<li>可以计算出 65 次， 65 + 131 次 和 65 + 131 * 2 次移动距离时到达的位置数</li>
+<li>假设二次函数为 $f(x) = ax^2 + bx +c$ 且 $x = (step - 65) / 131$</li>
+<li>那么得到 f(0) , f(1) 和 f(2) 的值就可以计算出系数 a b c</li>
+<li>再计算 f(202300) 即是结果</li>
+</ul>
+<h2 id="day-22-code">Day 22[<a href="https://github.com/livexia/advent-of-code-2023/blob/main/aoc22/src/main.rs">code</a>]</h2>
+<p>今天的题目并不难，核心的问题就是砖块掉落，是否会和下方的砖块产生碰撞。第一部分第二部分都是在这个基础之上进行求解。我首先就想到砖块实际上就是两个线段，是否会产生碰撞，那么只需要计算线段是否存在交点即可，参考了几个 stackover flow 的解法，可惜最后的答案不对。最后用了笨办法，那就是记录砖块占据的所有网格位置，碰撞时统计各自占据的网格位置是否存在重叠即可，笨办法替换了线性代数之后可以顺利解决两个部分，虽然运行速度不快。对比两个检测碰撞的方法，发现在两个线段存在重叠时，线性代数的方法会得出错误的结果，可惜我的线性代数学不到家，只看数学我是根本不知道问题何在。</p>
+<p><strong>线性代数检测线段相交[<a href="https://github.com/livexia/advent-of-code-2023/commit/fdb5d7cccfb93ee2c75de1382dde44b74238d6d0">code</a>,</strong> <a href="https://github.com/livexia/advent-of-code-2023/commit/10a2bb9480697a3a5ed8e26e179a436945aefb1d">fixed code</a><strong>]</strong></p>
+<ul>
+<li>https://stackoverflow.com/questions/5666222/3d-line-plane-intersection</li>
+<li>https://stackoverflow.com/questions/55220355/how-to-detect-whether-two-segments-in-3d-space-intersect</li>
+<li>https://stackoverflow.com/questions/2316490/the-algorithm-to-find-the-point-of-intersection-of-two-3d-line-segment</li>
+<li>当两个线段位于同一条直线上时，实现代码计算出的 s 和 t 都为 Nan ，于是被认定线段一定不存在交点（重叠）</li>
+<li>增加线段重叠检测之后，运行结果正确，运行时间是 HashSet 方法的一半</li>
+</ul>
+<p><strong>性能优优化[<a href="https://github.com/livexia/advent-of-code-2023/commit/93c6f76316c688720026cb35380ffd4af26eb848">code</a>]</strong></p>
+<ul>
+<li>无论是用 Set 还是线性代数判断线段是否相交时，可以先判断两个砖块在 Z 轴方向上是否存在重叠，如果不存在重叠，那么一定不可能相交，通过这一个判断可以将 Debug 编译的第一部分运行时间从 10s 降低至 3s  ，第二部分则从 18 s 降低至 6s。</li>
+<li>当前的 HashSet 是存储在 Struct 中，每一个砖块都有自己的 HashSet ，在测试掉落时，也需要构造新的 HashSet ，也许可以使用一份 HashSet 记录所有砖块已经占据的位置。
+<ul>
+<li>Debug: 第一部分 3s → 2s</li>
+</ul>
+</li>
+</ul>
+<p><strong>构造支撑图[<a href="https://github.com/livexia/advent-of-code-2023/commit/f1fecd6014c902769779cc9084eafd7c38bb7829">code</a>]</strong></p>
+<p>根据初始完全落下所有砖块，构造砖块与砖块之间的支撑关系</p>
+<ul>
+<li>第一部分要计算移除某一砖块（节点），图不被断开</li>
+<li>第二部分则要计算移除某一砖块（节点），当图断开时剩余图的长度</li>
+<li>主要的时间耗费应该是在最初的落下砖块和构造支撑图，第一第二部分的具体计算只占用很小一部分的运行时间</li>
+<li>对比利用线性代数或者 HashSet 在第一第二部分都模拟消除砖块再检测下落，Debug 下的运行时间从 2s → 1s ，release 则是从 400ms → 120ms</li>
+</ul>
+<h2 id="day-23-code">Day 23[<a href="https://github.com/livexia/advent-of-code-2023/blob/main/aoc23/src/main.rs">code</a>]</h2>
+<p>需要计算最长路径，第一部分限制了部分节点的移动可能，于是很容易的利用 DFS 求解即可。第二部分则无法这样简单的实现，因为涉及到大量的可能路径，求解空间巨大，于是用 DFS 首先可能会栈溢出，然后就是运行时间过久，无法得出结果。即然简单的 DFS 不行，那么是不是可以引入缓存呢？可惜还是不行，缓存只记录在某一个路径中的最长部分，但是这个最长并不适用于另一个路径，也就无法正确的得出结果。通过搜索我发现还存在一种方法就是利用拓扑排序确定最长路径，拓扑排序要求是有向无环图，实现之后依旧无法计算出最长路径，原因就是在网格中移动的路径的确是有向无环图，但是如果把所有的可能路径都考虑到，那么实际上题目给出的网格是有环图，所以拓扑排序依旧不可行。</p>
+<p>不优化的 DFS 方法 release 编译运行了 1268s 得出正确的解</p>
+<p>可行的缓存：缓存需要记录的状态，当前经过的所有路径，这样可以确保不同路径之间不会产生干扰，可是需要记录的状态太大，不太现实？</p>
+<h3 id="jiang-wang-ge-zhuan-hua-wei-tu-bing-dui-tu-jin-xing-he-bing-jian-zhi-code">将网格转化为图，并对图进行合并（剪枝）[<a href="https://github.com/livexia/advent-of-code-2023/commit/1e0a24fdc04d821dece0e6e0d6be809dbb8e2a44">code</a>]</h3>
+<ul>
+<li>根据网格构造图</li>
+<li>只记录邻接节点构成的长度为 1 的边，遍历网格中每一个不为 <code>#</code> 的位置，判断当前位置的所有邻接位置是否能够构成边</li>
+<li>对图进行剪枝当一个节点只存在两个边时，可以删除当前节点并合并两个边，直到图中不存在只有两个边的节点
+<ul>
+<li>经过剪枝，图的长度从 9412 减少为 36</li>
+<li>那么经过剪枝，最多只有 36 * 4 的边，求解空间大大减少</li>
+</ul>
+</li>
+<li>再对图进行 DFS 遍历
+<ul>
+<li>release 运行时间从 1268s 减少到 4s</li>
+</ul>
+</li>
+<li>除了因为边的合并的性能提升，相比于直接网格的 DFS 在对于邻接节点确定上也有一定的性能提升，700s → 600s</li>
+<li>https://en.wikipedia.org/wiki/Edge_contraction</li>
+</ul>
+<h3 id="xing-neng-you-hua-code">性能优化[<a href="https://github.com/livexia/advent-of-code-2023/commit/94a763044a57a4120b230947095c30ff5efc1133">code</a>]</h3>
+<ul>
+<li>visited 不使用 HashSet 而使用 Vec ，运行时间：4s → 1s
+<ul>
+<li>直接 dfs 的方法 1200s → 700s</li>
+</ul>
+</li>
+</ul>
+<h2 id="day-24">Day 24</h2>
+<p>今天的题目不是编程题，更像是数学题，第一部分要求二元一次方程组，第二部分要求九元九次方程组。第一部分因为涉及到的方程组数量较少，所以我手动推导出求解过程，代码中再进行计算。第二部分我则代码打印出方程，寻找到在线求解方程组的网站进行求解，第二部分这样居然进了前一千。<strong>今天的问题主要就是需要计算直线相交的，这和第 22 天计算线段相交的问题实际上是一模一样的。涉及到数学和线性代数，我并不是完全理解，但是没办法，也就是这样了。</strong></p>
+<p>题意分析：</p>
+<ul>
+<li>所有的石头有一个初始位置，同时有一个速度，按照一定的时间间隔根据速度改变位置</li>
+<li>第一部分需要计算两两石头的运行路径相交的次数，只要计算路径的相交，而不是石头产生碰撞，即相交不需要石头同时抵达。</li>
+<li>第二部分则要想象一个新的石头，这个石头和所有输入的石头同时以各自的速度前进，而且这个石头会和输入的所有石头碰撞，计算这个石头的初始坐标和。</li>
+</ul>
+<p>求解思路</p>
+<ul>
+<li>
+<p>令石头的初始位置为 p0 速度为 v ，运行时间为 t ，那么就有石头在 t 时的位置 $p = p0 + v*t$</p>
+</li>
+<li>
+<p>第一部分判断两两石头路径是否相交，要注意的是相交的位置可能并不是正好处于整数的位置，所以第一部分的计算最好<strong>使用浮点数作为计算类型</strong></p>
+</li>
+<li>
+<p>令石头 a 的路径函数为 $pa = pa0 + va * ta$</p>
+</li>
+<li>
+<p>令石头 b 的路径函数为 $pb = pb0 + vb * tb$</p>
+</li>
+<li>
+<p>当路径相交时，即 pa = pb，所以就有 $pa0 + va*ta = pb0 + vb * tb$</p>
+</li>
+<li>
+<p>第一部分只考虑 x 和 y ，所以自然的就存在两条方程</p>
+<ul>
+<li>$xa0 + vxa * ta = xb0 + vxb * tb$</li>
+<li>$ya0 + vya * ta = yb0 + vyb * tb$</li>
+</ul>
+</li>
+<li>
+<p>因为 xa0 vxa xb0 vxb ya0 vya yb0 vyb 都是输入已知，那么只有 ta 和 tb 未知，同时有两条方程组，那么就可以通过消元法分别求解 ta 和 tb</p>
+</li>
+<li>
+<p>如果计算出的 ta 和 tb 小于 0 那么说明石头a 和 b 的路径在他们还没移动前就相交了，不合题意</p>
+</li>
+<li>
+<p>如果 ta 和 tb 是无穷，说明计算中存在除 0 的情况，那么石头 a 和 b 的路径应该是平行了，也就不可能相交</p>
+<ul>
+<li>根据无穷的 ta 和 tb 计算相交的位置，可以发现位置是在无限远的位置相交，实际上也就是不相交</li>
+</ul>
+</li>
+<li>
+<p>计算出 ta 和 tb 之后，就可以确定路径相交的位置，判断相交位置是否位于输入给定的范围内即可</p>
+</li>
+<li>
+<p>[<a href="https://github.com/livexia/advent-of-code-2023/commit/d1c9163f827d6926ef21c7a06b73f5f96574f69d">code</a>]第二部分需要计算当一个石头与所有输入石头都存在某一时刻直接相交，计算这个石头的位置</p>
+</li>
+<li>
+<p>令这个石头的位置为 p 同时速度为 v</p>
+</li>
+<li>
+<p>第二部分不仅需要考虑 x 和 y 也要考虑 z</p>
+</li>
+<li>
+<p>令输入石头的位置和速度为 pn 和 vn ，n为输入的石头数，那么就有以下方程</p>
+<ul>
+<li>$p + v*t1 = p1 + v1 * t1$</li>
+<li>$p + v*t2 = p2 + v2 * t2$</li>
+<li>$p + v*t3 = p3 + v3 * t3$</li>
+<li>…</li>
+<li>$p + v*tn = pn + vn * tn$</li>
+</ul>
+</li>
+<li>
+<p>暂时先将 p 和 v 都视为一个变量（不是自然数，而是向量/矩阵）</p>
+</li>
+<li>
+<p>首先存在 n 条方程，每一条方程引入一个新的未知量 tn</p>
+</li>
+<li>
+<p>那么总共的未知量个数就是 n + 2</p>
+</li>
+<li>
+<p>一次方程的数量要和未知量的数量一致才能求解未知量，可是总共只有 n 条方程</p>
+<ul>
+<li><strong>方程并不是一次的，而是二次方程，这会影响结果吗？</strong>
+<ul>
+<li>改变方程的位置可以得到 $p - pn = tn(vn - v)$</li>
+<li>p 和 v 实际上都是矩阵，所以在两侧叉乘上 $v - vn$ 得到</li>
+<li>$(p-pn) \times (v-vn) = tn(vn -v)\times(v - vn)$</li>
+<li>同时有平行的向量叉乘为0， $(vn -v)\times(v - vn) = 0$ 即有</li>
+<li>$(p-pn) \times (v-vn) = 0$</li>
+<li>p 和 v 是未知数，同时 $p \times v$ 是每一个方程中可得到的共同部分，于是可以被消去，所以这个方程组虽然看似是二次的，可是实际上最后依旧是线性的</li>
+<li>因为这个原因所以就算不用第三方的求解工具，依旧可以手动推导求解</li>
+</ul>
+</li>
+<li>https://old.reddit.com/r/adventofcode/comments/18pptor/2023_day_24_part_2java_is_there_a_trick_for_this/kepvp8j/</li>
+<li>https://old.reddit.com/r/adventofcode/comments/18pnycy/2023_day_24_solutions/kepu26z/</li>
+</ul>
+</li>
+<li>
+<p>不过因为需要考虑三个方向上的情况，那么实际上一条方程是等同于三个方向上的方程</p>
+</li>
+<li>
+<p>所以在考虑三个方向上后，p 和 v 实际上是总共 6 个位置了</p>
+</li>
+<li>
+<p>未知量个数就是 n + 6，方程个数就是 3 * n</p>
+<ul>
+<li>实际上时间 t 可以被消去，当然 v 的三个未知量也可以被消去，不过这就要自己实现消元法了，头疼放弃。</li>
+</ul>
+</li>
+<li>
+<p>满足未知量个数等于方程个数的最小 n 实际上是 3</p>
+</li>
+<li>
+<p>所以理论上只需要计算 9 个方程，也就是输入中的 3 个石头就能计算出解，剩余的石头/方程是没有用的</p>
+<ul>
+<li>如果计算出的石头和剩余石头相交情况不满足题意，那么实际上输入是存在问题的，也就是说这样的输入是无法计算出可能的石头满足题意</li>
+</ul>
+</li>
+<li>
+<p>九元九次方程如果直接用消元法手动推导求解，估计眼睛会看不过来，我用 Rust 生产了 9 条方程，再偷懒直接找了网站计算</p>
+<ul>
+<li><a href="https://quickmath.com/webMathematica3/quickmath/equations/solve/advanced.jsp#c=solve_solveequationsadvanced&amp;v1=x%2Ba*t%253D262130794315133%2B57*t%250Ay%2Bb*t%253D305267994111063%2B-252*t%250Az%2Bc*t%253D163273807102793%2B150*t%250Ax%2Ba*q%253D290550702673836%2B-74*q%250Ay%2Bb*q%253D186986670515285%2B19*q%250Az%2Bc*q%253D231769402282435%2B-219*q%250Ax%2Ba*w%253D275698513286341%2B-59*w%250Ay%2Bb*w%253D162656001312879%2B-24*w%250Az%2Bc*w%253D183065006152383%2B-225*w&amp;v2=x%250Ay%250Az%250Aa%250Ab%250Ac%250At%250Aq%250Aw">https://quickmath.com/webMathematica3/quickmath/equations/solve/advanced.jsp#c=solve_solveequationsadvanced</a></li>
+</ul>
+</li>
+<li>
+<p>得出正确答案后，我尝试从 bard 和 cahtgpt 处取得正确答案，可惜 bard 不够聪明，chatgpt 倒是给出了一份 python 的代码，本地运行也的确计算出了正确答案。</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">from </span><span>sympy </span><span style="color:#b48ead;">import </span><span>symbols, solve
+</span><span>
+</span><span style="color:#65737e;"># 定义符号变量
+</span><span>x, y, z, vx, vy, vz, t0, t1, t2 = </span><span style="color:#bf616a;">symbols</span><span>(&#39;</span><span style="color:#a3be8c;">x y z vx vy vz t0 t1 t2</span><span>&#39;)
+</span><span>
+</span><span style="color:#65737e;"># 定义方程组
+</span><span>equations = [
+</span><span>    x + vx * t0 - (</span><span style="color:#d08770;">262130794315133 </span><span>+ </span><span style="color:#d08770;">57 </span><span>* t0),
+</span><span>    y + vy * t0 - (</span><span style="color:#d08770;">305267994111063 </span><span>- </span><span style="color:#d08770;">252 </span><span>* t0),
+</span><span>    z + vz * t0 - (</span><span style="color:#d08770;">163273807102793 </span><span>+ </span><span style="color:#d08770;">150 </span><span>* t0),
+</span><span>    x + vx * t1 - (</span><span style="color:#d08770;">290550702673836 </span><span>- </span><span style="color:#d08770;">74 </span><span>* t1),
+</span><span>    y + vy * t1 - (</span><span style="color:#d08770;">186986670515285 </span><span>+ </span><span style="color:#d08770;">19 </span><span>* t1),
+</span><span>    z + vz * t1 - (</span><span style="color:#d08770;">231769402282435 </span><span>- </span><span style="color:#d08770;">219 </span><span>* t1),
+</span><span>    x + vx * t2 - (</span><span style="color:#d08770;">275698513286341 </span><span>- </span><span style="color:#d08770;">59 </span><span>* t2),
+</span><span>    y + vy * t2 - (</span><span style="color:#d08770;">162656001312879 </span><span>- </span><span style="color:#d08770;">24 </span><span>* t2),
+</span><span>    z + vz * t2 - (</span><span style="color:#d08770;">183065006152383 </span><span>- </span><span style="color:#d08770;">225 </span><span>* t2)
+</span><span>]
+</span><span>
+</span><span style="color:#65737e;"># 解方程组
+</span><span>solutions = </span><span style="color:#bf616a;">solve</span><span>(equations, (x, y, z, vx, vy, vz, t0, t1, t2))
+</span><span>
+</span><span style="color:#65737e;"># 打印结果
+</span><span style="color:#96b5b4;">print</span><span>(solutions)
+</span><span style="color:#65737e;"># 计算 x + y + z
+</span><span style="color:#96b5b4;">sum</span><span>(solutions[</span><span style="color:#d08770;">0</span><span>][:</span><span style="color:#d08770;">3</span><span>])
+</span></code></pre>
+</li>
+</ul>
+<h3 id="shi-yong-solver-qiu-jie-fang-cheng">使用 Solver 求解方程</h3>
+<p><strong>z3 [<a href="https://github.com/livexia/advent-of-code-2023/commit/fd68fc663e721ce1f5f13599a481a09857fedb30">code</a>]</strong></p>
+<ul>
+<li>https://docs.rs/z3/latest/z3/</li>
+<li>https://github.com/Z3Prover/z3/wiki#background</li>
+<li><code>brew install z3</code> 之后依旧无法正确的找到 z3.h 应该是路径问题，不想排查，换一个 Solver</li>
+<li>官方的文档不是很简洁明了，所以参考了社区的实现，最后的运行速度没有想象中的快
+<ul>
+<li>https://github.com/AxlLind/AdventOfCode2023/blob/main/src/bin/24.rs</li>
+</ul>
+</li>
+<li>第二部分的题目要求 Rock 和输入的石头只会在一定的时间间隔内和输入的石头产生碰撞，而输入石头的位置和速度都是整数，所以最后碰撞的位置也一定是整数，那么求解的时候只需要考虑整数即可</li>
+</ul>
+<p><strong>good_lp</strong></p>
+<ul>
+<li>https://crates.io/crates/good_lp</li>
+<li>方程式存在两个变量相乘的情况，无法求解，back to z3</li>
+</ul>
+<h2 id="day-25">Day 25</h2>
+<p>以为今天的题目会很简单，结果是我不熟悉的题目。给定的输入构成一个无向有环图，需要求解断开哪三个边可以使得图产生分裂，计算分裂后图的节点数乘积。因为不知道解决这个问题有什么特定的算法，所以我决定直接直接暴力遍历所有的可能边的组合，很可惜暴力是跑不出什么结果的。</p>
+<ul>
+<li>从所有的边中选择三个删除总共存在 254960703480 这么多的可能</li>
+<li>检测 100000000 个可能需要 2131.196800375s</li>
+<li>预估时间：62 天</li>
+</ul>
+<h3 id="dui-bian-jin-xing-pai-xu-ti-sheng-bao-li-sou-suo-de-xiao-lu-code">对边进行排序，提升暴力搜索的效率 [<a href="https://github.com/livexia/advent-of-code-2023/blob/main/aoc25/src/main.rs">code</a>]</h3>
+<ul>
+<li>已知图在删除特定的三条边之后，图会被分成两个新的图</li>
+<li>可以想象这两个新的图是由这三条边相连的</li>
+<li><strong>左边图中的节点和右边图的节点相连，那么至少要从这三条边中经过一次</strong></li>
+<li>如果不断开任何边，那么从一个节点出发，通过 BFS 和 DFS 可以对其他所有的节点进行一次搜索（不重复访问节点）</li>
+<li>在搜索过程中记录所有边的出现次数，当只从一个节点出发时，所有边的出现次数只会是 1</li>
+<li>那么可以对图中所有的节点都进行单独的 BFS/DFS 搜索，并在过程中记录所有边出现的次数</li>
+<li>同时在记录边出现的次数时，要对边进行统一化，即 (a → b) 和 (b → a) 应当记录在同一个边下</li>
+<li>假设左图有 L 条边，右图有 R 条边，同左图和右图通过 3 条边相连</li>
+<li>左图内的节点访问其他左图内的节点理论上不需要经过中间的 3 条边和右图的边</li>
+<li>而如果左图的节点需要访问右图的节点，那么必然会经过中间 3 条边的某一条</li>
+<li>在 BFS / DFS 的过程中不允许重复访问，那么每一次搜索一条边最多只会经过一次，同时有的边则会被忽略不访问（因为节点已经访问过）</li>
+<li>但是每一次搜索一定至少会经过两个图之间三条边其中一条，如果没有经过，说明左图和右图的节点没有产生连通的路径，这和题意不符</li>
+<li>虽然知道这样是可行的，但是我却没法明确的说出为什么，哎一知半解。</li>
+<li>根据边出现的频率对边进行排序，那么出现次数前三的边就应该是需要被删除的边</li>
+<li>暴力时可以优先删除出现频率高的边，判断是否可以分割图，直到分割</li>
+</ul>
+<h3 id="li-yong-graphviz-sheng-cheng-tu-de-ke-shi-hua-pic">利用 Graphviz 生成图的可视化 [<a href="https://github.com/livexia/advent-of-code-2023/tree/main/aoc25/graphviz">pic</a>]</h3>
+<ul>
+<li>将 input.txt 修改为 input.dot</li>
+<li>利用 graphviz 的 neato 或者 spdf 生成图的可视化
+<ul>
+<li>可以将图按照集群进行展示</li>
+<li>neato https://en.wikipedia.org/wiki/Spring_system</li>
+<li>spdf https://en.wikipedia.org/wiki/Force-directed_graph_drawing</li>
+</ul>
+</li>
+<li>根据可视化确定需要删除的边</li>
+<li>将边删除，利用代码计算分裂的图节点数的乘积</li>
+<li>这个方法太取巧，不是一个适用的方法</li>
+<li>https://graphviz.org/doc/info/lang.html</li>
+<li>https://graphviz.org/</li>
+</ul>
+
+
+
+<noscript>
+    This is where the comments would load if you enabled JavaScript.
+</noscript>
+<script src="https://utteranc.es/client.js"
+        repo="livexia/ghost.livexia.xyz"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </article>
+            
+
+<nav class="toc">
+    <h4>目录</h4>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#rust-hints">Rust Hints</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#things-to-learn">Things to Learn</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-1">Day 1</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-2">Day 2</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-3">Day 3</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-4">Day 4</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-5">Day 5</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-6">Day 6</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-7">Day 7</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-8-todo">Day 8（TODO）</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#huan-jian-ce-suan-fa">环检测算法</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#dfs">DFS</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#xing-neng-you-hua">性能优化</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-9">Day 9</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-10">Day 10</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#brute-force-and-bfs-code">Brute Force and BFS [code]</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#move-along-and-dfs-bfs-dfs-bfs">Move along and DFS&#x2F;BFS [DFS&#x2F;BFS]</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#double-resolution-flood-fill-code">Double Resolution &#x2F; Flood Fill [code]</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#line-crossing-ray-casting-shoelace-theorem-code">Line Crossing (Ray Casting) &#x2F; Shoelace Theorem? [code]</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#more-solutions">More Solutions</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-11-code">Day 11 [code]</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-12-todo">Day 12 (TODO)</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#dfs-with-cache-code-dp">DFS with Cache [code] = DP ?</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#rust">Rust @</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-13">Day 13</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#xing-neng-you-hua-1">性能优化</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-14-code">Day 14 [code]</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#huan-jian-ce-suan-fa-code">环检测算法 [code]</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#xing-neng-you-hua-2">性能优化</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-15">Day 15</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-16">Day 16</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#xing-neng-ti-sheng">性能提升</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-17-todo">Day 17 (TODO)</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#bfs">BFS</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#dfs-1">DFS</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#dong-tai-gui-hua">动态规划</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#dijkstra-s-algorithm-todo">Dijkstra&#x27;s algorithm (TODO)</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-18-todo">Day 18 (TODO)</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-19-code">Day 19 [code]</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-20">Day 20</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#di-er-bu-fen">第二部分</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-21-todo">Day 21(TODO)</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#di-er-bu-fen-1">第二部分</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-22-code">Day 22[code]</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-23-code">Day 23[code]</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#jiang-wang-ge-zhuan-hua-wei-tu-bing-dui-tu-jin-xing-he-bing-jian-zhi-code">将网格转化为图，并对图进行合并（剪枝）[code]</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#xing-neng-you-hua-code">性能优化[code]</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-24">Day 24</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#shi-yong-solver-qiu-jie-fang-cheng">使用 Solver 求解方程</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#day-25">Day 25</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#dui-bian-jin-xing-pai-xu-ti-sheng-bao-li-sou-suo-de-xiao-lu-code">对边进行排序，提升暴力搜索的效率 [code]</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;adventofcode2023&#x2F;#li-yong-graphviz-sheng-cheng-tu-de-ke-shi-hua-pic">利用 Graphviz 生成图的可视化 [pic]</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+
+        </main>
+    </body>
+</html>

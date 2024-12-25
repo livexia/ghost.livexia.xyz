@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+    
+    
+        
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <title>Linux下set、env、export的不同</title>
+        <link rel="stylesheet" href="https://ghost.livexia.xyz/style.css?2"/>
+        <link rel="icon" href="https://ghost.livexia.xyz/icon.png"/>
+        <link rel="canonical" href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;set-env-export&#x2F;"/>
+        <link rel="alternate" type="application/rss+xml" title="Just Some Ramblings" href="/rss.xml">
+        
+<meta property="og:type" content="article">
+
+        <meta property="og:title" content="Linux下set、env、export的不同">
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;set-env-export&#x2F;">
+        <meta property="og:image" content="https://ghost.livexia.xyz/icon.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125980270-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-125980270-1');
+        </script>
+    </head>
+    <body class="theme-default">
+        <header>
+            <div class="nav-content main-column">
+                <!-- <div class="icon"> -->
+                <!--     <a href="/"> -->
+                <!--         <img id="icon" src="/icon.png"> -->
+                <!--     </a> -->
+                <!-- </div> -->
+                <div class="header-nav"> 
+                    <a href="/">
+                        <span>livexia</span>
+                    </a>
+                </div>
+
+                <div class="header-nav"> 
+                    <a href="/tags/reading">
+                      <span>reading</span>
+                    </a>
+                </div>
+                <div class="header-nav btn">
+                    <a href="/tags">
+                      <span>tags</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
+                    <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></i></a>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <article>
+                
+<h1 class="title">
+  Linux下set、env、export的不同
+</h1>
+
+<div class="page-metadata">
+[Coding]
+Posted on Nov 26, 2020
+
+&middot; 5 minute read
+</div>
+
+<p><strong>此文转载而来，在工作时对Linux下的各种环境变量设置有所疑惑，以下是对原文的翻译</strong></p>
+<blockquote>
+<p>原文：<a href="https://askubuntu.com/a/205698">What's the difference between set, export and env and when should I use each?</a></p>
+</blockquote>
+<p>让我们考虑以下这个特定的例子，<code>grep</code>命令利用一个<code>GREP_OPTIONS</code> 环境变量（environment variable）来设置默认的选项。</p>
+<p>现在，给定一个文件 <code>test.txt</code> 含有以下行：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>line one
+</span><span>line two
+</span></code></pre>
+<p>运行命令 <code>grep one test.xt</code> 将会返回以下内容：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>line one
+</span></code></pre>
+<p>如果你运行 <code>grep</code> 时附带 <code>-v</code> 参数，将会返回所有不匹配的行，所以输出如下：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>line two
+</span></code></pre>
+<h2 id="wo-men-jiang-chang-shi-li-yong-huan-jing-bian-liang-she-ding-zhe-ge-xuan-xiang"><strong>我们将尝试利用环境变量设定这个选项</strong></h2>
+<ol>
+<li></li>
+</ol>
+<p><strong>不利用 <code>export</code> 设定环境变量</strong> 将不会被你调用命令的环境所继承。</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>GREP_OPTIONS=&#39;-v&#39;
+</span><span>grep one test.txt
+</span></code></pre>
+<p>结果：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>line one
+</span></code></pre>
+<p>很显然，参数 <code>-v</code> 没有成功的传入<code>grep</code>程序中</p>
+<p>*只有在你希望设定一个变量仅在当前运行shell内生效时才采用这种形式，例如在<code>for i in \* ; do</code>中你不会希望  <code> export $i</code>.</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>然而，这个变量将会被传给当前命令的运行环境中，所以你也可以这样做使其生效：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>GREP_OPTIONS=&#39;-v&#39; grep one test.txt
+</span></code></pre>
+<p>这样就会返回预期的结果了</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>line two
+</span></code></pre>
+<p><em>当你想临时改变当前运行实例程序的环境时，采用这种方法。</em></p>
+<ol start="3">
+<li></li>
+</ol>
+<p><code>export</code> 一个变量会使得这个变量被继承:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>export GREP_OPTIONS=&#39;-v&#39;
+</span><span>grep one test.txt
+</span></code></pre>
+<p>现在返回</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>line two
+</span></code></pre>
+<p><em>这种形式最常见的使用场景是在，在shell中设置变量以供随后启动的进程使用</em></p>
+<ol start="4">
+<li></li>
+</ol>
+<p>这里所说的都是在bash中的实现。 <code>export</code> 是bash的内建方法; <code>VAR=whatever</code> 则是bash的语法。 <code>env</code>, 在另一方面来说, 自己就是一个程序。当 <code>env</code> 被调用时, 下列事情将会发生:</p>
+<ol>
+<li>命令 <code>env</code> 被作为新的进程进行执行</li>
+<li><code>env</code> 修改环境的同时</li>
+<li>调起作为参数传入的命令， <code>env</code> 进程被 <code>command</code> 进程替换</li>
+</ol>
+<p>Example:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>env GREP_OPTIONS=&#39;-v&#39; grep one test.txt
+</span></code></pre>
+<p>这个命令会启动两个进程: (i) env and (ii) grep (实际上，第二个进程会替代第一个进程). 从 <code>grep</code> 进程的角度来看, 运行的结果与运行下面的命令一模一样：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>GREP_OPTIONS=&#39;-v&#39; grep one test.txt
+</span></code></pre>
+<p>然而，当你不在bash内或者不希望唤起另一个shell时，你可以使用这个方法 (例如，当你使用 <code>exec()</code> 类似的函数而不是 <code>system()</code> 调用).</p>
+<p><strong>关于 <code>#!/usr/bin/env</code> 的附加说明</strong></p>
+<p>这也是为什么， 使用<code>#!/usr/bin/env interpreter</code> 而不是 <code>#!/usr/bin/interpreter</code>. <code>env</code> 并不需要完整的程序路径, 因为它使用 <code>execvp()</code> 函数遍历的搜索 <code>PATH</code> 变量，就像shell会做的一样,  然后将运行命令替换自身。 因此，它可以用作寻找解释器 (例如 perl、 python) 的"位置".</p>
+<p>这也表示，通过修改当前的PATH变量，你可以影响到哪个python的程序会被调用。这使得下列命令有可能执行成功：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>echo -e &#39;#!/usr/bin/bash\n\necho I am an evil interpreter!&#39; &gt; python
+</span><span>chmod a+x ./python
+</span><span>export PATH=.
+</span><span>calibre
+</span></code></pre>
+<p>会返回如下结果，而不是调起Calibre</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>I am an evil interpreter!
+</span></code></pre>
+<p>说明：Calibre是一个自由开源的电子书软件套装，由python编写，需要依赖python解释器才能运行</p>
+
+
+
+<noscript>
+    This is where the comments would load if you enabled JavaScript.
+</noscript>
+<script src="https://utteranc.es/client.js"
+        repo="livexia/ghost.livexia.xyz"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </article>
+            
+
+<nav class="toc">
+    <h4>目录</h4>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;set-env-export&#x2F;#wo-men-jiang-chang-shi-li-yong-huan-jing-bian-liang-she-ding-zhe-ge-xuan-xiang">我们将尝试利用环境变量设定这个选项</a>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+
+        </main>
+    </body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+    
+    
+        
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <title>Python如何实现大数</title>
+        <link rel="stylesheet" href="https://ghost.livexia.xyz/style.css?2"/>
+        <link rel="icon" href="https://ghost.livexia.xyz/icon.png"/>
+        <link rel="canonical" href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;"/>
+        <link rel="alternate" type="application/rss+xml" title="Just Some Ramblings" href="/rss.xml">
+        
+<meta property="og:type" content="article">
+
+        <meta property="og:title" content="Python如何实现大数">
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;">
+        <meta property="og:image" content="https://ghost.livexia.xyz/icon.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125980270-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-125980270-1');
+        </script>
+    </head>
+    <body class="theme-default">
+        <header>
+            <div class="nav-content main-column">
+                <!-- <div class="icon"> -->
+                <!--     <a href="/"> -->
+                <!--         <img id="icon" src="/icon.png"> -->
+                <!--     </a> -->
+                <!-- </div> -->
+                <div class="header-nav"> 
+                    <a href="/">
+                        <span>livexia</span>
+                    </a>
+                </div>
+
+                <div class="header-nav"> 
+                    <a href="/tags/reading">
+                      <span>reading</span>
+                    </a>
+                </div>
+                <div class="header-nav btn">
+                    <a href="/tags">
+                      <span>tags</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
+                    <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></i></a>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <article>
+                
+<h1 class="title">
+  Python如何实现大数
+</h1>
+
+<div class="page-metadata">
+[Coding]
+Posted on Apr 11, 2020
+
+&middot; 12 minute read
+</div>
+
+<h2 id="wen-zhang-shuo-ming">文章说明</h2>
+<ul>
+<li>来自电台 <a href="https://pythonbytes.fm/">Python Bytes Podcast</a><a href="https://pythonbytes.fm/episodes/show/176/how-python-implements-super-long-integers">Episode #176: How python implements super long integers</a> 的推荐</li>
+<li>文章链接：<a href="https://arpitbhayani.me/blogs/super-long-integers">How python implements super long integers?</a></li>
+<li>以下是对文章的翻译和部分个人的理解</li>
+</ul>
+<h2 id="fan-yi-shuo-ming">翻译说明</h2>
+<p>直到存储节的内容都是由我自己进行翻译，但是存储之后的部分都是在翻译工具 <a href="https://www.deepl.com/translator">Deppl</a> 的基础上润色而来，如想要支持原作者请前往原文链接，或者文章底部的相关位置对作者进行支持。</p>
+<p>在此推荐这个翻译工具，翻译质量的确是比我之前使用的工具都要好很多，翻译时间也没有明显的落后。</p>
+<h2 id="yin-yan">引言</h2>
+<p>当你在例如C语言的底层语言上进行编码，你需要担心为你的整数选择正确的数据类型与限定词。在每一步中，您都需要考虑 <code>int</code> 是否足够，还是应该选择 <code>long </code>，甚至更长的 <code>long double</code> ？但是当你利用  python 进行编码时，你不需要担心这些 “不重要的” 细节，因为python支持任意大小的整数。</p>
+<p>在C语言中，当你尝试利用内置的 <code>powl</code> 函数计算 2^20000 时，将会给出 <code>inf</code> 作为输出</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>#include &lt;stdio.h&gt;
+</span><span>#include &lt;math.h&gt;
+</span><span>
+</span><span>int main(void) {
+</span><span>  printf(&quot;%Lf\n&quot;, powl(2, 20000));
+</span><span>  return 0;
+</span><span>}
+</span><span>
+</span><span>$ ./a.out
+</span><span>inf
+</span></code></pre>
+<p>但是对于python来说，真的是小菜一碟</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt;&gt;&gt; 2 ** 20000
+</span><span>39802768403379665923543072061912024537047727804924259387134 ...
+</span><span>...
+</span><span>... 6021 digits long ...
+</span><span>...
+</span><span>6309376
+</span></code></pre>
+<p>Python一定在内部做了一些美妙的事情来支持容易大小的整数，今天就让我们一探究竟吧！</p>
+<h2 id="xing-shi-yu-ding-yi">形式与定义</h2>
+<p>Python中的一个整数实际上是一个C的结构体，定义如下：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>struct _longobject {
+</span><span>    PyObject_VAR_HEAD
+</span><span>    digit ob_digit[1];
+</span><span>};
+</span></code></pre>
+<p><code>PyObject_VAR_HEAD</code> 是一个宏，这个宏将会展开成为一个 <code>PyVarObject</code> ，结构如下：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>typedef struct {
+</span><span>    PyObject ob_base;
+</span><span>    Py_ssize_t ob_size; /* Number of items in variable part */
+</span><span>} PyVarObject;
+</span></code></pre>
+<p>其他拥有 <code>PyObject_VAR_HEAD</code> 的类型是：</p>
+<ul>
+<li><code>PyBytesObject</code></li>
+<li><code>PyTupleObject</code></li>
+<li><code>PyListObject</code></li>
+</ul>
+<p>这表明一个整数，就像一个 <code>tuple</code> 或一个 <code>list</code> 一样，其长度是可变的，是我们对它如何支持巨型长整数的第一认识。 宏扩展后的 <code>_longobject</code> 可以粗略地看成视作以下定义：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>struct _longobject {
+</span><span>    PyObject ob_base;
+</span><span>    Py_ssize_t ob_size; /* Number of items in variable part */
+</span><span>    digit ob_digit[1];
+</span><span>};
+</span></code></pre>
+<p>有一些在 <code>PyObject</code> 结构体中字段,  将会在引用计数（垃圾回收）中被使用，详细讲解这些字段就需要一篇独立的文章。我们目前主要关注的字段是  <code>ob_digit</code> 和一定程度的 <code>ob_size</code>。</p>
+<h2 id="jie-ma-ob-digit">解码 <code>ob_digit</code></h2>
+<p><code>ob_size</code>表示 <code>ob_digit</code> 中实际元素的个数。为了在给数组 <code>ob_digit</code> 分配内存时更加高效，python会预留数组长度，同时依赖 <code>ob_size</code> 的值来决定实际有多少元素在数组中。</p>
+<h2 id="cun-chu">存储</h2>
+<p>存储一个整形最简单的方式是在，数组中每一个元素存储一个十进制中数的每位，然后就可像小学数学一样进行加减法等运算操作。</p>
+<p>用这种方法，数字 <code>5238</code> 将会被存储为： <code>8325</code>，如下图：
+<img src="https://user-images.githubusercontent.com/15051530/79039986-ae626f00-7c17-11ea-9d8c-9a6618f85e9c.png" alt="image" />
+这种方法效率很低，因为我们将耗费32位（uint32_t）来存储一个小数位，而实际上这个小数位的范围只有0到9，本来可以很容易地用4位来表示。写出像python这样多功能的语言，作为一个核心开发人员必须要能够更加有效的利用资源。</p>
+<p>那么，我们能不能做得更好呢？ 当然可以，否则，这篇文章在互联网上应该是没有立足之地的。下面我们就来深入了解一下python是如何存储超长整数的。</p>
+<h2 id="pythonicde-fang-shi">Pythonic的方式</h2>
+<p>python并不是在数组 <code>ob_digit</code> 的每一个项目中只存储一个十进制数字，而是将数字从基数10转换为基数2^30 ，数组中每个元素的范围是从为从0到2^30 - 1的数字。</p>
+<p>在十六进制的数字系统中，基数是16~2^4，这意味着十六进制数字的每个  <code>bit</code> 的范围是0~15。同样，对于python来说，"digit "的基数是2^30 ，这意味着它的范围也就是十进制从 <code>0 ~ 2^30 - 1= 1073741823</code>。</p>
+<p>这样一来，python几乎有效地使用了每个位数32位的分配空间，并且保持了自身的资源优势，仍然可以像小学数学一样执行加减法等操作。</p>
+<p>根据平台的不同，Python使用的是32位无符号整数组的30位数位，或者16位无符号整数组的15位数位。它需要几个位来执行操作，这些操作将在以后的一些文章中讨论。</p>
+<p>例子：1152921504606846976</p>
+<p>如前所述，对于Python来说，一个 "数字 "是基数2^30 ，因此如果将1152921504606846976转换为基数2^30，则得到100</p>
+<p>1152921504606846976 = 1 * (2^30)2 + 0 * (2^30)1 + 0 * (2^30)0</p>
+<p>由于 <code>ob_digit</code> 先将其最低位保留下来，所以它将被存储为 <code>001</code>，存储为3个不同的位数。</p>
+<p>这个值的 <code>_longobject</code> 结构将持有</p>
+<ul>
+<li></li>
+</ul>
+<p><code>ob_size </code>为 <code>3</code></p>
+<ul>
+<li></li>
+</ul>
+<p><code>ob_digit </code>为 <code>[0, 0, 1]</code></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039977-a5719d80-7c17-11ea-8163-35c93dbd28e7.png" alt="image" />
+原作者创建了一个解释器展示 <a href="https://repl.it/@arpitbbhayani/super-long-int?language=python3">demo REPL</a> ，它将输出python内部存储整数的方式，同时也有对结构成员的引用，如 <code>ob_size </code>、<code>ob_refcount </code>等。</p>
+<h1 id="da-shu-de-yun-suan">大数的运算</h1>
+<p>现在我们对python如何支持和实现任意精度整数有了一定的了解，是时候了解各种数学运算是如何在它们实现的。</p>
+<h2 id="jia-fa">加法</h2>
+<p>I整数是以 "数位为单位 "进行持久化，这意味着加法就像我们在小学时学过的那样简单，而python的源码告诉我们，它也正是这样实现的.。文件<a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c">longobject.c</a>中名为<a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3116">x_add</a>的函数执行两个数的加法。</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>...
+</span><span>    for (i = 0; i &lt; size_b; ++i) {
+</span><span>        carry += a-&gt;ob_digit[i] + b-&gt;ob_digit[i];
+</span><span>        z-&gt;ob_digit[i] = carry &amp; PyLong_MASK;
+</span><span>        carry &gt;&gt;= PyLong_SHIFT;
+</span><span>    }
+</span><span>    for (; i &lt; size_a; ++i) {
+</span><span>        carry += a-&gt;ob_digit[i];
+</span><span>        z-&gt;ob_digit[i] = carry &amp; PyLong_MASK;
+</span><span>        carry &gt;&gt;= PyLong_SHIFT;
+</span><span>    }
+</span><span>    z-&gt;ob_digit[i] = carry;
+</span><span>...
+</span></code></pre>
+<p>上面的代码片段取自 <code>x_add</code> 函数，你可以看到它在每个数位上进行迭代，执行数字加法，并计算和进位。</p>
+<blockquote>
+<p>当加法的结果是一个负数时，事情就变得有趣了。<code>ob_size</code> 的符号是整数的符号，这意味着，如果你有一个负数，那么 <code>ob_size</code> 将是负数。<code>ob_size </code>的绝对值将决定 <code>ob_digit </code>中的位数。</p>
+</blockquote>
+<h2 id="jian-fa">减法</h2>
+<p>与加法的实现方式类似，减法也是以数字为单位进行的。文件<a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3150">longobject.c</a>中名为<a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c">x_sub</a>的函数执行两个数字的减法。</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>...
+</span><span>    for (i = 0; i &lt; size_b; ++i) {
+</span><span>        borrow = a-&gt;ob_digit[i] - b-&gt;ob_digit[i] - borrow;
+</span><span>        z-&gt;ob_digit[i] = borrow &amp; PyLong_MASK;
+</span><span>        borrow &gt;&gt;= PyLong_SHIFT;
+</span><span>        borrow &amp;= 1; /* Keep only one sign bit */
+</span><span>    }
+</span><span>    for (; i &lt; size_a; ++i) {
+</span><span>        borrow = a-&gt;ob_digit[i] - borrow;
+</span><span>        z-&gt;ob_digit[i] = borrow &amp; PyLong_MASK;
+</span><span>        borrow &gt;&gt;= PyLong_SHIFT;
+</span><span>        borrow &amp;= 1; /* Keep only one sign bit */
+</span><span>    }
+</span><span>...
+</span></code></pre>
+<p>上面的代码片段来自于<code>x_sub</code>函数，你可以看到它是如何迭代数字，并执行减法，计算和借位。确实和加法很相似。</p>
+<h2 id="cheng-fa">乘法</h2>
+<p>同样，一个最简单的方法来实现乘法，就是我们在小学数学中所学的乘法，但它的效率并不高。为了保证效率，Python实现了<a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm">Karatsuba算法</a>，它可以用O( nlog23)的基本步数来实现两个n位数的乘法。</p>
+<p>这个算法略显复杂，不在本文的范围之内，但你可以在文件 <a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c">longobject.c</a> 中的 <a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3397">k_mul </a>和 <a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3618">k_lopsided_mul</a> 函数中找到它的实现。</p>
+<h2 id="chu-fa-he-qi-ta-yun-suan-cao-zuo">除法和其他运算操作</h2>
+<p>所有关于整数的操作都在文件 <a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c">longobject.c</a> 中定义了，找到并跟踪每一个操作都非常简单。警告：详细了解每一个操作都需要一些时间，所以在开始略读之前先拿些爆米花。</p>
+<h1 id="dui-jiao-chang-shi-yong-de-zheng-shu-de-you-hua">对较常使用的整数的优化</h1>
+<p>Python <a href="https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong">预先分配</a> 在-5到256的范围内的小整数。这种分配发生在初始化过程中，由于我们不能更新整数 (不变性)，所以这些预分配的整数是单整数，直接引用而不是重新分配。这意味着，每次我们使用/创建一个小整数时，python都会返回预分配的整数的引用，而不是重新分配。</p>
+<p>这种优化可以在宏 <code>IS_SMALL_INT</code> 和函数<a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L35">longobject.c</a>中的函数<a href="https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L43">get_small_int</a>中找到。这样python可以为常用的整数节省大量的空间和计算量。</p>
+<hr />
+<p>这是《Python内部》系列的第二篇文章。第一篇文章是<a href="https://arpitbhayani.me/blogs/i-changed-my-python">我是如何改变我的Python并让它变得可疑的</a>，它帮助你迈出了Python源代码的第一步，为你成为Python核心开发者铺平了道路。</p>
+<p>如果你想看更多这样的文章，请订阅我的时事通讯，并将文章直接发送到你的收件箱。我每周五都会写一些关于工程、系统设计和编程的文章。给原作者点赞<a href="https://twitter.com/arpit_bhayani">@arpit_bhayani</a>。你可以找到原作者之前的文章<a href="https://arpitbhayani.me/blogs">@arpitbhayani.me/blogs</a>。</p>
+
+
+
+<noscript>
+    This is where the comments would load if you enabled JavaScript.
+</noscript>
+<script src="https://utteranc.es/client.js"
+        repo="livexia/ghost.livexia.xyz"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </article>
+            
+
+<nav class="toc">
+    <h4>目录</h4>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#wen-zhang-shuo-ming">文章说明</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#fan-yi-shuo-ming">翻译说明</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#yin-yan">引言</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#xing-shi-yu-ding-yi">形式与定义</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#jie-ma-ob-digit">解码 ob_digit</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#cun-chu">存储</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#pythonicde-fang-shi">Pythonic的方式</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#da-shu-de-yun-suan">大数的运算</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#jia-fa">加法</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#jian-fa">减法</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#cheng-fa">乘法</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#chu-fa-he-qi-ta-yun-suan-cao-zuo">除法和其他运算操作</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;how-python-implements-super-long-integers&#x2F;#dui-jiao-chang-shi-yong-de-zheng-shu-de-you-hua">对较常使用的整数的优化</a>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+
+        </main>
+    </body>
+</html>

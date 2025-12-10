@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+    
+    
+        
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <title>构建二叉树解决Advent of Code 2021 18天</title>
+        <link rel="stylesheet" href="https://ghost.livexia.xyz/style.css?2"/>
+        <link rel="icon" href="https://ghost.livexia.xyz/icon.png"/>
+        <link rel="canonical" href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;"/>
+        <link rel="alternate" type="application/rss+xml" title="Just Some Ramblings" href="/rss.xml">
+        
+<meta property="og:type" content="article">
+
+        <meta property="og:title" content="构建二叉树解决Advent of Code 2021 18天">
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;">
+        <meta property="og:image" content="https://ghost.livexia.xyz/icon.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125980270-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-125980270-1');
+        </script>
+    </head>
+    <body class="theme-default">
+        <header>
+            <div class="nav-content main-column">
+                <!-- <div class="icon"> -->
+                <!--     <a href="/"> -->
+                <!--         <img id="icon" src="/icon.png"> -->
+                <!--     </a> -->
+                <!-- </div> -->
+                <div class="header-nav"> 
+                    <a href="/">
+                        <span>livexia</span>
+                    </a>
+                </div>
+
+                <div class="header-nav"> 
+                    <a href="/tags/reading">
+                      <span>reading</span>
+                    </a>
+                </div>
+                <div class="header-nav btn">
+                    <a href="/tags">
+                      <span>tags</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
+                    <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></i></a>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <article>
+                
+<h1 class="title">
+  构建二叉树解决Advent of Code 2021 18天
+</h1>
+
+<div class="page-metadata">
+[Coding]
+Posted on Dec 28, 2021
+
+&middot; 11 minute read
+</div>
+
+<p>记录在2021.12.28日，利用 Rust 构建二叉树解决 Advent of Code 2021 18天。</p>
+<p>代码仓库：<a href="https://github.com/livexia/advent-of-code-2021/blob/main/aoc18">livexia/advent-of-code-2021 Day 18</a></p>
+<p>Advent of Code 网站：<a href="https://adventofcode.com/2021/day/18">Advent of Code 2021 Day 18</a></p>
+<hr />
+<p>在题目最初放出的时候，我曾就考虑过利用构建树来解决。但是那个时候我没有足够的耐心来理清楚所有的所有权的情况，于是最后我选择使用字符串解析的方式来完成。</p>
+<h2 id="shu-jie-gou">树结构</h2>
+<p>根据题目所要求的，对于每个二叉树的节点的成员如下：</p>
+<ol>
+<li>可能有或者没有value</li>
+<li>可能有或者没有左、右子节点</li>
+<li>需要记录树的高度（深度）</li>
+</ol>
+<p>所以我们可以这样描述树节点：(<code>Int</code> 是我指定的 <code>u8</code> 的别名)</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">struct </span><span>Number {
+</span><span>    </span><span style="color:#bf616a;">value</span><span>: Option&lt;Int&gt;,
+</span><span>    </span><span style="color:#bf616a;">left</span><span>: Option&lt;Box&lt;Number&gt;&gt;,
+</span><span>    </span><span style="color:#bf616a;">right</span><span>: Option&lt;Box&lt;Number&gt;&gt;,
+</span><span>    </span><span style="color:#bf616a;">height</span><span>: </span><span style="color:#b48ead;">usize</span><span>,
+</span><span>}
+</span></code></pre>
+<p>因为 Rust 无法确定一个结构体递归的包含自己时的大小，所以需要用 Box 将左右节点进行包装，也就是说编译器在编译的时候，知道这里是一个指针（Box）。在写这篇文章的时候， 我查到还有利用数组进行构造二叉树的情况。参见：<a href="https://users.rust-lang.org/t/when-to-use-arrays-and-when-to-box-trees/24805">When to use arrays and when to box trees?</a></p>
+<h2 id="jie-xi-zi-fu-chuan-gou-zao-shu-jie-dian">解析字符串构造树节点</h2>
+<h3 id="zi-fu-chuan-yu-chu-li">字符串预处理</h3>
+<p>读入的数据为字符串，每一行为一个数字。将字符串的每个字符转为对应的数字，并进行倒叙存储。</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">from_str</span><span>(</span><span style="color:#bf616a;">s</span><span>: &amp;</span><span style="color:#b48ead;">str</span><span>) -&gt; Result&lt;Option&lt;Box&lt;</span><span style="color:#b48ead;">Self</span><span>&gt;&gt;&gt; {
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> stack: Vec&lt;</span><span style="color:#b48ead;">u8</span><span>&gt; = s
+</span><span>        .</span><span style="color:#96b5b4;">bytes</span><span>()
+</span><span>        .</span><span style="color:#96b5b4;">filter</span><span>(|</span><span style="color:#bf616a;">c</span><span>| !c.</span><span style="color:#96b5b4;">is_ascii_whitespace</span><span>())
+</span><span>        .</span><span style="color:#96b5b4;">rev</span><span>()
+</span><span>        .</span><span style="color:#96b5b4;">collect</span><span>();
+</span><span>    stack.</span><span style="color:#96b5b4;">pop</span><span>();
+</span><span>    Ok(Number::from_stack(&amp;</span><span style="color:#b48ead;">mut</span><span> stack))
+</span><span>}
+</span></code></pre>
+<h3 id="di-gui-sheng-cheng-shu">递归生成树</h3>
+<p>弹出栈内容（这个时候弹出顺序应该是初始字符串的倒叙），针对所有可能的字符有如下的处理方式：</p>
+<ol>
+<li>‘[’ as u8：存在子节点，将剩余栈递归传入。</li>
+<li>‘]’ as u8：当前节点所有成员构造完成，返回当前节点。</li>
+<li>‘,’ as u8：当前节点只完成了左节点构造，仍需等待右节点。</li>
+<li>数字：是当前节点的一个不存在左右节点，但是value为数字值的子节点（叶子节点）。</li>
+</ol>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">from_stack</span><span>(</span><span style="color:#bf616a;">stack</span><span>: &amp;</span><span style="color:#b48ead;">mut </span><span>Vec&lt;</span><span style="color:#b48ead;">u8</span><span>&gt;) -&gt; Option&lt;Box&lt;</span><span style="color:#b48ead;">Self</span><span>&gt;&gt; {
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> number = Number::new(None, None, None);
+</span><span>    </span><span style="color:#b48ead;">while let </span><span>Some(b) = stack.</span><span style="color:#96b5b4;">pop</span><span>() {
+</span><span>        </span><span style="color:#b48ead;">if</span><span> b == &#39;</span><span style="color:#a3be8c;">]</span><span>&#39; as </span><span style="color:#b48ead;">u8 </span><span>{
+</span><span>            </span><span style="color:#b48ead;">break</span><span>;
+</span><span>        } </span><span style="color:#b48ead;">else if</span><span> b == &#39;</span><span style="color:#a3be8c;">,</span><span>&#39; as </span><span style="color:#b48ead;">u8 </span><span>{
+</span><span>            </span><span style="color:#b48ead;">continue</span><span>;
+</span><span>        } </span><span style="color:#b48ead;">else if</span><span> b == &#39;</span><span style="color:#a3be8c;">[</span><span>&#39; as </span><span style="color:#b48ead;">u8 </span><span>{
+</span><span>            number.</span><span style="color:#96b5b4;">add_child</span><span>(Number::from_stack(stack));
+</span><span>        } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>            number.</span><span style="color:#96b5b4;">add_child</span><span>(Some(Box::new(Number::with_value(b - &#39;</span><span style="color:#a3be8c;">0</span><span>&#39; as </span><span style="color:#b48ead;">u8</span><span>))));
+</span><span>        }
+</span><span>    }
+</span><span>    number.</span><span style="color:#96b5b4;">update_height</span><span>();
+</span><span>    Some(Box::new(number))
+</span><span>}
+</span></code></pre>
+<h3 id="zeng-jia-zi-jie-dian">增加子节点</h3>
+<p>因为是倒叙弹出，那么每次增加节点的时候，必然是先增加左节点，然后是右节点，然后返回当前节点。</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">add_child</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">child</span><span>: Option&lt;Box&lt;Number&gt;&gt;) {
+</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.left.</span><span style="color:#96b5b4;">is_none</span><span>() {
+</span><span>        </span><span style="color:#bf616a;">self</span><span>.left = child
+</span><span>    } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>        </span><span style="color:#bf616a;">self</span><span>.right = child
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h3 id="ji-lu-shen-du">记录深度</h3>
+<p>因为后续需要根据节点深度判断是否进行操作，所以我选择以根节点深度为0，而叶子节点的深度最大的形式来存储节点深度。递归的对子树的深度进行更新。</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">update_height</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">if let </span><span>Some(left) = </span><span style="color:#bf616a;">self</span><span>.left.</span><span style="color:#96b5b4;">as_mut</span><span>() {
+</span><span>        left.height = </span><span style="color:#bf616a;">self</span><span>.height + </span><span style="color:#d08770;">1</span><span>;
+</span><span>        left.</span><span style="color:#96b5b4;">update_height</span><span>();
+</span><span>    }
+</span><span>    </span><span style="color:#b48ead;">if let </span><span>Some(right) = </span><span style="color:#bf616a;">self</span><span>.right.</span><span style="color:#96b5b4;">as_mut</span><span>() {
+</span><span>        right.height = </span><span style="color:#bf616a;">self</span><span>.height + </span><span style="color:#d08770;">1</span><span>;
+</span><span>        right.</span><span style="color:#96b5b4;">update_height</span><span>();
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h2 id="dui-shu-jin-xing-bao-zha">对树进行爆炸</h2>
+<p>根据题目的说明，理论上只有当节点的两个子节点都是叶子节点时才会出现爆炸的情况。</p>
+<p>爆炸处理，就是当一个节点的高度大于3（从0开始）的时候，需要将该节点左子树的值给该子树左边最近的叶子节点，该节点右子树的值给该子树右边最近的叶子节点。对于树的遍历，存在前序、中序、后序和层次遍历四种，其中前序、中序、后序中大致都是先遍历左子树，然后遍历右子树的顺序，理论上在这里选择任意一种都无所谓，因为无论是哪一种情况都需要更新最新的最左边的节点。而层次遍历并无法针对题目的要求有何优点，不考虑。</p>
+<p>针对当前节点深度大于3的情况，那么需要将当前节点的左子树的值传给最近的左子树，如果是从左到右的顺序，那么理论上我们可以更新一个变量，这个变量记录最左边的叶子节点的地址，因为需要对这个叶子节点进行修改，所以需要是 <code>mut</code> 。理论上，当前节点爆炸之后，当前节点无论再何种情况下都是会变成值为0的叶子节点。</p>
+<p>假如当前的节点深度小于4，那么针对左右子树进行递归的搜索即可。针对题目的要求，每一次最多只有一个节点会爆炸，所以传递一个变量 exploded 记录是否已经出现过爆炸，如果已经出现过，那么不再进行爆炸。实际上假如不加入这个变量，那么在处于同一棵树下的两个子树的深度都大于3的情况时，会导致两次爆炸进行干扰。</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">explode</span><span>&lt;</span><span style="color:#b48ead;">&#39;a</span><span>&gt;(
+</span><span>    &amp;</span><span style="color:#b48ead;">&#39;a mut </span><span style="color:#bf616a;">self</span><span>,
+</span><span>    </span><span style="color:#bf616a;">leftmost</span><span>: Option&lt;&amp;</span><span style="color:#b48ead;">&#39;a mut </span><span>Option&lt;Box&lt;Number&gt;&gt;&gt;,
+</span><span>    </span><span style="color:#bf616a;">right_value</span><span>: Option&lt;</span><span style="color:#b48ead;">u8</span><span>&gt;,
+</span><span>    </span><span style="color:#bf616a;">exploded</span><span>: </span><span style="color:#b48ead;">bool</span><span>,
+</span><span>) -&gt; (Option&lt;&amp;</span><span style="color:#b48ead;">&#39;a mut </span><span>Option&lt;Box&lt;Number&gt;&gt;&gt;, Option&lt;</span><span style="color:#b48ead;">u8</span><span>&gt;, </span><span style="color:#b48ead;">bool</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.height &gt; </span><span style="color:#d08770;">3 </span><span>&amp;&amp; !exploded {
+</span><span>        </span><span style="color:#b48ead;">let</span><span> right_value = </span><span style="color:#bf616a;">self</span><span>.right.</span><span style="color:#96b5b4;">take</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>().value;
+</span><span>        </span><span style="color:#bf616a;">self</span><span>.value = Some(</span><span style="color:#d08770;">0</span><span>);
+</span><span>        </span><span style="color:#b48ead;">if let </span><span>Some(left_value) = </span><span style="color:#bf616a;">self</span><span>.left.</span><span style="color:#96b5b4;">take</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>().value {
+</span><span>            </span><span style="color:#b48ead;">if let </span><span>Some(Some(leftmost)) = leftmost {
+</span><span>                </span><span style="color:#b48ead;">if let </span><span>Some(value) = leftmost.value {
+</span><span>                    leftmost.value = Some(value + left_value);
+</span><span>                }
+</span><span>            }
+</span><span>        }
+</span><span>        (None, right_value, </span><span style="color:#d08770;">true</span><span>)
+</span><span>    } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>        </span><span style="color:#b48ead;">let </span><span>(leftmost, right_value, exploded) =
+</span><span>            Number::find_right(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>.left, leftmost, right_value, exploded);
+</span><span>        </span><span style="color:#b48ead;">let </span><span>(leftmost, right_value, exploded) =
+</span><span>            Number::find_right(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>.right, leftmost, right_value, exploded);
+</span><span>        (leftmost, right_value, exploded)
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<p>那么如何找到右边的第一个叶子节点呢？继续进行遍历，找到的第一个叶子节点就是当前节点右边的第一个子树。当找到时，修改该叶子节点的值。假如当前节点不是叶子节点时，对当前节点进行爆炸操作。</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">find_right</span><span>&lt;</span><span style="color:#b48ead;">&#39;a</span><span>&gt;(
+</span><span>    </span><span style="color:#bf616a;">child</span><span>: &amp;</span><span style="color:#b48ead;">&#39;a mut </span><span>Option&lt;Box&lt;Number&gt;&gt;,
+</span><span>    </span><span style="color:#bf616a;">leftmost</span><span>: Option&lt;&amp;</span><span style="color:#b48ead;">&#39;a mut </span><span>Option&lt;Box&lt;Number&gt;&gt;&gt;,
+</span><span>    </span><span style="color:#bf616a;">right_value</span><span>: Option&lt;</span><span style="color:#b48ead;">u8</span><span>&gt;,
+</span><span>    </span><span style="color:#bf616a;">exploded</span><span>: </span><span style="color:#b48ead;">bool</span><span>,
+</span><span>) -&gt; (Option&lt;&amp;</span><span style="color:#b48ead;">&#39;a mut </span><span>Option&lt;Box&lt;Number&gt;&gt;&gt;, Option&lt;</span><span style="color:#b48ead;">u8</span><span>&gt;, </span><span style="color:#b48ead;">bool</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">let</span><span> value = right_value.</span><span style="color:#96b5b4;">clone</span><span>();
+</span><span>    </span><span style="color:#b48ead;">if</span><span> child.</span><span style="color:#96b5b4;">as_ref</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>().value.</span><span style="color:#96b5b4;">is_some</span><span>() {
+</span><span>        </span><span style="color:#b48ead;">if let </span><span>Some(value) = value {
+</span><span>            child.</span><span style="color:#96b5b4;">as_mut</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>().value =
+</span><span>                Some(child.</span><span style="color:#96b5b4;">as_ref</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>().value.</span><span style="color:#96b5b4;">unwrap</span><span>() + value);
+</span><span>            (leftmost, None, exploded)
+</span><span>        } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>            (Some(child), right_value, exploded)
+</span><span>        }
+</span><span>    } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>        child
+</span><span>            .</span><span style="color:#96b5b4;">as_mut</span><span>()
+</span><span>            .</span><span style="color:#96b5b4;">unwrap</span><span>()
+</span><span>            .</span><span style="color:#96b5b4;">explode</span><span>(leftmost, right_value, exploded)
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h2 id="dui-shu-jin-xing-fen-lie">对树进行分裂</h2>
+<p>假如当前树存在叶子节点的值大于9的时候，需要对该叶子节点进行分裂。注意每次分裂，根据题目要求，只能对一个叶子节点进行分裂。</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">split</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>) -&gt; </span><span style="color:#b48ead;">bool </span><span>{
+</span><span>    </span><span style="color:#b48ead;">if let </span><span>Some(value) = </span><span style="color:#bf616a;">self</span><span>.value {
+</span><span>        </span><span style="color:#b48ead;">if</span><span> value &gt; </span><span style="color:#d08770;">9 </span><span>{
+</span><span>            </span><span style="color:#b48ead;">let</span><span> left_value = value / </span><span style="color:#d08770;">2</span><span>;
+</span><span>            </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#96b5b4;">add_child</span><span>(Some(Box::new(Number::with_value(left_value))));
+</span><span>            </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#96b5b4;">add_child</span><span>(Some(Box::new(Number::with_value(value - left_value))));
+</span><span>            </span><span style="color:#bf616a;">self</span><span>.value = None;
+</span><span>            </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#96b5b4;">update_height</span><span>();
+</span><span>            </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">true</span><span>;
+</span><span>        }
+</span><span>        </span><span style="color:#d08770;">false
+</span><span>    } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>        </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.left.</span><span style="color:#96b5b4;">as_mut</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>().</span><span style="color:#96b5b4;">split</span><span>() {
+</span><span>            </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">true</span><span>;
+</span><span>        }
+</span><span>        </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">self</span><span>.right.</span><span style="color:#96b5b4;">as_mut</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>().</span><span style="color:#96b5b4;">split</span><span>() {
+</span><span>            </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">true</span><span>;
+</span><span>        }
+</span><span>        </span><span style="color:#d08770;">false
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h2 id="reducecao-zuo">Reduce操作</h2>
+<p>Reduce的流程是，不停的进行爆炸，直到树的深度都不大于3的时候，对树进行分裂，当树无法爆炸和分裂的时候，reduce完成。</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">reduce</span><span>(&amp;</span><span style="color:#b48ead;">mut </span><span style="color:#bf616a;">self</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> reduced = </span><span style="color:#d08770;">false</span><span>;
+</span><span>    </span><span style="color:#b48ead;">while </span><span>!reduced {
+</span><span>        </span><span style="color:#b48ead;">let</span><span> result = </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#96b5b4;">explode</span><span>(None, None, </span><span style="color:#d08770;">false</span><span>);
+</span><span>        </span><span style="color:#b48ead;">if</span><span> result.</span><span style="color:#d08770;">2 </span><span>{
+</span><span>            reduced = </span><span style="color:#d08770;">false</span><span>;
+</span><span>            </span><span style="color:#b48ead;">continue</span><span>;
+</span><span>        }
+</span><span>        reduced = !</span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#96b5b4;">split</span><span>();
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h2 id="ji-suan-magnitude">计算magnitude</h2>
+<p>假如当前节点是叶子节点，直接返回节点的值。节点的magnitude，是左节点magnitude的3倍和右节点magnitude的2倍的和。递归进行计算即可。</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">calc_magnitude</span><span>(&amp;</span><span style="color:#bf616a;">self</span><span>) -&gt; </span><span style="color:#b48ead;">i32 </span><span>{
+</span><span>    </span><span style="color:#b48ead;">if let </span><span>Some(value) = </span><span style="color:#bf616a;">self</span><span>.value {
+</span><span>        </span><span style="color:#b48ead;">return</span><span> value as </span><span style="color:#b48ead;">i32</span><span>;
+</span><span>    }
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> result = </span><span style="color:#d08770;">0</span><span>;
+</span><span>    result += </span><span style="color:#d08770;">3 </span><span>* </span><span style="color:#bf616a;">self</span><span>.left.</span><span style="color:#96b5b4;">as_ref</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>().</span><span style="color:#96b5b4;">calc_magnitude</span><span>();
+</span><span>    result += </span><span style="color:#d08770;">2 </span><span>* </span><span style="color:#bf616a;">self</span><span>.right.</span><span style="color:#96b5b4;">as_ref</span><span>().</span><span style="color:#96b5b4;">unwrap</span><span>().</span><span style="color:#96b5b4;">calc_magnitude</span><span>();
+</span><span>
+</span><span>    result
+</span><span>}
+</span></code></pre>
+<h2 id="zong-jie">总结</h2>
+<p>这次花了大概8个小时完成了这个遗留的任务，现在完成了反过来看，倒是没有那么复杂了。最复杂的地方就是爆炸遍历树的时候，需要记录并修改已经遍历过的节点，这就难倒了我。通过这次的重复练习，我对 Rust 中关于所有权和生命周期的理解更深了一点，对于利用迭代解决问题的思维更加熟悉了。</p>
+<p><strong>针对涉及到的所有权和生命周期的几个小点：</strong></p>
+<ol>
+<li>
+<p>对于 <code>Option&lt;Box&lt;TreeNode&gt;&gt;</code> 这样的节点 <code>node</code> ，假如需要修改这个节点，那么需要使用 <code>node.as_mut().unwrap()</code> 取得 <code>&amp;mut Box&lt;TreeNode&gt;</code></p>
+</li>
+<li>
+<p>对于需要取得子节点的值，并设子节点为 <code>None</code> 的情况，可以使用 <code>take</code> 。这个时候的子节点的所有权就从节点中取得了，子节点生命周期不再同节点有关。</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">let</span><span> node = Some(Box::new(TreeNode::new()));
+</span><span style="color:#b48ead;">let</span><span> left = node.left.</span><span style="color:#96b5b4;">take</span><span>();    </span><span style="color:#65737e;">// node.left.is_none();
+</span></code></pre>
+</li>
+<li>
+<p>对于需要将引用作为函数参数的情况中，不用害怕加上生命周期标志，特别是需要修改子树的情况中。</p>
+</li>
+</ol>
+<p><strong>对于涉及到递归的情况：</strong></p>
+<ol>
+<li>注意递归在什么情况下会停止
+<ol>
+<li>在计算深度的时候，当不存在子节点的时候，递归就不再深入了。</li>
+<li>在计算magnitude的情况中，当遇到叶子节点的时候，递归就不再深入了。</li>
+<li>在进行分裂的情况中，当分裂已经发生时，递归就不再深入了。</li>
+<li>在爆炸过程中，当左右叶子节点的值都耗尽时，递归就不再深入了。但是为了方便，我利用变量 exploded 来表示，实际上当爆炸发生过后，实际上递归就不再深入了。</li>
+</ol>
+</li>
+<li>当前状态和下一个状态的关系
+<ol>
+<li>在计算深度的时候，子节点的深度是父节点的深度加一。</li>
+<li>在计算magnitude的情况中，父节点的magnitude是子节点的magnitude计算而来。</li>
+<li>在进行分裂的情况中，叶子节点的构造取决于父节点的值。</li>
+<li>在爆炸过程中，下一个叶子节点的值需要加上当前节点的右叶子节点的值。对于左叶子，实际上是当前的左叶子的引用是由上一个状态更新的引用值。</li>
+</ol>
+</li>
+</ol>
+<h2 id="can-kao">参考</h2>
+<ol>
+<li><a href="https://gist.github.com/aidanhs/5ac9088ca0f6bdd4a370">https://gist.github.com/aidanhs/5ac9088ca0f6bdd4a370</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86">https://zh.wikipedia.org/wiki/树的遍历</a></li>
+<li><a href="https://users.rust-lang.org/t/when-to-use-arrays-and-when-to-box-trees/24805/1">https://users.rust-lang.org/t/when-to-use-arrays-and-when-to-box-trees/24805/1</a></li>
+</ol>
+
+
+
+<noscript>
+    This is where the comments would load if you enabled JavaScript.
+</noscript>
+<script src="https://utteranc.es/client.js"
+        repo="livexia/ghost.livexia.xyz"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </article>
+            
+
+<nav class="toc">
+    <h4>目录</h4>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#shu-jie-gou">树结构</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#jie-xi-zi-fu-chuan-gou-zao-shu-jie-dian">解析字符串构造树节点</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#zi-fu-chuan-yu-chu-li">字符串预处理</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#di-gui-sheng-cheng-shu">递归生成树</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#zeng-jia-zi-jie-dian">增加子节点</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#ji-lu-shen-du">记录深度</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#dui-shu-jin-xing-bao-zha">对树进行爆炸</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#dui-shu-jin-xing-fen-lie">对树进行分裂</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#reducecao-zuo">Reduce操作</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#ji-suan-magnitude">计算magnitude</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#zong-jie">总结</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;build-a-binary-tree-to-solve-aoc-ay18&#x2F;#can-kao">参考</a>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+
+        </main>
+    </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+    
+    
+        
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <title>Percolation</title>
+        <link rel="stylesheet" href="https://ghost.livexia.xyz/style.css?2"/>
+        <link rel="icon" href="https://ghost.livexia.xyz/icon.png"/>
+        <link rel="canonical" href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;percolation&#x2F;"/>
+        <link rel="alternate" type="application/rss+xml" title="Just Some Ramblings" href="/rss.xml">
+        
+<meta property="og:type" content="article">
+
+        <meta property="og:title" content="Percolation">
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;percolation&#x2F;">
+        <meta property="og:image" content="https://ghost.livexia.xyz/icon.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125980270-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-125980270-1');
+        </script>
+    </head>
+    <body class="theme-default">
+        <header>
+            <div class="nav-content main-column">
+                <!-- <div class="icon"> -->
+                <!--     <a href="/"> -->
+                <!--         <img id="icon" src="/icon.png"> -->
+                <!--     </a> -->
+                <!-- </div> -->
+                <div class="header-nav"> 
+                    <a href="/">
+                        <span>livexia</span>
+                    </a>
+                </div>
+
+                <div class="header-nav"> 
+                    <a href="/tags/reading">
+                      <span>reading</span>
+                    </a>
+                </div>
+                <div class="header-nav btn">
+                    <a href="/tags">
+                      <span>tags</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
+                    <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></i></a>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <article>
+                
+<h1 class="title">
+  Percolation
+</h1>
+
+<div class="page-metadata">
+[Coding]
+Posted on Apr  5, 2019
+
+&middot; 5 minute read
+</div>
+
+<p>Java基础：</p>
+<p>关键点：</p>
+<p>时间复杂度：允许Backwash时间复杂度下降，所有Memory/Timing Test passed，但是会有部分测试安利错误。出现原因，当系统已经渗透成功，如果最底层存在open sites，所有open sites都会被标记为full，无论其是否与top连接。</p>
+<h4 id="yao-qiu-fen-xi-xian-zhi">要求分析/限制：</h4>
+<p>主要包含两个实验（Java Class），第一个是渗透模型具体API限制如下。</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>public class Percolation {
+</span><span>   public Percolation(int n)                // create n-by-n grid, with all sites blocked
+</span><span>   public    void open(int row, int col)    // open site (row, col) if it is not open already
+</span><span>   public boolean isOpen(int row, int col)  // is site (row, col) open?
+</span><span>   public boolean isFull(int row, int col)  // is site (row, col) full?
+</span><span>   public     int numberOfOpenSites()       // number of open sites
+</span><span>   public boolean percolates()              // does the system percolate?
+</span><span>
+</span><span>   public static void main(String[] args)   // test client (optional)
+</span><span>}
+</span></code></pre>
+<p>第二个是蒙特卡洛模拟（Monte Carlo simulation），模拟是为了探究当一个，具体API限制如下。</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>public class PercolationStats {
+</span><span>   public PercolationStats(int n, int trials)    // perform trials independent experiments on an n-by-n grid
+</span><span>   public double mean()                          // sample mean of percolation threshold
+</span><span>   public double stddev()                        // sample standard deviation of percolation threshold
+</span><span>   public double confidenceLo()                  // low  endpoint of 95% confidence interval
+</span><span>   public double confidenceHi()                  // high endpoint of 95% confidence interval
+</span><span>
+</span><span>   public static void main(String[] args)        // test client (described below)
+</span><span>}
+</span></code></pre>
+<ul>
+<li>方法II：95/100，错误3</li>
+</ul>
+<h4 id="yu-dao-wen-ti">遇到问题：</h4>
+<p>Backwash解决方法：</p>
+<ol>
+<li>利用两个WQUF（路径压缩的带权并查集），第一个含有一个虚拟Top、Bottom，该wquf可以快速判断是否渗透。第二个wquf只含虚拟Top，不会出现Backwash，在判断isFull的时候，利用第二个wquf来判断。缺点：内存/时间复杂度翻倍。</li>
+<li>直接取消虚拟Bottom，判断是否渗透时，循环扫描Bottom line的每一个site是否连接到Top。缺点时间复杂度大大增加，请求wquf中find方法的数量大大增加。</li>
+<li>修改WQUF，在每一个site中存储一个“状态码”，状态码代表其是否连接到虚拟Top或者虚拟Bottom，每次union都更新该状态，当且仅当某一同时含有Top/Bottom时渗透发生。参见@sigmainfy的方法。参见示例代码II。</li>
+</ol>
+<p>Java示例代码I：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>import edu.princeton.cs.algs4.In;
+</span><span>import edu.princeton.cs.algs4.StdOut;
+</span><span>import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+</span><span>
+</span><span>// way2.Use both virtual bottom and top, backwash exists
+</span><span>// score 95/100
+</span><span>//Correctness:  30/33 tests passed
+</span><span>//Memory:       8/8 tests passed
+</span><span>//Timing:       20/20 tests passed
+</span><span>public class Percolation {
+</span><span>    private boolean[][] g;
+</span><span>    private int count;
+</span><span>    private int opensites;
+</span><span>    private WeightedQuickUnionUF weightedQuickUnionUF;
+</span><span>
+</span><span>    public Percolation(int n) {
+</span><span>        if (n &lt;= 0) {
+</span><span>            throw new IllegalArgumentException(&quot;outside its prescribed range&quot;);
+</span><span>        }
+</span><span>        count = n;
+</span><span>        g = new boolean[n + 1][n + 1];
+</span><span>        weightedQuickUnionUF = new WeightedQuickUnionUF(n * n + 2);
+</span><span>        for (int i = 1; i &lt; n + 1; i++) {
+</span><span>            for (int j = 1; j &lt; n + 1; j++) {
+</span><span>                g[i][j] = false;
+</span><span>            }
+</span><span>        }
+</span><span>    }
+</span><span>
+</span><span>    public void open(int row, int col) {
+</span><span>        if (!isOpen(row, col)) {
+</span><span>            g[row][col] = true;
+</span><span>            if (row == 1)
+</span><span>                weightedQuickUnionUF.union(0, (row - 1) * count + col);
+</span><span>            if (row == count)
+</span><span>                weightedQuickUnionUF.union(count*count+1, (row - 1) * count + col);
+</span><span>            if (row&gt;1 &amp;&amp; isOpen(row - 1, col))
+</span><span>                weightedQuickUnionUF.union((row - 1) * count + col, (row - 2) * count + col);
+</span><span>            if (row&lt;count &amp;&amp; isOpen(row + 1, col))
+</span><span>                weightedQuickUnionUF.union((row - 1) * count + col, row * count + col);
+</span><span>            if (col&gt;1 &amp;&amp; isOpen(row, col - 1))
+</span><span>                weightedQuickUnionUF.union((row - 1) * count + col, (row - 1) * count + col - 1);
+</span><span>            if (col &lt; count &amp;&amp; isOpen(row, col + 1))
+</span><span>                weightedQuickUnionUF.union((row - 1) * count + col, (row - 1) * count + col + 1);
+</span><span>            opensites += 1;
+</span><span>        }
+</span><span>    }
+</span><span>
+</span><span>    public boolean isOpen(int row, int col) {
+</span><span>        if (row &gt;= 1 &amp;&amp; row &lt;= count &amp;&amp; col &gt;= 1 &amp;&amp; col &lt;= count)
+</span><span>            return g[row][col];
+</span><span>        else {
+</span><span>            throw new IllegalArgumentException(row + &quot;,&quot; + col + &quot; outside its prescribed range&quot;);
+</span><span>        }
+</span><span>    }
+</span><span>
+</span><span>    public boolean isFull(int row, int col) {
+</span><span>        if (row &gt;= 1 &amp;&amp; row &lt;= count &amp;&amp; col &gt;= 1 &amp;&amp; col &lt;= count)
+</span><span>            return weightedQuickUnionUF.connected(0, (row - 1) * count + col);
+</span><span>        else {
+</span><span>            throw new IllegalArgumentException(row + &quot;,&quot; + col + &quot; outside its prescribed range&quot;);
+</span><span>        }
+</span><span>    }
+</span><span>
+</span><span>    public int numberOfOpenSites() {
+</span><span>        return opensites;
+</span><span>    }
+</span><span>
+</span><span>    public boolean percolates() {
+</span><span>        return weightedQuickUnionUF.connected(0, count*count+1);
+</span><span>    }
+</span><span>
+</span><span>    public static void main(String[] args) {
+</span><span>        In in = new In(args[0]);      // input file
+</span><span>        int n = in.readInt();
+</span><span>        Percolation percolation = new Percolation(n);
+</span><span>        while (!in.isEmpty()) {
+</span><span>            int row = in.readInt();
+</span><span>            int col = in.readInt();
+</span><span>            percolation.open(row, col);
+</span><span>            StdOut.println(&quot;isPercolates: &quot; + percolation.percolates());
+</span><span>        }
+</span><span>    }
+</span><span>}
+</span></code></pre>
+
+
+
+<noscript>
+    This is where the comments would load if you enabled JavaScript.
+</noscript>
+<script src="https://utteranc.es/client.js"
+        repo="livexia/ghost.livexia.xyz"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </article>
+            
+
+<nav class="toc">
+    <h4>目录</h4>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;percolation&#x2F;#yao-qiu-fen-xi-xian-zhi">要求分析&#x2F;限制：</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;percolation&#x2F;#yu-dao-wen-ti">遇到问题：</a>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+
+        </main>
+    </body>
+</html>

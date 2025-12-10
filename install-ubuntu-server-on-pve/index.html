@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+    
+    
+        
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <title>PVE后续使用记录Part1-UbuntuServer</title>
+        <link rel="stylesheet" href="https://ghost.livexia.xyz/style.css?2"/>
+        <link rel="icon" href="https://ghost.livexia.xyz/icon.png"/>
+        <link rel="canonical" href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;install-ubuntu-server-on-pve&#x2F;"/>
+        <link rel="alternate" type="application/rss+xml" title="Just Some Ramblings" href="/rss.xml">
+        
+<meta property="og:type" content="article">
+
+        <meta property="og:title" content="PVE后续使用记录Part1-UbuntuServer">
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;install-ubuntu-server-on-pve&#x2F;">
+        <meta property="og:image" content="https://ghost.livexia.xyz/icon.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125980270-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-125980270-1');
+        </script>
+    </head>
+    <body class="theme-default">
+        <header>
+            <div class="nav-content main-column">
+                <!-- <div class="icon"> -->
+                <!--     <a href="/"> -->
+                <!--         <img id="icon" src="/icon.png"> -->
+                <!--     </a> -->
+                <!-- </div> -->
+                <div class="header-nav"> 
+                    <a href="/">
+                        <span>livexia</span>
+                    </a>
+                </div>
+
+                <div class="header-nav"> 
+                    <a href="/tags/reading">
+                      <span>reading</span>
+                    </a>
+                </div>
+                <div class="header-nav btn">
+                    <a href="/tags">
+                      <span>tags</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
+                    <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></i></a>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <article>
+                
+<h1 class="title">
+  PVE后续使用记录Part1-UbuntuServer
+</h1>
+
+<div class="page-metadata">
+[Tech]
+Posted on Apr 11, 2020
+
+&middot; 5 minute read
+</div>
+
+<h2 id="an-zhuang-ubuntu-server-18-04">安装Ubuntu Server 18.04</h2>
+<p>需要使用Linux的环境来部署一些工具，由于这些工具对Ubuntu的支持都较为良好，所以选用Ubuntu Server.</p>
+<h3 id="xia-zai">下载</h3>
+<p>可以在ubnutu的官网进行下载，虽然官网会根据地区自动优化下载镜像源，不过在这里还是推荐直接在国内的镜像源上下载镜像，保证高速下载，在此给出：<a href="https://mirror.tuna.tsinghua.edu.cn/ubuntu-releases/bionic/ubuntu-18.04.4-live-server-amd64.iso">清华大学镜像源的下载地址</a></p>
+<p><strong>注意下载完的镜像需要上传到pve的存储中，或者在pve上利用wget进行下载</strong></p>
+<h3 id="zai-pveshang-chuang-jian-xu-ni-ji">在PVE上创建虚拟机</h3>
+<h4 id="part1-pvechuang-jian-xu-ni-ji">Part1：PVE创建虚拟机</h4>
+<p><strong>Step1：点击创建虚拟机</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039176-0c8c5380-7c12-11ea-8e26-eb64636f071c.png" alt="image" /></p>
+<p><strong>Step2：选择创建虚拟机在哪一个节点、VM的ID和名称，点击下一步</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039189-275ec800-7c12-11ea-8086-864a54d4758f.png" alt="image" /></p>
+<p><strong>Step3：选择前面上传的系统安装镜像，点击下一步</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039197-30e83000-7c12-11ea-80e0-9c3685fd592c.png" alt="image" /></p>
+<p><strong>Step4：选择图像选项和BISO类型，推荐图像选项选择VirtIO-GPU，BIOS类型可不选择UEFI，如果选择了UEFI，需要选择UEFI的存储位置，点击下一步</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039202-42c9d300-7c12-11ea-854c-5fc1e9a54479.png" alt="image" /></p>
+<p><strong>Step5：修改磁盘的默认大小，点击下一步</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039206-4c533b00-7c12-11ea-964a-5d7776d82cf8.png" alt="image" /></p>
+<p><strong>Step6：修改CPU核数和CPU启用的额外标志，此处默认，点击下一步</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039210-55440c80-7c12-11ea-99c9-593fb0ab1e7f.png" alt="image" /></p>
+<p><strong>Step7：修改内存大小，此处分配8G，点击下一步</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039217-5d03b100-7c12-11ea-8770-45bef5a29fc7.png" alt="image" /></p>
+<p><strong>Step8：修改网络设置即可，点击下一步</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039225-642abf00-7c12-11ea-8161-5f1901a3f489.png" alt="image" /></p>
+<p><strong>Step9：最后的整体设置预览，点击完成</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039227-69880980-7c12-11ea-8800-4afc50732d83.png" alt="image" /></p>
+<h4 id="part2-an-zhuang-ubuntu-server-18-04">Part2：安装Ubuntu Server 18，04</h4>
+<p><strong>Step1：启动安装</strong>，点击z右上角的启动，进入安装阶段</p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039832-976f4d00-7c16-11ea-9dac-8011bcbbc531.png" alt="image" /></p>
+<p><strong>Step2：点击控制台，输出vnc画面</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039850-b241c180-7c16-11ea-929b-5232bf1a5222.png" alt="image" /></p>
+<p><strong>Step3：选择语言</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039881-f8972080-7c16-11ea-9ec2-0de5bc84b2c3.png" alt="image" /></p>
+<p><strong>Step4：更新安装器</strong>，推荐进行更新，网络环境较差也可不更新</p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039527-6857dc00-7c14-11ea-8ef3-24d46f8f6512.png" alt="image" /></p>
+<p><strong>Step5：配置语言和键盘</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039537-74439e00-7c14-11ea-81ab-67875166db11.png" alt="image" /></p>
+<p><strong>Step6：配置网络，默认即可</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039540-79a0e880-7c14-11ea-809f-12be95bd2131.png" alt="image" /></p>
+<p><strong>Step7：配置代理，按需配置</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039551-7efe3300-7c14-11ea-81c8-bb10e9b4da81.png" alt="image" /></p>
+<p><strong>Step8：配置镜像源，按需配置</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039553-845b7d80-7c14-11ea-878e-87ea2409a7be.png" alt="image" /></p>
+<p><strong>Step9：设置使用一整个磁盘，有需要要也可选择其他选项</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039558-8f161280-7c14-11ea-9b6b-ec1752c43b77.png" alt="image" /></p>
+<p><strong>Step10：选择安装的磁盘</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039560-93dac680-7c14-11ea-9337-ddac162b12cd.png" alt="image" /></p>
+<p><strong>Step11：确认自动分区情况</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039565-99381100-7c14-11ea-969e-c13d1979a791.png" alt="image" /></p>
+<p><strong>Step12：配置用户名、密码与host name</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039569-a05f1f00-7c14-11ea-88d2-647293dcfd37.png" alt="image" /></p>
+<p><strong>Step13：选择安装openssh-server</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039578-a94ff080-7c14-11ea-8c3e-0a7215443ac1.png" alt="image" /></p>
+<p><strong>Step14：推荐不在此页面选择任何额外的软件，此处的软件应该是通过ubnutu的snap包管理器进行安装的，如果不熟悉的情况下，可能选取之后找不到相应的安装结果，我就在前几次的安装中选择了docker，导致系统上有两个docker sever端，令人十分迷惑。</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039582-b79e0c80-7c14-11ea-8633-ff004aaf9e37.png" alt="image" /></p>
+<p><strong>Step15：开始安装，等待安装结束即可</strong></p>
+<p><img src="https://user-images.githubusercontent.com/15051530/79039584-bf5db100-7c14-11ea-8622-9dfd90d3f1ec.png" alt="image" /></p>
+
+
+
+<noscript>
+    This is where the comments would load if you enabled JavaScript.
+</noscript>
+<script src="https://utteranc.es/client.js"
+        repo="livexia/ghost.livexia.xyz"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </article>
+            
+
+<nav class="toc">
+    <h4>目录</h4>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;install-ubuntu-server-on-pve&#x2F;#an-zhuang-ubuntu-server-18-04">安装Ubuntu Server 18.04</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;install-ubuntu-server-on-pve&#x2F;#xia-zai">下载</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;install-ubuntu-server-on-pve&#x2F;#zai-pveshang-chuang-jian-xu-ni-ji">在PVE上创建虚拟机</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+
+        </main>
+    </body>
+</html>

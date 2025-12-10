@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+    
+    
+        
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <title>修复 zsh 启动缓慢</title>
+        <link rel="stylesheet" href="https://ghost.livexia.xyz/style.css?2"/>
+        <link rel="icon" href="https://ghost.livexia.xyz/icon.png"/>
+        <link rel="canonical" href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;"/>
+        <link rel="alternate" type="application/rss+xml" title="Just Some Ramblings" href="/rss.xml">
+        
+<meta property="og:type" content="article">
+
+        <meta property="og:title" content="修复 zsh 启动缓慢">
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;">
+        <meta property="og:image" content="https://ghost.livexia.xyz/icon.png">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125980270-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-125980270-1');
+        </script>
+    </head>
+    <body class="theme-default">
+        <header>
+            <div class="nav-content main-column">
+                <!-- <div class="icon"> -->
+                <!--     <a href="/"> -->
+                <!--         <img id="icon" src="/icon.png"> -->
+                <!--     </a> -->
+                <!-- </div> -->
+                <div class="header-nav"> 
+                    <a href="/">
+                        <span>livexia</span>
+                    </a>
+                </div>
+
+                <div class="header-nav"> 
+                    <a href="/tags/reading">
+                      <span>reading</span>
+                    </a>
+                </div>
+                <div class="header-nav btn">
+                    <a href="/tags">
+                      <span>tags</span>
+                    </a>
+                </div>
+                <div class="social-links header-nav">
+                    <span class="social-links" data-license="CC-BY 4.0 https://fontawesome.com/license">
+                        <a href="https://github.com/livexia" target="_blank" class="hide-when-small"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></i></a>
+                    </span>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <article>
+                
+<h1 class="title">
+  修复 zsh 启动缓慢
+</h1>
+
+<div class="page-metadata">
+[Linux]
+Posted on Jan 23, 2024
+
+&middot; 9 minute read
+</div>
+
+<p>tl;dr: 终端启动缓慢，实际上是 <code>zsh</code> 启动缓慢，通过使用 <code>zprof</code> 确定问题来自 <code>nvm</code> 的初始化，利用 oh-my-zsh 插件实现 <code>nvm</code> 只在使用时进行初始化。</p>
+<h2 id="qi-yin">起因</h2>
+<p>主要使用的环境有 3 个，两个 Linux 一个 MacOS，自己从大学开始就在用 oh-my-zsh ，长久以来都是如此。不知道从何时开始启动终端就特别的缓慢，特别是在 Linux 的环境上，因为 Linux 环境上我用的是 Alacritty 而 MacOS 上用的则是 iterm2 ，所以最初我以为是终端的问题，因为问题并不是很大，特别是涉及到的两个环境的机器并不高，所以我并没有想要查清问题。昨天晚上太冷了，在冰冷的笔记本上等待终端启动让我觉得很有必要解决这个问题。</p>
+<h2 id="que-ding-wen-ti">确定问题</h2>
+<p>终端启动缓慢有两种可能：一是终端模拟器启动缓慢，二是 <code>zsh</code> 启动缓慢。当前点击 Alacritty 时，终端窗口出现并不慢，而 shell 环境仍未出现，所以更可能是 <code>zsh</code> 的问题。通过启动系统自带的终端模拟器，发现启动依旧缓慢，所以并不是终端模拟器的问题。</p>
+<h3 id="zsh-de-qi-dong-shi-jian">zsh 的启动时间</h3>
+<p>使用 <code>time</code> 命令测试 <code>zsh</code> 启动时间 <code>time zsh -i -c exit</code> 命令会在启动 <code>zsh</code> 后立即退出，所以可以估算 <code>zsh</code> 的启动时间，运行结果为 <code>zsh -i -c exit  0.95s user 1.26s system 106% cpu 2.075 total</code> 可见启动时间在一秒左右，这是很明显感到启动缓慢的原因。</p>
+<h3 id="qi-yong-zsh-profiling">启用 zsh profiling</h3>
+<p>参考 <a href="https://pickard.cc/posts/why-does-zsh-start-slowly/">why does zsh start so slowly?</a> 和 <a href="https://stevenvanbael.com/profiling-zsh-startup">Profiling zsh startup time</a> 对 <code>zsh</code> 的启动进行采样，具体操作是在 <code>~/. zshrc</code> 的顶部增加 <code>zmodload zsh/zprof</code> 和在最底部增加 <code>zprof</code> ，然后重新启动 <code>zsh</code> 即可取得 profiling 的结果。</p>
+<p>重启 <code>zsh</code> 后取得 profiling 结果如下：</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">num</span><span>  calls                time                       self            name
+</span><span style="color:#bf616a;">-----------------------------------------------------------------------------------
+</span><span> </span><span style="color:#bf616a;">1</span><span>)    </span><span style="color:#bf616a;">1</span><span>         804.38   804.38   89.73%    436.31   436.31   48.67%  nvm_auto
+</span><span> </span><span style="color:#bf616a;">2</span><span>)    </span><span style="color:#bf616a;">2</span><span>         368.07   184.03   41.06%    206.64   103.32   23.05%  nvm
+</span><span> </span><span style="color:#bf616a;">3</span><span>)    </span><span style="color:#bf616a;">1</span><span>         146.69   146.69   16.36%    122.63   122.63   13.68%  nvm_ensure_version_installed
+</span><span> </span><span style="color:#bf616a;">4</span><span>)   </span><span style="color:#bf616a;">21</span><span>          43.31     2.06    4.83%     34.24     1.63    3.82%  _omz_source
+</span><span> </span><span style="color:#bf616a;">5</span><span>)    </span><span style="color:#bf616a;">1</span><span>          24.06    24.06    2.68%     24.06    24.06    2.68%  nvm_is_version_installed
+</span><span> </span><span style="color:#bf616a;">6</span><span>)    </span><span style="color:#bf616a;">2</span><span>          21.35    10.68    2.38%     21.35    10.68    2.38%  compaudit
+</span><span> </span><span style="color:#bf616a;">7</span><span>)    </span><span style="color:#bf616a;">1</span><span>          14.63    14.63    1.63%     14.47    14.47    1.61%  nvm_die_on_prefix
+</span><span> </span><span style="color:#bf616a;">8</span><span>)    </span><span style="color:#bf616a;">1</span><span>          11.41    11.41    1.27%     11.41    11.41    1.27%  (anon) </span><span style="color:#bf616a;">[/home/livexia/.oh-my-zsh/tools/check_for_upgrade.sh:155]
+</span><span> </span><span style="color:#bf616a;">9</span><span>)    </span><span style="color:#bf616a;">1</span><span>           8.27     8.27    0.92%      8.27     8.27    0.92%  zrecompile
+</span><span style="color:#bf616a;">10</span><span>)    </span><span style="color:#bf616a;">1</span><span>          25.99    25.99    2.90%      4.64     4.64    0.52%  compinit
+</span><span style="color:#bf616a;">11</span><span>)    </span><span style="color:#bf616a;">1</span><span>          13.74    13.74    1.53%      2.33     2.33    0.26%  handle_update
+</span><span style="color:#bf616a;">12</span><span>)    </span><span style="color:#bf616a;">1</span><span>           1.91     1.91    0.21%      1.91     1.91    0.21%  test-ls-args
+</span><span style="color:#bf616a;">13</span><span>)    </span><span style="color:#bf616a;">5</span><span>           1.88     0.38    0.21%      1.88     0.38    0.21%  add-zsh-hook
+</span><span style="color:#bf616a;">14</span><span>)    </span><span style="color:#bf616a;">1</span><span>           1.86     1.86    0.21%      1.86     1.86    0.21%  colors
+</span><span style="color:#bf616a;">15</span><span>)   </span><span style="color:#bf616a;">13</span><span>           1.54     0.12    0.17%      1.54     0.12    0.17%  compdef
+</span><span style="color:#bf616a;">16</span><span>)    </span><span style="color:#bf616a;">5</span><span>           1.15     0.23    0.13%      1.15     0.23    0.13%  is-at-least
+</span><span style="color:#bf616a;">17</span><span>)    </span><span style="color:#bf616a;">1</span><span>           1.05     1.05    0.12%      1.05     1.05    0.12%  regexp-replace
+</span><span style="color:#bf616a;">18</span><span>)    </span><span style="color:#bf616a;">4</span><span>           0.16     0.04    0.02%      0.16     0.04    0.02%  nvm_npmrc_bad_news_bears
+</span><span style="color:#bf616a;">19</span><span>)    </span><span style="color:#bf616a;">1</span><span>           0.28     0.28    0.03%      0.13     0.13    0.01%  complete
+</span><span style="color:#bf616a;">20</span><span>)    </span><span style="color:#bf616a;">1</span><span>           0.11     0.11    0.01%      0.11     0.11    0.01%  nvm_has
+</span><span style="color:#bf616a;">21</span><span>)    </span><span style="color:#bf616a;">2</span><span>           0.08     0.04    0.01%      0.08     0.04    0.01%  is_plugin
+</span><span style="color:#bf616a;">22</span><span>)    </span><span style="color:#bf616a;">3</span><span>           0.08     0.03    0.01%      0.08     0.03    0.01%  is_theme
+</span><span style="color:#bf616a;">23</span><span>)    </span><span style="color:#bf616a;">2</span><span>           0.06     0.03    0.01%      0.06     0.03    0.01%  bashcompinit
+</span><span style="color:#bf616a;">24</span><span>)    </span><span style="color:#bf616a;">1</span><span>         804.43   804.43   89.73%      0.05     0.05    0.01%  nvm_process_parameters
+</span><span style="color:#bf616a;">25</span><span>)    </span><span style="color:#bf616a;">2</span><span>           0.05     0.02    0.01%      0.05     0.02    0.01%  env_default
+</span><span style="color:#bf616a;">26</span><span>)    </span><span style="color:#bf616a;">1</span><span>           0.01     0.01    0.00%      0.01     0.01    0.00%  nvm_is_zsh
+</span></code></pre>
+<p>根据结果可见<strong>启动过程中因为 <code>nvm</code> 而花费了大量的时间</strong>，并不是很多人遇见的因为 <code>compinit</code> 而导致的启动缓慢，例如 <a href="https://superuser.com/questions/236953/zsh-starts-incredibly-slowly">zsh starts incredibly slowly</a> 中的题主。</p>
+<h2 id="jie-jue-yin-wei-nvm-dao-zhi-de-qi-dong-huan-man">解决因为 <code>nvm</code> 导致的启动缓慢</h2>
+<p><code>~/.zshrc</code> 文件中涉及 <code>nvm</code> 的部分如下，主要是设定 <code>nvm</code> 主目录，然后加载 <code>nvm</code> ，最后加载 <code>nvm</code> 的 <code>shell</code> 补全，这样三个部分就导致了 <code>zsh</code> 的启动缓慢</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#b48ead;">export </span><span style="color:#bf616a;">NVM_DIR</span><span>=&quot;$</span><span style="color:#bf616a;">HOME</span><span style="color:#a3be8c;">/.config/nvm</span><span>&quot;
+</span><span style="color:#96b5b4;">[ </span><span style="color:#bf616a;">-s </span><span>&quot;$</span><span style="color:#bf616a;">NVM_DIR</span><span style="color:#a3be8c;">/nvm.sh</span><span>&quot; </span><span style="color:#96b5b4;">] </span><span>&amp;&amp; </span><span style="color:#96b5b4;">\. </span><span>&quot;$</span><span style="color:#bf616a;">NVM_DIR</span><span style="color:#a3be8c;">/nvm.sh</span><span>&quot;  </span><span style="color:#65737e;"># This loads nvm
+</span><span style="color:#96b5b4;">[ </span><span style="color:#bf616a;">-s </span><span>&quot;$</span><span style="color:#bf616a;">NVM_DIR</span><span style="color:#a3be8c;">/bash_completion</span><span>&quot; </span><span style="color:#96b5b4;">] </span><span>&amp;&amp; </span><span style="color:#96b5b4;">\. </span><span>&quot;$</span><span style="color:#bf616a;">NVM_DIR</span><span style="color:#a3be8c;">/bash_completion</span><span>&quot;  </span><span style="color:#65737e;"># This loads nvm bash_completion
+</span></code></pre>
+<p><code>nvm</code> 是 Nodejs 的版本管理器，我实际上并不直接使用 Nodejs ，但是在 LunarVim 中安装插件需要，所以直接删除 <code>~/.zshrc</code> 中涉及 nvm 的部分可能会导致问题。</p>
+<p>在搜索过程中发现通过跳过初始化 <code>zsh</code> 时跳过加载 <code>nvm</code> 解决的<a href="https://superuser.com/a/1611283">方法</a>，这个方法通过设置别名只在运行 <code>nvm</code> 时进行加载，这个方法无法实现在使用 <code>node</code> 或 <code>npm</code> 以及一系列其他程序时自动加载 <code>nvm</code>。但是后续发现了更好的解决方法，那就是通过使用 oh-my-zsh 的 <code>nvm</code> 插件实现类似的方法，只在需要时初始化 <code>nvm</code> 。</p>
+<p>根据 <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm">nvm plugin</a> 在 <code>~/.zshrc</code> 中启用 <code>nvm</code> 插件，然后设置 <code>nvm</code> 启动状态为 <code>lazy</code> 。</p>
+<ol>
+<li>启用 <code>nvm</code> 插件 <code>plugins=(... nvm)</code> ，在 <code>~/.zshrc</code> 文件中搜索 <code>plugins</code> 可以发现默认就启用了 <code>git</code> 插件，所以直接在原有的基础上增加 <code>nvm</code> 即可，直接加上文档中的 <code>plugins=(... nvm)</code> 这一句会覆盖 <code>git</code> 插件。例如 <code>plugins=(git nvm)</code>****</li>
+<li>在 <code>~/.zshrc</code> 中增加 <code>zstyle ':omz:plugins:nvm' lazy yes</code> 实现只有在需要时才加载 <code>nvm</code></li>
+<li>删除 <code>~/.zshrc</code> 中原有的两行加载 nvm 和 nvm shell 补全的部分，要保留设定 nvm 目录的部分，因为 <code>nvm</code> 插件默认 <code>~/.nvm</code> 为主目录，具体可见 <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm#settings">nvm/settings</a></li>
+</ol>
+<p>最初这么操作之后，发现启动中依旧加载了 <code>nvm</code> ，的确 <code>nvm</code> 插件替换了 <code>nvm</code> 的两条初始化语句，但是在 profiling 中依旧加载了 <code>nvm</code> ，也就是说 <code>nvm</code> 依旧在 <code>zsh</code> 初始化时启动了。</p>
+<p>测试后发现 <code>plugins=(git nvm)</code> 和 <code>zstyle ':omz:plugins:nvm' lazy yes</code> 的语句顺序导致了这样的问题，<code>zstyle ':omz:plugins:nvm' lazy yes</code> 要在 <code>plugins=(git nvm)</code> 之前，否则 <code>zsh</code> 依旧会自动初始化 <code>nvm</code> 。正确的是在 <code>~/.zshrc</code> 最初位置就设定 <code>nvm</code> 主目录和增加 <code>zstyle ':omz:plugins:nvm' lazy yes</code> ，<code>~/.zshrc</code> 头部示例如下：</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># profiling zsh
+</span><span style="color:#bf616a;">zmodload</span><span> zsh/zprof
+</span><span>
+</span><span style="color:#65737e;"># nvm lazy load
+</span><span style="color:#b48ead;">export </span><span style="color:#bf616a;">NVM_DIR</span><span>=&quot;$</span><span style="color:#bf616a;">HOME</span><span style="color:#a3be8c;">/.config/nvm</span><span>&quot;
+</span><span style="color:#bf616a;">zstyle </span><span>&#39;</span><span style="color:#a3be8c;">:omz:plugins:nvm</span><span>&#39; lazy yes
+</span></code></pre>
+<h3 id="bu-cheng-gong-de-chang-shi">不成功的尝试</h3>
+<p>上面的方法可以实现预期，但是分离了配置，一般来说我喜欢将新增/修改的配置放在配置文件的末尾，这个方法对配置进行了分裂。<code>plugins</code> 是 <code>bash</code> 的 <code>array</code> 数据类型，应该可以通过附加操作增加元素，因为 <code>zstyle</code> 设置 <code>nvm</code> 插件语句只需要在插件启用之前之前即可。所以可以将所有 <code>nvm</code> 相关的语句集合在一起，同时可以在配置文件的最后实现 nvm 的按需加载。具体如下：</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># nvm plugin lazy load
+</span><span style="color:#b48ead;">export </span><span style="color:#bf616a;">NVM_DIR</span><span>=&quot;$</span><span style="color:#bf616a;">HOME</span><span style="color:#a3be8c;">/.config/nvm</span><span>&quot;
+</span><span style="color:#bf616a;">zstyle </span><span>&#39;</span><span style="color:#a3be8c;">:omz:plugins:nvm</span><span>&#39; lazy yes
+</span><span style="color:#bf616a;">plugins</span><span>+=(nvm)
+</span></code></pre>
+<p>但是这个方法依旧存在问题，<code>plugins</code> 需要在 <code>source $ZSH/oh-my-zsh.sh</code> 之前进行设置，如果放在配置文件末尾，将导致 <code>nvm</code> 不可用。所以我希望将所有新增配置都放在配置文件末尾的希望落空了，最后仍旧是按照最初的方式，将设置 <code>nvm</code> 主目录和 <code>zstyle</code> 设置 <code>nvm</code> 插插件的语句放在配置文件的头部，同时新增 <code>plugins</code> 变量为 <code>plugins=(git nvm)</code> 。</p>
+<h3 id="que-ding-nvm-ke-yong">确定 <code>nvm</code> 可用</h3>
+<p>使用 <code>nvm</code> 插进后运行 <code>nvm</code> <code>node</code> 或者 <code>npm</code> 都可以成功，同时启动终端模拟器和 zsh 几乎是瞬时的，毫无停滞的感觉。</p>
+<h2 id="zai-ci-ce-shi">再次测试</h2>
+<p>再次 profiling 结果如下：</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">❯</span><span> zsh
+</span><span style="color:#bf616a;">num</span><span>  calls                time                       self            name
+</span><span style="color:#bf616a;">-----------------------------------------------------------------------------------
+</span><span> </span><span style="color:#bf616a;">1</span><span>)   </span><span style="color:#bf616a;">21</span><span>          31.85     1.52   41.86%     24.68     1.18   32.44%  _omz_source
+</span><span> </span><span style="color:#bf616a;">2</span><span>)    </span><span style="color:#bf616a;">2</span><span>          24.05    12.02   31.60%     24.05    12.02   31.60%  compaudit
+</span><span> </span><span style="color:#bf616a;">3</span><span>)    </span><span style="color:#bf616a;">1</span><span>           8.25     8.25   10.85%      8.25     8.25   10.85%  (anon) </span><span style="color:#bf616a;">[/home/livexia/.oh-my-zsh/tools/check_for_upgrade.sh:155]
+</span><span> </span><span style="color:#bf616a;">4</span><span>)    </span><span style="color:#bf616a;">1</span><span>          29.06    29.06   38.20%      5.02     5.02    6.59%  compinit
+</span><span> </span><span style="color:#bf616a;">5</span><span>)    </span><span style="color:#bf616a;">1</span><span>           3.57     3.57    4.69%      3.57     3.57    4.69%  zrecompile
+</span><span> </span><span style="color:#bf616a;">6</span><span>)    </span><span style="color:#bf616a;">1</span><span>          11.15    11.15   14.66%      2.90     2.90    3.81%  handle_update
+</span><span> </span><span style="color:#bf616a;">7</span><span>)    </span><span style="color:#bf616a;">1</span><span>           1.97     1.97    2.59%      1.97     1.97    2.59%  test-ls-args
+</span><span> </span><span style="color:#bf616a;">8</span><span>)    </span><span style="color:#bf616a;">5</span><span>           1.25     0.25    1.64%      1.25     0.25    1.64%  add-zsh-hook
+</span><span> </span><span style="color:#bf616a;">9</span><span>)    </span><span style="color:#bf616a;">1</span><span>           1.22     1.22    1.61%      1.22     1.22    1.61%  colors
+</span><span style="color:#bf616a;">10</span><span>)   </span><span style="color:#bf616a;">12</span><span>           1.22     0.10    1.60%      1.22     0.10    1.60%  compdef
+</span><span style="color:#bf616a;">11</span><span>)    </span><span style="color:#bf616a;">5</span><span>           1.13     0.23    1.48%      1.13     0.23    1.48%  is-at-least
+</span><span style="color:#bf616a;">12</span><span>)    </span><span style="color:#bf616a;">1</span><span>           0.59     0.59    0.77%      0.59     0.59    0.77%  regexp-replace
+</span><span style="color:#bf616a;">13</span><span>)    </span><span style="color:#bf616a;">2</span><span>           0.13     0.06    0.17%      0.13     0.06    0.17%  is_plugin
+</span><span style="color:#bf616a;">14</span><span>)    </span><span style="color:#bf616a;">3</span><span>           0.08     0.03    0.10%      0.08     0.03    0.10%  is_theme
+</span><span style="color:#bf616a;">15</span><span>)    </span><span style="color:#bf616a;">2</span><span>           0.03     0.01    0.04%      0.03     0.01    0.04%  env_default
+</span><span style="color:#bf616a;">16</span><span>)    </span><span style="color:#bf616a;">1</span><span>           0.02     0.02    0.03%      0.02     0.02    0.03%  bashcompinit
+</span></code></pre>
+<p>禁用 profiling 测试启动时间：</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">❯</span><span> time zsh</span><span style="color:#bf616a;"> -i -c</span><span> exit
+</span><span style="color:#bf616a;">zsh -i -c</span><span> exit  0.19s user 0.22s system 117% cpu 0.348 total
+</span></code></pre>
+<p>可以发现启动时间从最初的 <code>2.075</code> 减少到 <code>0.348</code> ，实际的使用体验也反映了这一提升，终端启动几乎是即时没有延迟感。在我的 <code>~/.zshrc</code> 文件中，除了初始化 <code>nvm</code> 还初始化了 <code>zoxide</code> <code>starship</code> 和 <code>pyenv</code> ，虽然在测试中并未发现这些初始化占用了大量的启动时间，但并不代表未来不会有这样的问题，后续再遇到也许也可以通过这个方法解决，使用插件。虽然在这些插件的页面并不涉及可能的加速方法，因此在此并不将原有初始化方法修改为使用配置。</p>
+<h2 id="can-kao">参考</h2>
+<ol>
+<li><a href="https://dev.to/thraizz/fix-slow-zsh-startup-due-to-nvm-408k">Fix slow ZSH startup due to NVM</a></li>
+<li><a href="https://pickard.cc/posts/why-does-zsh-start-slowly/">why does zsh start so slowly?</a></li>
+<li><a href="https://stevenvanbael.com/profiling-zsh-startup">Profiling zsh startup time</a></li>
+<li><a href="https://superuser.com/questions/236953/zsh-starts-incredibly-slowly">zsh starts incredibly slowly</a></li>
+<li><a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm">nvm plugin</a></li>
+<li><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">oh-my-zsh/Plugins</a></li>
+</ol>
+
+
+
+<noscript>
+    This is where the comments would load if you enabled JavaScript.
+</noscript>
+<script src="https://utteranc.es/client.js"
+        repo="livexia/ghost.livexia.xyz"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </article>
+            
+
+<nav class="toc">
+    <h4>目录</h4>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;#qi-yin">起因</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;#que-ding-wen-ti">确定问题</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;#zsh-de-qi-dong-shi-jian">zsh 的启动时间</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;#qi-yong-zsh-profiling">启用 zsh profiling</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;#jie-jue-yin-wei-nvm-dao-zhi-de-qi-dong-huan-man">解决因为 nvm 导致的启动缓慢</a>
+            
+            <ul>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;#bu-cheng-gong-de-chang-shi">不成功的尝试</a>
+                    </li>
+                
+                    <li>
+                        <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;#que-ding-nvm-ke-yong">确定 nvm 可用</a>
+                    </li>
+                
+            </ul>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;#zai-ci-ce-shi">再次测试</a>
+            
+        </li>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;ghost.livexia.xyz&#x2F;fix-zsh-start-slow&#x2F;#can-kao">参考</a>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+
+        </main>
+    </body>
+</html>
